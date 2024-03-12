@@ -948,3 +948,11 @@ section.footer{
 .hidden{
     display:none !important;
 }
+
+#my-div {
+    position: absolute;
+    bottom: 15px;
+    text-align: center;
+    width: 100%;
+ }
+ 
