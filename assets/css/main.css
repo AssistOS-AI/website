@@ -955,4 +955,31 @@ section.footer{
     text-align: center;
     width: 100%;
  }
- 
+
+ .section-title {
+    padding-left: 10.5%
+ }
+
+ .container {
+    display: flex;
+  }
+  
+  .column {
+    flex: 1; /* This makes both columns equal width */
+    border: 0px solid #000; /* Just for visualization */
+    padding: 20px; /* Add padding as needed */
+  }
+    .video {
+    flex: 2; /* This makes both columns equal width */
+    border: 0px solid #000; /* Just for visualization */
+    padding: 20px; /* Add padding as needed */
+  }
+
+  .column > p {
+    font-size: 1.5rem;
+  }
+
+  p strong {
+    color:#2860F8 
+  }
+  
