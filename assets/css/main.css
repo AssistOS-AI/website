@@ -1110,9 +1110,18 @@ p strong {
     color: #2860F8
 }
 
-.axiologicresearchh-container {
+.axiologic-research-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 20px;
+}
+.blogs-demo{
+    display: flex;
+}
+.blogs-title{
+    text-align: center;
+}
+.demo-container{
+    margin-top: 95px;
 }
