@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./assets/css/main.css">
     <style>
@@ -68,6 +68,7 @@
             /*color: ; */
             /* Adjust as needed */
             font-family: 'Raleway', sans-serif;
+            color: #07A5E9;
             /* Adjust as needed */
         }
 
@@ -124,6 +125,7 @@
         .axiologicresearchh p {
             margin-top: 10px;
             font-size: 18px;
+            color: #07A5E9;
             /* Adjust as needed */
             /*color: ;*/
             /* Adjust as needed */
@@ -132,84 +134,107 @@
         }
     </style>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <script src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
     <title>AssistOS</title>
 </head>
 
-<body>
-    <!--- Nav --->
-    <nav class="main-nav" id="main-nav">
-        <div class="logo-img">
-            <img src="./assets/images/demo.png" alt="AssistOS" class="logo">
-        </div>
-        <ul class="main-menu">
-            <li><a href="https://github.com/AssistOS-AI">GitHub </a></li>
-            <li><a href="https://www.youtube.com/@AssistOS-sv2db">YouTube </a></li>
-            <li><a href="https://blog.assistos.net/">Blog </a></li>
+<body onload="addEvent(); showCookieAgreement()">
+<!--- Nav --->
+<nav class="main-nav" id="main-nav">
+    <div class="logo-img">
+        <img src="./assets/images/assistos-logo.svg" alt="AssistOS" class="logo">
+    </div>
+    <ul class="main-menu">
+        <li><a href="https://github.com/AssistOS-AI">GitHub </a></li>
+        <li><a href="https://www.youtube.com/@AssistOS-sv2db">YouTube </a></li>
+        <li><a href="https://blog.assistos.net/">Blog </a></li>
 
-            <li>
-                <a href="#contact">
-                    <button class="btn-contact">Contact us</button>
-                </a>
-            </li>
-        </ul>
-    </nav>
+        <li>
+            <a href="#contact">
+                <button class="btn-contact">Contact us</button>
+            </a>
+        </li>
+    </ul>
+    <div class="hamburger-lines" id="hamburger">
+        <span class="line" id="line1"></span>
+        <span class="line" id="line2"></span>
+        <span class="line" id="line3"></span>
+    </div>
+    <ul class="secondary-menu">
+        <li><a href="https://github.com/AssistOS-AI">GitHub </a></li>
+        <li><a href="https://www.youtube.com/@AssistOS-sv2db">YouTube </a></li>
+        <li><a href="https://blog.assistos.net/">Blog </a></li>
+
+        <li>
+            <a href="#contact">
+                <button class="btn-contact">Contact us</button>
+            </a>
+        </li>
+    </ul>
+</nav>
+<br>
+
+<!-- research -->
+<section class="research" id="research">
+
+    <div class="container landing-page-text">
+        <!--<div class="video">
+            <iframe width="90%" height="800px"
+                src="https://www.youtube.com/embed/Jm_fLdCt_Sc?si=SgIP3k4vBk36KxOV" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen style="height: 400px;"></iframe>
+        </div>-->
+        <img id="video_placeholder" src="assets/images/placeholder.png"/>
+        <video id="home_video" loading="lazy" preload="auto" controls muted playsinline style="display: none;">
+            <source src="assets/home_video.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="breakline second"></div>
     <br>
-
-    <!-- research -->
-    <section class="research" id="research">
-        <div class="breakline" style="background-color: transparent;"></div>
-        <div>
-            <div class="container">
-                <div class="video">
-                    <iframe width="90%" height="800px"
-                        src="https://www.youtube.com/embed/Jm_fLdCt_Sc?si=SgIP3k4vBk36KxOV" title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen style="height: 400px;"></iframe>
-                </div>
-                <div class="column">
-                    <p>AssistOS aims to become an innovative open-source platform that integrates advanced AI
-                        capabilities, specifically Large Language Models (LLMs), into a user-friendly interface for both
-                        personal and professional use.</p>
-                </div>
-            </div>
-        </div>
-        <div class="breakline second"></div>
-        <br>
-        <h1><span style="font-family: 'Raleway', sans-serif; font-size: 45px;">AssistOS: Empowering Users Through
+    <h1><span style="font-family: 'Raleway', sans-serif; font-size: 45px;">About AssistOS</span></h1>
+    <p><span style="text-align: justify">AssistOS aims to become an innovative open-source platform that integrates advanced AI
+        capabilities, specifically Large Language Models (LLMs), into a user-friendly interface for both
+        personal and professional use.
+    </span>
+    </p>
+    <div class="breakline second"></div>
+    <br>
+    <h1><span style="font-family: 'Raleway', sans-serif; font-size: 45px;">AssistOS: Empowering Users Through
                 AI</span></h1>
-        <br>
-        <p><span style="text-align: justify">AssistOS is more than just a platform; it's a community and a movement
+    <br>
+    <p><span style="text-align: justify">AssistOS is more than just a platform; it's a community and a movement
                 towards democratizing AI technology.
                 By providing an accessible, flexible, and secure environment for AI interaction, AssistOS aims to
                 empower
                 users to leverage AI in ways that enhance their productivity, creativity, and decision-making processes.
                 Join us in shaping the future of AI, where technology serves humanity, and innovation is accessible to
                 all.</span>
-        </p>
-        <h1><span style="font-family: 'Raleway', sans-serif; font-size: 45px;">Key Features of AssistOS</span><br><br>
-        </h1>
-        <p><strong>Comprehensive Suite of AI Tools:</strong> From proofreading and translation to content creation
-            across documents, presentations, images, and videos, AssistOS provides a wide array of AI-powered
-            functionalities. It serves as a versatile tool for businesses, educational institutions, and individuals
-            alike, enabling enhanced productivity and creativity.</p>
-        <p><strong>Adaptable and User-Centric Design:</strong> AssistOS is designed with the user in mind, offering
-            customizable options that allow for the integration of new AI agents and types of interactions. This
-            flexibility ensures that the platform remains relevant and valuable as your needs evolve.</p>
-        <p><strong>Open-Source Collaboration:</strong> Embracing the principles of open-source development, AssistOS
-            fosters a collaborative environment that encourages innovation and reduces redundancy. By participating in
-            this community-driven project, users and developers can contribute to the shaping of a platform that truly
-            meets the diverse needs of its user base.</p>
-        <p><strong>Ethical and Responsible AI Use:</strong> AssistOS is committed to ethical AI development, ensuring
-            privacy, data security, and responsible usage are prioritized. This commitment extends to the platform's
-            architecture, which is designed to enable ethical oversight and safeguard user interests.</p>
-        <p><strong>Future-Oriented:</strong> With an eye towards the future, AssistOS aims to become an integral
-            component of digital ecosystems, facilitating seamless interaction between a user’s personal AI agents and
-            external digital services. This vision includes the potential for AssistOS to evolve into an advanced
-            interface for operating systems, enhancing the reach and usability of AI technologies in everyday life.</p>
-        <br>
-    </section>
+    </p>
+    <h1><span style="font-family: 'Raleway', sans-serif; font-size: 45px;">Key Features of AssistOS</span><br><br>
+    </h1>
+    <p><strong>Comprehensive Suite of AI Tools:</strong> From proofreading and translation to content creation
+        across documents, presentations, images, and videos, AssistOS provides a wide array of AI-powered
+        functionalities. It serves as a versatile tool for businesses, educational institutions, and individuals
+        alike, enabling enhanced productivity and creativity.</p>
+    <p><strong>Adaptable and User-Centric Design:</strong> AssistOS is designed with the user in mind, offering
+        customizable options that allow for the integration of new AI agents and types of interactions. This
+        flexibility ensures that the platform remains relevant and valuable as your needs evolve.</p>
+    <p><strong>Open-Source Collaboration:</strong> Embracing the principles of open-source development, AssistOS
+        fosters a collaborative environment that encourages innovation and reduces redundancy. By participating in
+        this community-driven project, users and developers can contribute to the shaping of a platform that truly
+        meets the diverse needs of its user base.</p>
+    <p><strong>Ethical and Responsible AI Use:</strong> AssistOS is committed to ethical AI development, ensuring
+        privacy, data security, and responsible usage are prioritized. This commitment extends to the platform's
+        architecture, which is designed to enable ethical oversight and safeguard user interests.</p>
+    <p><strong>Future-Oriented:</strong> With an eye towards the future, AssistOS aims to become an integral
+        component of digital ecosystems, facilitating seamless interaction between a user’s personal AI agents and
+        external digital services. This vision includes the potential for AssistOS to evolve into an advanced
+        interface for operating systems, enhancing the reach and usability of AI technologies in everyday life.</p>
+    <br>
+</section>
 </body>
 
 <style>
@@ -277,14 +302,14 @@
         <div class="demo-container">
             <a href="http://demo.assistos.org:8080/">
                 <div class="demo">
-                    <img src="./assets/images/demo.png" alt="Logo AssistOS">
+                    <img src="./assets/images/assistos-logo.svg" alt="Logo AssistOS">
                 </div>
             </a>
         </div>
     </section>
     <section>
         <h1 class="blogs-title"><span class="section-title"
-                style="font-family: 'Raleway', sans-serif; font-size: 45px;">Blog</span><br><br>
+                                      style="font-family: 'Raleway', sans-serif; font-size: 45px;">Blog</span><br><br>
         </h1>
         <div class="blog-container">
             <a href="https://blog.assistos.net/">
@@ -306,71 +331,71 @@
                 <img src="./assets/images/thinking_databases.png" alt="Image 1">
                 <p>Thinking Databases (2024)</p>
             </div>
-        <a href="https://www.axiologic.net/downloads/llm_inference_engines.pdf">
-            <div class="axiologicresearchh">
-                <img src="./assets/images/llm_inference_engines.png" alt="Image 1">
-                <p>LLM-Based Domain-Specific Inference Engines (2024)</p>
-            </div>
-            <a href="https://www.axiologic.net/downloads/assistos_blueprint_report.pdf">
-            <div class="axiologicresearchh">
-                <img src="./assets/images/assistos_blueprint.png" alt="Image 1">
-                <p>AssistOS Blueprint (2024)</p>
-            </div>
-            <a href="https://www.axiologic.net/downloads/universe_k_report.pdf">
+            <a href="https://www.axiologic.net/downloads/llm_inference_engines.pdf">
                 <div class="axiologicresearchh">
-                    <img src="./assets/images/universe_k.png" alt="Image 3">
-                    <p>Universe K Report (2024)</p>
+                    <img src="./assets/images/llm_inference_engines.png" alt="Image 1">
+                    <p>LLM-Based Domain-Specific Inference Engines (2024)</p>
                 </div>
-
-                <a href="https://www.axiologic.net/downloads/ai_alignment_report.pdf">
+                <a href="https://www.axiologic.net/downloads/assistos_blueprint_report.pdf">
                     <div class="axiologicresearchh">
-                        <img src="./assets/images/ai_alignment.png" alt="Image 3">
-                        <p>AI Alignment Research Report (2024)</p>
+                        <img src="./assets/images/assistos_blueprint.png" alt="Image 1">
+                        <p>AssistOS Blueprint (2024)</p>
                     </div>
-
-                    <a href="https://www.axiologic.net/downloads/midas_report.pdf">
+                    <a href="https://www.axiologic.net/downloads/universe_k_report.pdf">
                         <div class="axiologicresearchh">
-                            <img src="./assets/images/midas.png" alt="Image 3">
-                            <p>MIDAS (2024)</p>
+                            <img src="./assets/images/universe_k.png" alt="Image 3">
+                            <p>Universe K Report (2024)</p>
                         </div>
 
-                        <a href="https://www.axiologic.net/downloads/choreographies_report.pdf">
+                        <a href="https://www.axiologic.net/downloads/ai_alignment_report.pdf">
                             <div class="axiologicresearchh">
-                                <img src="./assets/images/choreographies.png" alt="Image 3">
-                                <p>Choreographies, DSUs, SVDs for Multi-Agent Systems (2023)</p>
+                                <img src="./assets/images/ai_alignment.png" alt="Image 3">
+                                <p>AI Alignment Research Report (2024)</p>
                             </div>
-                            <a href="https://www.axiologic.net/downloads/assistos_report.pdf">
+
+                            <a href="https://www.axiologic.net/downloads/midas_report.pdf">
                                 <div class="axiologicresearchh">
-                                    <img src="./assets/images/AssistOS.png" alt="Image 1">
-                                    <p>AssistOS Vision (2023)</p>
+                                    <img src="./assets/images/midas.png" alt="Image 3">
+                                    <p>MIDAS (2024)</p>
                                 </div>
+
+                                <a href="https://www.axiologic.net/downloads/choreographies_report.pdf">
+                                    <div class="axiologicresearchh">
+                                        <img src="./assets/images/choreographies.png" alt="Image 3">
+                                        <p>Choreographies, DSUs, SVDs for Multi-Agent Systems (2023)</p>
+                                    </div>
+                                    <a href="https://www.axiologic.net/downloads/assistos_report.pdf">
+                                        <div class="axiologicresearchh">
+                                            <img src="./assets/images/AssistOS.png" alt="Image 1">
+                                            <p>AssistOS Vision (2023)</p>
+                                        </div>
+                                    </a>
+
+                                    <a href="https://www.axiologic.net/downloads/ai_market_report.pdf">
+                                        <div class="axiologicresearchh">
+                                            <img src="./assets/images/ai_market_evolution.png" alt="Image 2">
+                                            <p>AI Market Evolution Report (2023)</p>
+                                        </div>
+                                    </a>
+
+
+                                </a>
+                                <a href="./downloads/super_intelligences_report.pdf">
+                                    <div class="axiologicresearchh">
+                                        <img src="./assets/images/super_intelligence.png" alt="Image 3">
+                                        <p>Super Intelligence Classification (2023)</p>
+                                    </div>
+                                </a>
+                                <a href="https://www.axiologic.net/downloads/super_intelligences_report.pdf">
+                                    <div class="axiologicresearchh">
+                                        <img src="./assets/images/social_ai.png" alt="Image 1">
+                                        <p>Social Impact of Controllable AIs (2023)</p>
+                                    </div>
+                                </a>
                             </a>
-
-                            <a href="https://www.axiologic.net/downloads/ai_market_report.pdf">
-                                <div class="axiologicresearchh">
-                                    <img src="./assets/images/ai_market_evolution.png" alt="Image 2">
-                                    <p>AI Market Evolution Report (2023)</p>
-                                </div>
-                            </a>
-
-
-                        </a>
-                        <a href="./downloads/super_intelligences_report.pdf">
-                            <div class="axiologicresearchh">
-                                <img src="./assets/images/super_intelligence.png" alt="Image 3">
-                                <p>Super Intelligence Classification (2023)</p>
-                            </div>
-                        </a>
-                        <a href="https://www.axiologic.net/downloads/super_intelligences_report.pdf">
-                            <div class="axiologicresearchh">
-                                <img src="./assets/images/social_ai.png" alt="Image 1">
-                                <p>Social Impact of Controllable AIs (2023)</p>
-                            </div>
                         </a>
                     </a>
                 </a>
-            </a>
-        </a>
     </div>
 </section>
 
@@ -381,7 +406,7 @@
 
 
 <section class="contact" id="contact">
-    <h1> <span>Have a question? </span>Don't hesitate to reach out!</h1>
+    <h1><span>Have a question? </span>Don't hesitate to reach out!</h1>
     <div class="contact-container">
         <div class="contact-information">
             <div class="image">
@@ -402,7 +427,7 @@
     <div class="breakline"></div>
     <div class="container-padding">
         <div class="footer-img">
-            <img src="./assets/images/logo.png" alt="Axiologic" class="footer-logo">
+            <img src="./assets/images/logo.svg" alt="Axiologic" class="footer-logo">
         </div>
         <ul>
 
