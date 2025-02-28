@@ -686,6 +686,11 @@ section.researches {
     color: #FFFFFF;
 }
 
+h1 {
+    color: #C0DEED;
+    text-align: center;
+}
+
 .research h3 {
     max-width: 1000px;
     font-weight: 500;
@@ -701,7 +706,8 @@ section.researches {
     font-size: 1.25rem;
     line-height: 191.9%;
     color: #FFFFFF;
-    margin-bottom: 67px;
+    margin: 0 auto 50px;
+    text-align: justify;
 }
 
 .researches .button-container {
@@ -752,7 +758,7 @@ section.contact {
     font-size: 3.5rem;
     line-height: 186.4%;
     /* or 104px */
-    color: #FFFFFF;
+    color: #C0DEED;;
 }
 
 .contact > h1 > span {
@@ -768,15 +774,14 @@ section.contact {
 }
 
 .contact-information {
-    margin-right: 35px;
-    margin-bottom: 35px;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+    margin: auto;
 }
 
 .contact-information .text {
-    margin-left: 1.5rem;
+    margin: 1.5rem;
 }
 
 .contact-information .text p {
