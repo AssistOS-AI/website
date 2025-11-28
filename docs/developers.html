@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>AssistOS - Developers</title>
+    <style>
+        .github-section {
+            padding-top: 140px;
+            background-color: #101010;
+        }
+        .github-box {
+            background: #181c2b;
+            border: 1px solid #2E2F46;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .github-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .github-box h2 {
+            color: #07A5E9;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+        .github-box p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #D8D8E8;
+            margin-bottom: 1.5rem;
+        }
+        .github-box a.repo-link {
+            background: #07A5E9;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1rem;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 11px 26px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .github-box a.repo-link:hover {
+            background: #222BE7;
+        }
+    </style>
+</head>
+
+<body>
+    <!--- Nav --->
+    <nav class="main-nav" id="main-nav">
+        <div class="logo-img">
+            <a href="index.html"><img src="./assets/images/assistos-logo.svg" alt="AssistOS" class="logo"></a>
+        </div>
+        <ul class="main-menu">
+            <li><a href="index.html#vision">Vision</a></li>
+            <li><a href="index.html#integrations">Ecosystem</a></li>
+            <li><a href="developers.html">Developers</a></li>
+            <li>
+                <a href="index.html#contact">
+                    <button class="btn-contact">Contact us</button>
+                </a>
+            </li>
+        </ul>
+        <div class="hamburger-lines" id="hamburger">
+            <span class="line" id="line1"></span>
+            <span class="line" id="line2"></span>
+            <span class="line" id="line3"></span>
+        </div>
+        <ul class="secondary-menu">
+            <li><a href="index.html#vision">Vision</a></li>
+            <li><a href="index.html#integrations">Ecosystem</a></li>
+            <li><a href="developers.html">Developers</a></li>
+            <li>
+                <a href="index.html#contact">
+                    <button class="btn-contact">Contact us</button>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- GitHub Content Section -->
+    <section class="github-section">
+        <h1 class="section-title">Developer Resources</h1>
+
+        <div class="github-box">
+            <h2>Development & Unstable Versions</h2>
+            <p>This repository hosts the latest, cutting-edge, and potentially unstable versions of our core components. Use these for development, testing, or to see the latest features as they are being built.</p>
+            <a href="https://github.com/OutfinityResearch/" target="_blank" class="repo-link">Visit OutfinityResearch</a>
+        </div>
+
+        <div class="github-box">
+            <h2>Default Agents & Stable Releases</h2>
+            <p>This repository contains default agent implementations and stable, open-source releases for Ploinky and AGISystem2. This is the best place to start for reliable, production-ready code.</p>
+            <a href="https://github.com/outfinityResearch/" target="_blank" class="repo-link">Visit outfinityResearch</a>
+        </div>
+
+        <div class="github-box">
+            <h2>Commercial Licensing & Support</h2>
+            <p>While we are committed to open source, some components and applications developed with AssistOS technologies are available under a commercial license. If you are interested in enterprise-grade support, professional consultancy, or custom solutions, please get in touch.</p>
+            <a href="index.html#contact" class="repo-link">Contact Us</a>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="breakline"></div>
+        <div class="container-padding">
+            <div class="footer-img">
+                <a href="https://www.axiologic.net/" target="_blank"><img src="./assets/images/logo.svg"
+                        alt="Axiologic" class="footer-logo"></a>
+            </div>
+            <ul>
+                <li><a href="https://www.youtube.com/@AssistOS-sv2db">YouTube</a></li>
+                <li><a href="archive.html">Past vision and reports</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const hamburger = document.querySelector("#hamburger");
+            if (hamburger) {
+                hamburger.addEventListener('click', () => {
+                    document.querySelector('.secondary-menu').classList.toggle("toggle");
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

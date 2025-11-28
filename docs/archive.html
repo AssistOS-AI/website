@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>AssistOS - Archive</title>
+</head>
+
+<body>
+<!--- Nav --->
+<nav class="main-nav" id="main-nav">
+    <div class="logo-img">
+        <a href="index.html"><img src="./assets/images/assistos-logo.svg" alt="AssistOS" class="logo"></a>
+    </div>
+    <ul class="main-menu">
+        <li><a href="index.html#vision">Vision</a></li>
+        <li><a href="index.html#integrations">Ecosystem</a></li>
+        <li><a href="developers.html">Developers</a></li>
+        <li>
+            <a href="index.html#contact">
+                <button class="btn-contact">Contact us</button>
+            </a>
+        </li>
+    </ul>
+    <div class="hamburger-lines" id="hamburger">
+        <span class="line" id="line1"></span>
+        <span class="line" id="line2"></span>
+        <span class="line" id="line3"></span>
+    </div>
+    <ul class="secondary-menu">
+        <li><a href="index.html#vision">Vision</a></li>
+        <li><a href="index.html#integrations">Ecosystem</a></li>
+        <li><a href="developers.html">Developers</a></li>
+        <li>
+            <a href="index.html#contact">
+                <button class="btn-contact">Contact us</button>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<section id="historic-content" class="historic-content-section" style="padding-top: 140px;">
+    <h2 class="section-title">Archive</h2>
+    <p class="historic-intro">This section contains previous materials and research reports related to the AssistOS project.</p>
+    
+    <div class="historic-video-container">
+        <video id="home_video" loading="lazy" preload="auto" controls muted playsinline>
+            <source src="assets/home_video.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <div class="historic-reports-container">
+        <h3 class="reports-title">Public Research Reports</h3>
+        <div class="axiologic-research-container">
+            <a href="https://www.axiologic.net/downloads/thinking_databases.pdf" class="axiologicresearchh">
+                <img src="./assets/images/thinking_databases.png" alt="Thinking Databases">
+                <p>Thinking Databases (2024)</p>
+            </a>
+            <a href="https://www.axiologic.net/downloads/llm_inference_engines.pdf" class="axiologicresearchh">
+                <img src="./assets/images/llm_inference_engines.png" alt="LLM Inference Engines">
+                <p>LLM-Based Domain-Specific Inference Engines (2024)</p>
+            </a>
+            <a href="https://www.axiologic.net/downloads/assistos_blueprint_report.pdf" class="axiologicresearchh">
+                <img src="./assets/images/assistos_blueprint.png" alt="AssistOS Blueprint">
+                <p>AssistOS Blueprint (2024)</p>
+            </a>
+            <a href="https://www.axiologic.net/downloads/universe_k_report.pdf" class="axiologicresearchh">
+                <img src="./assets/images/universe_k.png" alt="Universe K Report">
+                <p>Universe K Report (2024)</p>
+            </a>
+            <a href="https://www.axiologic.net/downloads/ai_alignment_report.pdf" class="axiologicresearchh">
+                <img src="./assets/images/ai_alignment.png" alt="AI Alignment Report">
+                <p>AI Alignment Research Report (2024)</p>
+            </a>
+            <a href="https://www.axiologic.net/downloads/midas_report.pdf" class="axiologicresearchh">
+                <img src="./assets/images/midas.png" alt="MIDAS Report">
+                <p>MIDAS (2024)</p>
+            </a>
+            <a href="https://www.axiologic.net/downloads/choreographies_report.pdf" class="axiologicresearchh">
+                <img src="./assets/images/choreographies.png" alt="Choreographies Report">
+                <p>Choreographies, DSUs, SVDs for Multi-Agent Systems (2023)</p>
+            </a>
+            <a href="https://www.axiologic.net/downloads/assistos_report.pdf" class="axiologicresearchh">
+                <img src="./assets/images/AssistOS.png" alt="AssistOS Vision">
+                <p>AssistOS Vision (2023)</p>
+            </a>
+            <a href="https://www.axiologic.net/downloads/ai_market_report.pdf" class="axiologicresearchh">
+                <img src="./assets/images/ai_market_evolution.png" alt="AI Market Evolution">
+                <p>AI Market Evolution Report (2023)</p>
+            </a>
+            <a href="./downloads/super_intelligences_report.pdf" class="axiologicresearchh">
+                <img src="./assets/images/super_intelligence.png" alt="Super Intelligence Classification">
+                <p>Super Intelligence Classification (2023)</p>
+            </a>
+            <a href="https://www.axiologic.net/downloads/super_intelligences_report.pdf" class="axiologicresearchh">
+                <img src="./assets/images/social_ai.png" alt="Social Impact of Controllable AIs">
+                <p>Social Impact of Controllable AIs (2023)</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" id="footer">
+    <div class="breakline"></div>
+    <div class="container-padding">
+        <div class="footer-img">
+            <a href="https://www.axiologic.net/" target="_blank"><img src="./assets/images/logo.svg" alt="Axiologic" class="footer-logo"></a>
+        </div>
+        <ul>
+            <li><a href="https://www.youtube.com/@AssistOS-sv2db">YouTube</a></li>
+            <li><a href="archive.html">Past vision and reports</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.querySelector("#hamburger");
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                document.querySelector('.secondary-menu').classList.toggle("toggle");
+            });
+        }
+    });
+</script>
+
+</body>
+</html>
