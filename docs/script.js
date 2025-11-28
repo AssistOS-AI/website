@@ -70,13 +70,3 @@ function viewMoreItems(className, name) {
         });
     }
 }
-
-function showModal(options = {}) {
-    const buttonsHTML = (options.buttons || []).map(button => {
-        if (!button) {
-            return;
-        }
-        return `<button type=\"button\" class=\"modal_action_button\" button-type=\"${button.type}\">${button.text}</button>`;
-    }).join('');
-    const dialogHTML = `
-        <dialog class=\"axiologic_modal ${options.className}\" modal-type=\"${options.type || \
