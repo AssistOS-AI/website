@@ -29,6 +29,36 @@ function initIframeSwitcher() {
     });
 }
 
+function toggleMore(element) {
+    const paragraph = element.previousElementSibling;
+    if (paragraph.classList.contains('truncated')) {
+        paragraph.classList.remove('truncated');
+        paragraph.classList.add('expanded');
+        element.textContent = 'Less';
+    } else {
+        paragraph.classList.remove('expanded');
+        paragraph.classList.add('truncated');
+        element.textContent = 'More...';
+    }
+}
+
+function copyCurrentLink() {
+    const activeButton = document.querySelector('.iframe-nav-button.active');
+    if (activeButton) {
+        const url = activeButton.getAttribute('data-url');
+        navigator.clipboard.writeText(url).then(() => {
+            const copyBtn = document.querySelector('.copy-link-btn');
+            const originalText = copyBtn.innerHTML;
+            copyBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+            copyBtn.classList.add('copied');
+            setTimeout(() => {
+                copyBtn.innerHTML = originalText;
+                copyBtn.classList.remove('copied');
+            }, 1500);
+        });
+    }
+}
+
 function initPage() {
     addEvent();
     initIframeSwitcher();

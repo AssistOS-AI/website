@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Integrated Toolchain - AssistOS</title>
+</head>
+
+<body>
+<!--- Nav --->
+<nav class="main-nav" id="main-nav">
+    <div class="logo-img">
+        <a href="index.html"><img src="./assets/images/assistos-logo.svg" alt="AssistOS" class="logo"></a>
+    </div>
+    <ul class="main-menu">
+        <li><a href="index.html#vision">Vision</a></li>
+        <li><a href="index.html#integrations">Ecosystem</a></li>
+        <li><a href="developers.html">Developers</a></li>
+        <li>
+            <a href="index.html#contact">
+                <button class="btn-contact">Contact us</button>
+            </a>
+        </li>
+    </ul>
+    <div class="hamburger-lines" id="hamburger">
+        <span class="line" id="line1"></span>
+        <span class="line" id="line2"></span>
+        <span class="line" id="line3"></span>
+    </div>
+    <ul class="secondary-menu">
+        <li><a href="index.html#vision">Vision</a></li>
+        <li><a href="index.html#integrations">Ecosystem</a></li>
+        <li><a href="developers.html">Developers</a></li>
+        <li>
+            <a href="index.html#contact">
+                <button class="btn-contact">Contact us</button>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Page Content -->
+<section class="page-content">
+    <h1 class="page-title">Integrated Toolchain</h1>
+
+    <div class="content-block intro-block">
+        <div class="intro-text">
+            <p>The AssistOS ecosystem is built around a tightly integrated toolchain where each component serves a specific purpose while seamlessly connecting with the others. The <strong>Achilles IDE</strong> provides the development environment where agents are designed and tested. These agents are built using <strong>AchillesAgentLib</strong>, which implements our cognitive architecture patterns. For trustworthy reasoning and knowledge management, agents connect to <strong>AGISystem2</strong>. When ready for production, <strong>Ploinky</strong> handles secure deployment and scaling. Finally, <strong>Achilles CLI</strong> ties everything together, enabling automation and scripting across the entire workflow.</p>
+        </div>
+        <div class="vision-diagram">
+            <svg viewBox="0 0 420 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="toolGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#07A5E9;stop-opacity:0.1"/>
+                        <stop offset="100%" style="stop-color:#222BE7;stop-opacity:0.05"/>
+                    </linearGradient>
+                </defs>
+
+                <!-- Developer on left -->
+                <circle cx="45" cy="100" r="18" stroke="#07A5E9" stroke-width="2" fill="none"/>
+                <circle cx="45" cy="94" r="6" fill="#07A5E9" opacity="0.7"/>
+                <path d="M45 106 L45 125 M36 114 L54 114 M45 125 L36 140 M45 125 L54 140" stroke="#07A5E9" stroke-width="2" stroke-linecap="round"/>
+                <text x="45" y="158" text-anchor="middle" fill="#D8D8E8" font-size="9">Developer</text>
+
+                <!-- Arrow to IDE -->
+                <path d="M68 100 L105 100" stroke="#07A5E9" stroke-width="2"/>
+                <polygon points="102,96 112,100 102,104" fill="#07A5E9"/>
+
+                <!-- Achilles IDE box -->
+                <rect x="115" y="75" width="80" height="50" rx="6" stroke="#07A5E9" stroke-width="2" fill="url(#toolGrad)"/>
+                <text x="155" y="97" text-anchor="middle" fill="#07A5E9" font-size="10" font-weight="bold">Achilles IDE</text>
+                <text x="155" y="112" text-anchor="middle" fill="#5BC4F1" font-size="8">Development</text>
+
+                <!-- AgentLib box -->
+                <rect x="115" y="155" width="80" height="50" rx="6" stroke="#07A5E9" stroke-width="2" fill="url(#toolGrad)"/>
+                <text x="155" y="177" text-anchor="middle" fill="#07A5E9" font-size="10" font-weight="bold">AgentLib</text>
+                <text x="155" y="192" text-anchor="middle" fill="#5BC4F1" font-size="8">Architecture</text>
+
+                <!-- Connection IDE to AgentLib -->
+                <path d="M155 125 L155 150" stroke="#07A5E9" stroke-width="1.5" stroke-dasharray="4 2"/>
+
+                <!-- AGISystem2 box -->
+                <rect x="225" y="35" width="90" height="50" rx="6" stroke="#07A5E9" stroke-width="2" fill="url(#toolGrad)"/>
+                <text x="270" y="57" text-anchor="middle" fill="#07A5E9" font-size="10" font-weight="bold">AGISystem2</text>
+                <text x="270" y="72" text-anchor="middle" fill="#5BC4F1" font-size="8">Reasoning</text>
+
+                <!-- Connection IDE to AGISystem2 -->
+                <path d="M195 85 L225 65" stroke="#07A5E9" stroke-width="1.5" stroke-dasharray="4 2"/>
+
+                <!-- Ploinky box -->
+                <rect x="225" y="105" width="90" height="50" rx="6" stroke="#07A5E9" stroke-width="2" fill="url(#toolGrad)"/>
+                <text x="270" y="127" text-anchor="middle" fill="#07A5E9" font-size="10" font-weight="bold">Ploinky</text>
+                <text x="270" y="142" text-anchor="middle" fill="#5BC4F1" font-size="8">Deployment</text>
+
+                <!-- Arrow IDE to Ploinky -->
+                <path d="M195 100 L220 115" stroke="#07A5E9" stroke-width="2"/>
+                <polygon points="217,111 225,117 218,120" fill="#07A5E9"/>
+
+                <!-- Production circle -->
+                <circle cx="365" cy="130" r="25" stroke="#4CAF50" stroke-width="2" fill="none"/>
+                <text x="365" y="127" text-anchor="middle" fill="#4CAF50" font-size="9" font-weight="bold">Users</text>
+                <text x="365" y="140" text-anchor="middle" fill="#4CAF50" font-size="8">Production</text>
+
+                <!-- Arrow Ploinky to Production -->
+                <path d="M315 130 L335 130" stroke="#4CAF50" stroke-width="2"/>
+                <polygon points="333,126 343,130 333,134" fill="#4CAF50"/>
+
+                <!-- Achilles CLI bar at bottom -->
+                <rect x="115" y="235" width="250" height="40" rx="6" stroke="#222BE7" stroke-width="2" fill="none"/>
+                <text x="145" y="260" fill="#5BC4F1" font-size="14" font-weight="bold">&gt;_</text>
+                <text x="260" y="260" text-anchor="middle" fill="#222BE7" font-size="11" font-weight="bold">Achilles CLI - Automation & Scripting</text>
+
+                <!-- CLI connections -->
+                <path d="M155 210 L155 230" stroke="#222BE7" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
+                <path d="M270 160 L270 230" stroke="#222BE7" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
+                <path d="M270 90 L270 100" stroke="#222BE7" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
+            </svg>
+        </div>
+    </div>
+
+    <div class="content-block with-icon">
+        <div class="block-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="8" y="8" width="48" height="36" rx="4" stroke="#07A5E9" stroke-width="2" fill="none"/>
+                <line x1="8" y1="18" x2="56" y2="18" stroke="#07A5E9" stroke-width="1.5"/>
+                <circle cx="14" cy="13" r="2" fill="#07A5E9"/>
+                <circle cx="22" cy="13" r="2" fill="#07A5E9"/>
+                <circle cx="30" cy="13" r="2" fill="#07A5E9"/>
+                <rect x="12" y="22" width="18" height="18" rx="2" stroke="#07A5E9" stroke-width="1.5" fill="none"/>
+                <line x1="16" y1="28" x2="26" y2="28" stroke="#07A5E9" stroke-width="1"/>
+                <line x1="16" y1="33" x2="24" y2="33" stroke="#07A5E9" stroke-width="1"/>
+                <rect x="34" y="22" width="18" height="8" rx="2" stroke="#07A5E9" stroke-width="1.5" fill="none"/>
+                <rect x="34" y="32" width="18" height="8" rx="2" stroke="#07A5E9" stroke-width="1.5" fill="none"/>
+                <rect x="20" y="48" width="24" height="8" rx="2" stroke="#07A5E9" stroke-width="1.5" fill="none"/>
+            </svg>
+        </div>
+        <div class="block-content">
+            <h2>Achilles IDE</h2>
+            <p>A specialized development environment designed for building AI agents. The IDE provides intuitive tools for designing agent behaviors, testing interactions, and debugging complex AI workflows. It integrates directly with AgentLib for rapid prototyping and connects to AGISystem2 for real-time validation of agent reasoning.</p>
+            <p class="tool-link"><a href="https://ploinkyrepos.github.io/AssistOSExplorer/" target="_blank">Explore Achilles IDE &rarr;</a></p>
+        </div>
+    </div>
+
+    <div class="content-block with-icon">
+        <div class="block-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="8" y="12" width="16" height="22" rx="2" stroke="#07A5E9" stroke-width="2" fill="none"/>
+                <rect x="8" y="12" width="16" height="6" rx="2" stroke="#07A5E9" stroke-width="2" fill="#07A5E9"/>
+                <rect x="28" y="12" width="16" height="22" rx="2" stroke="#07A5E9" stroke-width="2" fill="none"/>
+                <rect x="28" y="12" width="16" height="6" rx="2" stroke="#07A5E9" stroke-width="2" fill="#07A5E9"/>
+                <rect x="48" y="12" width="12" height="22" rx="2" stroke="#07A5E9" stroke-width="2" fill="none"/>
+                <rect x="48" y="12" width="12" height="6" rx="2" stroke="#07A5E9" stroke-width="2" fill="#07A5E9"/>
+                <circle cx="32" cy="48" r="10" stroke="#07A5E9" stroke-width="2" fill="none"/>
+                <text x="32" y="52" text-anchor="middle" fill="#07A5E9" font-size="10" font-weight="bold">A</text>
+                <path d="M16 38 L26 44 M36 38 L38 44 M54 38 L42 44" stroke="#07A5E9" stroke-width="1.5"/>
+            </svg>
+        </div>
+        <div class="block-content">
+            <h2>Achilles AgentLib</h2>
+            <p>A comprehensive library implementing cognitive architecture patterns for AI agents. It provides the building blocks for creating agents that can reason, plan, and adapt to changing environments while maintaining alignment with specified goals. AgentLib handles skill orchestration, memory management, and the recursive execution model that powers our agents.</p>
+            <p class="tool-link"><a href="https://outfinityresearch.github.io/AchillesAgentLib/" target="_blank">Explore AgentLib &rarr;</a></p>
+        </div>
+    </div>
+
+    <div class="content-block with-icon">
+        <div class="block-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="22" stroke="#07A5E9" stroke-width="2" fill="none"/>
+                <text x="20" y="28" fill="#07A5E9" font-size="12" font-weight="bold">∀</text>
+                <text x="36" y="28" fill="#07A5E9" font-size="12" font-weight="bold">∃</text>
+                <text x="28" y="42" fill="#07A5E9" font-size="12" font-weight="bold">⊢</text>
+                <path d="M32 10 L32 4 M32 60 L32 54 M10 32 L4 32 M60 32 L54 32" stroke="#07A5E9" stroke-width="1.5"/>
+                <circle cx="32" cy="32" r="4" fill="#07A5E9"/>
+            </svg>
+        </div>
+        <div class="block-content">
+            <h2>AGISystem2</h2>
+            <p>A logical reasoning and validation system that ensures AI decisions are consistent and explainable. AGISystem2 provides formal verification capabilities, knowledge representation tools, and neurosymbolic integration essential for building trustworthy AI systems. It serves as the reasoning backbone that guarantees logical consistency across all agent operations.</p>
+            <p class="tool-link"><a href="https://agisystem2.com/" target="_blank">Explore AGISystem2 &rarr;</a></p>
+        </div>
+    </div>
+
+    <div class="content-block with-icon">
+        <div class="block-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 8 Q16 8 12 20 Q6 24 8 32 Q6 40 12 44 Q16 56 32 56 Q48 56 52 44 Q58 40 56 32 Q58 24 52 20 Q48 8 32 8 Z" stroke="#07A5E9" stroke-width="2" fill="none"/>
+                <circle cx="24" cy="28" r="4" stroke="#07A5E9" stroke-width="1.5" fill="none"/>
+                <circle cx="40" cy="28" r="4" stroke="#07A5E9" stroke-width="1.5" fill="none"/>
+                <circle cx="32" cy="40" r="4" stroke="#07A5E9" stroke-width="1.5" fill="none"/>
+                <line x1="27" y1="30" x2="37" y2="30" stroke="#07A5E9" stroke-width="1"/>
+                <line x1="26" y1="32" x2="30" y2="38" stroke="#07A5E9" stroke-width="1"/>
+                <line x1="38" y1="32" x2="34" y2="38" stroke="#07A5E9" stroke-width="1"/>
+                <path d="M32 48 L32 58" stroke="#07A5E9" stroke-width="2"/>
+                <polygon points="28,56 32,64 36,56" fill="#07A5E9"/>
+            </svg>
+        </div>
+        <div class="block-content">
+            <h2>Ploinky</h2>
+            <p>A secure deployment platform that handles the infrastructure concerns of running AI agents in production. Ploinky manages scaling, monitoring, security, and multi-tenant isolation, allowing developers to focus on agent logic rather than operational complexity. It provides the runtime environment where agents built with our toolchain serve real users.</p>
+            <p class="tool-link"><a href="https://ploinky.com/" target="_blank">Explore Ploinky &rarr;</a></p>
+        </div>
+    </div>
+
+    <div class="content-block with-icon">
+        <div class="block-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="12" width="52" height="40" rx="4" stroke="#222BE7" stroke-width="2" fill="none"/>
+                <rect x="6" y="12" width="52" height="8" rx="4" stroke="#222BE7" stroke-width="2" fill="#222BE7"/>
+                <text x="16" y="37" fill="#07A5E9" font-size="14" font-weight="bold">&gt;_</text>
+                <line x1="32" y1="34" x2="50" y2="34" stroke="#07A5E9" stroke-width="2"/>
+                <line x1="20" y1="44" x2="44" y2="44" stroke="#5BC4F1" stroke-width="1.5"/>
+            </svg>
+        </div>
+        <div class="block-content">
+            <h2>Achilles CLI</h2>
+            <p>The command-line interface that unifies the entire AssistOS toolchain. Achilles CLI enables developers to automate workflows, script complex operations, and integrate our tools into CI/CD pipelines. From generating agents to deploying them, from running validations to managing specifications, the CLI provides programmatic access to every capability in the ecosystem.</p>
+            <p class="tool-link"><a href="https://outfinityresearch.github.io/AchillesCLI/" target="_blank">Explore Achilles CLI &rarr;</a></p>
+        </div>
+    </div>
+
+    <div class="back-link">
+        <a href="index.html">&larr; Back to Home</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" id="footer">
+    <div class="breakline"></div>
+    <div class="container-padding">
+        <ul>
+            <li><a href="https://www.youtube.com/@AssistOS-sv2db">YouTube</a></li>
+            <li><a href="archive.html">Past vision and reports</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+
+</html>

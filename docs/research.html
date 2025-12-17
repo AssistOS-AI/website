@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Research Foundation - AssistOS</title>
+</head>
+
+<body>
+<!--- Nav --->
+<nav class="main-nav" id="main-nav">
+    <div class="logo-img">
+        <a href="index.html"><img src="./assets/images/assistos-logo.svg" alt="AssistOS" class="logo"></a>
+    </div>
+    <ul class="main-menu">
+        <li><a href="index.html#vision">Vision</a></li>
+        <li><a href="index.html#integrations">Ecosystem</a></li>
+        <li><a href="developers.html">Developers</a></li>
+        <li>
+            <a href="index.html#contact">
+                <button class="btn-contact">Contact us</button>
+            </a>
+        </li>
+    </ul>
+    <div class="hamburger-lines" id="hamburger">
+        <span class="line" id="line1"></span>
+        <span class="line" id="line2"></span>
+        <span class="line" id="line3"></span>
+    </div>
+    <ul class="secondary-menu">
+        <li><a href="index.html#vision">Vision</a></li>
+        <li><a href="index.html#integrations">Ecosystem</a></li>
+        <li><a href="developers.html">Developers</a></li>
+        <li>
+            <a href="index.html#contact">
+                <button class="btn-contact">Contact us</button>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Page Content -->
+<section class="page-content">
+    <h1 class="page-title">Research Foundation</h1>
+
+    <div class="content-block intro-block">
+        <div class="intro-text">
+            <p>Our research agenda is driven by a practical goal: making AI assistants more affordable, more reliable, and genuinely useful across industries. We pursue three interconnected research directions that together form a comprehensive approach to building production-grade AI systems.</p>
+        </div>
+        <div class="vision-diagram">
+            <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="researchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#07A5E9;stop-opacity:0.15"/>
+                        <stop offset="100%" style="stop-color:#222BE7;stop-opacity:0.05"/>
+                    </linearGradient>
+                </defs>
+
+                <!-- Central hub: Research -->
+                <circle cx="200" cy="60" r="35" stroke="#07A5E9" stroke-width="2" fill="url(#researchGrad)"/>
+                <text x="200" y="56" text-anchor="middle" fill="#07A5E9" font-size="10" font-weight="bold">AssistOS</text>
+                <text x="200" y="68" text-anchor="middle" fill="#07A5E9" font-size="10" font-weight="bold">Research</text>
+
+                <!-- Three research pillars -->
+
+                <!-- Pillar 1: AI Agents (left) -->
+                <rect x="20" y="130" width="110" height="90" rx="8" stroke="#07A5E9" stroke-width="1.5" fill="none"/>
+                <text x="75" y="148" text-anchor="middle" fill="#07A5E9" font-size="9" font-weight="bold">AI Agent</text>
+                <text x="75" y="160" text-anchor="middle" fill="#07A5E9" font-size="9" font-weight="bold">Architecture</text>
+
+                <!-- Recursive orchestrator visualization -->
+                <circle cx="55" cy="185" r="12" stroke="#5BC4F1" stroke-width="1.5" fill="none"/>
+                <text x="55" y="188" text-anchor="middle" fill="#5BC4F1" font-size="7">Agent</text>
+                <!-- Skills around it -->
+                <rect x="75" y="172" width="20" height="10" rx="2" stroke="#5BC4F1" stroke-width="1"/>
+                <text x="85" y="180" text-anchor="middle" fill="#5BC4F1" font-size="6">Skill</text>
+                <rect x="75" y="185" width="20" height="10" rx="2" stroke="#5BC4F1" stroke-width="1"/>
+                <text x="85" y="193" text-anchor="middle" fill="#5BC4F1" font-size="6">Skill</text>
+                <rect x="75" y="198" width="20" height="10" rx="2" stroke="#5BC4F1" stroke-width="1"/>
+                <text x="85" y="206" text-anchor="middle" fill="#5BC4F1" font-size="6">Tool</text>
+                <!-- Arrows -->
+                <path d="M67 185 L73 178" stroke="#5BC4F1" stroke-width="1"/>
+                <path d="M67 185 L73 190" stroke="#5BC4F1" stroke-width="1"/>
+                <path d="M67 185 L73 203" stroke="#5BC4F1" stroke-width="1"/>
+                <!-- Recursive arrow -->
+                <path d="M55 197 Q40 210 55 197" stroke="#5BC4F1" stroke-width="1" stroke-dasharray="2 1"/>
+                <path d="M43 185 Q30 185 43 173" stroke="#5BC4F1" stroke-width="1"/>
+                <polygon points="43,170 46,176 40,176" fill="#5BC4F1"/>
+
+                <!-- Pillar 2: Specification-Driven (center) -->
+                <rect x="145" y="130" width="110" height="90" rx="8" stroke="#07A5E9" stroke-width="1.5" fill="none"/>
+                <text x="200" y="148" text-anchor="middle" fill="#07A5E9" font-size="9" font-weight="bold">Specification</text>
+                <text x="200" y="160" text-anchor="middle" fill="#07A5E9" font-size="9" font-weight="bold">Driven R&D</text>
+
+                <!-- Spec document -->
+                <rect x="158" y="172" width="24" height="30" rx="2" stroke="#5BC4F1" stroke-width="1.5" fill="none"/>
+                <line x1="162" y1="179" x2="178" y2="179" stroke="#5BC4F1" stroke-width="1"/>
+                <line x1="162" y1="185" x2="176" y2="185" stroke="#5BC4F1" stroke-width="1"/>
+                <line x1="162" y1="191" x2="178" y2="191" stroke="#5BC4F1" stroke-width="1"/>
+                <line x1="162" y1="197" x2="174" y2="197" stroke="#5BC4F1" stroke-width="1"/>
+                <text x="170" y="212" text-anchor="middle" fill="#D8D8E8" font-size="6">SPEC</text>
+
+                <!-- Arrow to outputs -->
+                <path d="M186 187 L200 187" stroke="#5BC4F1" stroke-width="1.5"/>
+                <polygon points="198,184 204,187 198,190" fill="#5BC4F1"/>
+
+                <!-- Multiple outputs -->
+                <rect x="208" y="170" width="14" height="10" rx="1" stroke="#5BC4F1" stroke-width="1" fill="none"/>
+                <text x="215" y="178" text-anchor="middle" fill="#5BC4F1" font-size="5">{ }</text>
+                <rect x="224" y="170" width="14" height="10" rx="1" stroke="#5BC4F1" stroke-width="1" fill="none"/>
+                <circle cx="231" cy="175" r="3" stroke="#5BC4F1" stroke-width="0.5" fill="none"/>
+                <rect x="208" y="183" width="14" height="10" rx="1" stroke="#5BC4F1" stroke-width="1" fill="none"/>
+                <line x1="211" y1="186" x2="219" y2="186" stroke="#5BC4F1" stroke-width="0.5"/>
+                <line x1="211" y1="189" x2="217" y2="189" stroke="#5BC4F1" stroke-width="0.5"/>
+                <rect x="224" y="183" width="14" height="10" rx="1" stroke="#5BC4F1" stroke-width="1" fill="none"/>
+                <polygon points="228,186 234,189 228,192" stroke="#5BC4F1" stroke-width="0.5" fill="none"/>
+                <rect x="216" y="196" width="14" height="10" rx="1" stroke="#5BC4F1" stroke-width="1" fill="none"/>
+                <path d="M220 199 Q223 203 226 199" stroke="#5BC4F1" stroke-width="0.5" fill="none"/>
+
+                <!-- Pillar 3: Trustworthy AI (right) -->
+                <rect x="270" y="130" width="110" height="90" rx="8" stroke="#07A5E9" stroke-width="1.5" fill="none"/>
+                <text x="325" y="148" text-anchor="middle" fill="#07A5E9" font-size="9" font-weight="bold">Trustworthy</text>
+                <text x="325" y="160" text-anchor="middle" fill="#07A5E9" font-size="9" font-weight="bold">AI Research</text>
+
+                <!-- Neurosymbolic visualization -->
+                <!-- Neural side -->
+                <circle cx="295" cy="180" r="8" stroke="#5BC4F1" stroke-width="1" fill="none"/>
+                <circle cx="295" cy="200" r="8" stroke="#5BC4F1" stroke-width="1" fill="none"/>
+                <path d="M295 172 L295 168 M290 174 L286 170 M300 174 L304 170" stroke="#5BC4F1" stroke-width="0.8"/>
+                <path d="M295 188 L295 192" stroke="#5BC4F1" stroke-width="1"/>
+
+                <!-- Plus/merge -->
+                <text x="315" y="192" fill="#D8D8E8" font-size="12">+</text>
+
+                <!-- Symbolic side -->
+                <rect x="330" y="172" width="16" height="16" rx="2" stroke="#5BC4F1" stroke-width="1" fill="none"/>
+                <text x="338" y="184" text-anchor="middle" fill="#5BC4F1" font-size="8">∀</text>
+                <rect x="330" y="192" width="16" height="16" rx="2" stroke="#5BC4F1" stroke-width="1" fill="none"/>
+                <text x="338" y="204" text-anchor="middle" fill="#5BC4F1" font-size="8">⊢</text>
+
+                <!-- Checkmark result -->
+                <path d="M355 185 L360 192 L370 175" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+                <!-- Connection lines from hub to pillars -->
+                <path d="M175 90 L75 125" stroke="#07A5E9" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
+                <path d="M200 95 L200 125" stroke="#07A5E9" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
+                <path d="M225 90 L325 125" stroke="#07A5E9" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
+
+                <!-- Bottom: convergence -->
+                <path d="M75 225 L75 250 L325 250 L325 225" stroke="#07A5E9" stroke-width="1" opacity="0.5"/>
+                <path d="M200 250 L200 275" stroke="#07A5E9" stroke-width="2"/>
+                <polygon points="192,270 200,282 208,270" fill="#07A5E9"/>
+                <text x="200" y="295" text-anchor="middle" fill="#07A5E9" font-size="10" font-weight="bold">Reliable & Affordable AI Assistants</text>
+            </svg>
+        </div>
+    </div>
+
+    <div class="content-block with-icon">
+        <div class="block-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="32" r="14" stroke="#07A5E9" stroke-width="2" fill="none"/>
+                <text x="24" y="36" text-anchor="middle" fill="#07A5E9" font-size="10" font-weight="bold">A</text>
+                <rect x="42" y="20" width="14" height="8" rx="2" stroke="#07A5E9" stroke-width="1.5"/>
+                <rect x="42" y="32" width="14" height="8" rx="2" stroke="#07A5E9" stroke-width="1.5"/>
+                <rect x="42" y="44" width="14" height="8" rx="2" stroke="#07A5E9" stroke-width="1.5"/>
+                <path d="M38 32 L40 24 M38 32 L40 36 M38 32 L40 48" stroke="#07A5E9" stroke-width="1.5"/>
+                <path d="M24 18 Q10 18 18 28" stroke="#07A5E9" stroke-width="1.5" stroke-dasharray="2 1"/>
+                <polygon points="16,26 20,30 14,30" fill="#07A5E9"/>
+            </svg>
+        </div>
+        <div class="block-content">
+            <h2>AI Agent Architecture</h2>
+            <p>We research agent architectures designed to make AI copilots and generative assistants both more cost-effective and more reliable. Our core concept is the <strong>agent as a recursive orchestrator of skills</strong>: the orchestration itself can be guided by prompts or code, while skills are simply prompts or tools the assistant can invoke. This modular, composable approach enables sophisticated behaviors while keeping systems maintainable and predictable.</p>
+        </div>
+    </div>
+
+    <div class="content-block with-icon">
+        <div class="block-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="8" y="12" width="22" height="32" rx="2" stroke="#07A5E9" stroke-width="2" fill="none"/>
+                <line x1="12" y1="20" x2="26" y2="20" stroke="#07A5E9" stroke-width="1.5"/>
+                <line x1="12" y1="26" x2="24" y2="26" stroke="#07A5E9" stroke-width="1.5"/>
+                <line x1="12" y1="32" x2="26" y2="32" stroke="#07A5E9" stroke-width="1.5"/>
+                <line x1="12" y1="38" x2="22" y2="38" stroke="#07A5E9" stroke-width="1.5"/>
+                <path d="M34 28 L44 28" stroke="#07A5E9" stroke-width="2"/>
+                <polygon points="42,24 50,28 42,32" fill="#07A5E9"/>
+                <rect x="52" y="14" width="8" height="8" rx="1" stroke="#07A5E9" stroke-width="1.5"/>
+                <circle cx="56" cy="32" r="4" stroke="#07A5E9" stroke-width="1.5"/>
+                <polygon points="52,42 60,42 56,50" stroke="#07A5E9" stroke-width="1.5" fill="none"/>
+            </svg>
+        </div>
+        <div class="block-content">
+            <h2>Specification-Driven R&D</h2>
+            <p>We believe rigorous specification management is the key to unlocking AI's creative potential. Our research transforms AI into a true <strong>compiler from specifications to artifacts</strong>: code, diagrams, research theories, articles, novels, images, films, and any other creative output. By keeping specifications clear, traceable, and versioned, we enable reproducible, auditable AI-assisted creation across every domain, from software engineering to scientific research to artistic production.</p>
+        </div>
+    </div>
+
+    <div class="content-block with-icon">
+        <div class="block-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="24" r="10" stroke="#07A5E9" stroke-width="2" fill="none"/>
+                <circle cx="20" cy="44" r="10" stroke="#07A5E9" stroke-width="2" fill="none"/>
+                <path d="M20 14 L20 8 M12 18 L6 12 M28 18 L34 12" stroke="#07A5E9" stroke-width="1.5"/>
+                <path d="M20 34 L20 34" stroke="#07A5E9" stroke-width="2"/>
+                <rect x="38" y="16" width="16" height="16" rx="3" stroke="#07A5E9" stroke-width="2" fill="none"/>
+                <text x="46" y="28" text-anchor="middle" fill="#07A5E9" font-size="12">∀</text>
+                <rect x="38" y="38" width="16" height="16" rx="3" stroke="#07A5E9" stroke-width="2" fill="none"/>
+                <text x="46" y="50" text-anchor="middle" fill="#07A5E9" font-size="12">⊢</text>
+                <path d="M56 32 L62 40 L58 40" stroke="#4CAF50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <div class="block-content">
+            <h2>Trustworthy AI Research</h2>
+            <p>We investigate <strong>neurosymbolic solutions</strong> to address the fundamental challenges of trustworthy AI: the opacity of results, bias in training data, and the hallucinations that prevent adoption in highly regulated industries. Built around <a href="https://www.agisystem2.com/" target="_blank">AGISystem2</a>, our research has produced tangible results: working systems for knowledge representation and formal, verifiable reasoning that can explain their conclusions and guarantee logical consistency.</p>
+        </div>
+    </div>
+
+    <div class="back-link">
+        <a href="index.html">&larr; Back to Home</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" id="footer">
+    <div class="breakline"></div>
+    <div class="container-padding">
+        <ul>
+            <li><a href="https://www.youtube.com/@AssistOS-sv2db">YouTube</a></li>
+            <li><a href="archive.html">Past vision and reports</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+
+</html>
