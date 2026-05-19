@@ -1,0 +1,33 @@
+<h2>Chapter 13: MRP-VM</h2>
+
+<p class="chapter-intro">MRP-VM (Multi-Role Pipeline Virtual Machine) represents a new paradigm for creating and configuring AI agents. Rather than building agents as monolithic applications, MRP-VM allows you to define agents as configurable systems that expose standard interfaces while encapsulating complex agentic architectures internally.</p>
+
+<div class="placeholder-notice">
+    <p><strong>Coming Soon:</strong> This chapter is currently being prepared. Detailed technical documentation about MRP-VM architecture, configuration patterns, and integration examples will be added in an upcoming update.</p>
+</div>
+
+<h3>A New Way to Create Agents</h3>
+
+<p>MRP-VM agents expose standard interfaces to the outside world:</p>
+
+<ul>
+    <li><strong>MCP (Model Context Protocol):</strong> A standardized protocol for tool and resource access that allows agents to interact with external systems in a consistent way.</li>
+    <li><strong>OpenAI-Compatible APIs:</strong> Standard API endpoints that allow any OpenAI-compatible client to interact with MRP-VM agents, making them drop-in replacements for standard LLM calls.</li>
+</ul>
+
+<p>Behind these standard interfaces, however, lies the ability to configure complex agentic systems. An MRP-VM agent can internally orchestrate multiple sub-agents, use different models for different tasks, maintain state across interactions, and execute sophisticated pipelines all while presenting a simple, standard API to the outside world.</p>
+
+<h3>Configuration Over Code</h3>
+
+<p>The key insight behind MRP-VM is that complex agent behavior should be configurable rather than requiring custom code. By defining agent roles, pipelines, and behaviors through configuration, users can:</p>
+
+<ul>
+    <li>Rapidly prototype new agent capabilities</li>
+    <li>Share and reuse agent configurations</li>
+    <li>Modify agent behavior without changing code</li>
+    <li>Maintain version control over agent configurations</li>
+</ul>
+
+<p>This approach aligns with the broader AssistOS vision of specification-driven development, where the configuration of a system is the primary artifact and the system itself is a general-purpose executor of those specifications.</p>
+
+<p>For more information about the AGISystem2 reasoning framework that underpins MRP-VM's validation capabilities, visit <a href="https://agisystem2.com/" target="_blank">agisystem2.com</a>.</p>

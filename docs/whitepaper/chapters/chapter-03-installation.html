@@ -1,0 +1,34 @@
+<h2>Chapter 3: Simple Installation</h2>
+
+<p class="chapter-intro">One of the core design principles of AssistOS is accessibility. The entire ecosystem should be installable and runnable with minimal friction. We believe that powerful tools should not require complex setup procedures to get started.</p>
+
+<h3>Getting Started</h3>
+
+<p>The AssistOS environment is built on top of <a href="https://ploinky.com/" target="_blank">Ploinky</a>, our secure agent deployment platform. Once Ploinky is installed on your system, the entire AssistOS environment can be initialized with a single command:</p>
+
+<pre><code>ploinky start explorer</code></pre>
+
+<p>This command handles the complete initialization process:</p>
+
+<ul>
+    <li>Setting up the workspace directory structure</li>
+    <li>Initializing the Achilles IDE (AssistOS Explorer)</li>
+    <li>Configuring default agent repositories</li>
+    <li>Establishing the local development environment</li>
+</ul>
+
+<h3>Prerequisites</h3>
+
+<p>Ploinky uses containerized environments for agent isolation, so you will need a container runtime installed:</p>
+
+<ul>
+    <li><strong>Docker</strong> or <strong>Podman</strong> for full container isolation</li>
+    <li>Alternatively, on Linux, <strong>bubblewrap</strong> provides lightweight sandboxing without full containers</li>
+    <li>On macOS, <strong>seatbelt</strong> (sandbox-exec) offers similar lightweight isolation</li>
+</ul>
+
+<h3>Philosophy</h3>
+
+<p>This simplicity is intentional. We want researchers, designers, analysts, and professionals from any domain to be able to start working with AI agents without needing DevOps expertise. The complex infrastructure concerns container management, networking, security are handled automatically, so users can focus on what matters: specifying what they want to create and reviewing the results.</p>
+
+<p>The installation process reflects our broader vision: AI tools should be as easy to start using as any modern application, while retaining the power and flexibility that technical users demand.</p>

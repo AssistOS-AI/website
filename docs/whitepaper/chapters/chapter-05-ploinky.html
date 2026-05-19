@@ -1,0 +1,48 @@
+<h2>Chapter 5: Ploinky Environment</h2>
+
+<p class="chapter-intro"><a href="https://ploinky.com/" target="_blank">Ploinky</a> is the secure AI agent deployment and development platform that serves as the runtime foundation for the entire AssistOS ecosystem. It provides the infrastructure needed to run AI agents in isolated, reproducible environments making it possible to develop, test, and deploy agents with confidence.</p>
+
+<h3>What Is Ploinky?</h3>
+
+<p>In Ploinky, an "agent" is an abstract concept: any tool or application that can be invoked and interacted with. Agents can range from simple scripts to complex AI-powered applications. They are organized into repositories, which can contain multiple agents and be enabled or disabled as needed.</p>
+
+<p>Ploinky is <strong>open source under the MIT License</strong>, available on <a href="https://github.com/ploinkyRepos/ploinky" target="_blank">GitHub</a>. This open approach ensures transparency, community contribution, and the freedom to adapt the platform to specific needs.</p>
+
+<h3>Core Architecture</h3>
+
+<p>Ploinky's architecture is built around several key concepts:</p>
+
+<ul>
+    <li><strong>Isolated Containers:</strong> Each agent runs in its own container (Docker or Podman) with restricted access, ensuring complete isolation between agents and from the host system. For lighter workloads, Ploinky can use <strong>bubblewrap</strong> on Linux or <strong>seatbelt</strong> on macOS for process-level sandboxing without full container overhead.</li>
+    <li><strong>Repository System:</strong> Agents are organized in repositories, making it easy to manage, share, and version collections of related agents.</li>
+    <li><strong>Web Interfaces:</strong> Any CLI tool can be transformed into a modern web interface through Ploinky's WebConsole, WebChat, and Dashboard capabilities.</li>
+    <li><strong>Manifest-Based Configuration:</strong> A simple <code>manifest.json</code> file defines each agent's container image, dependencies, and commands.</li>
+</ul>
+
+<h3>Development Workflow</h3>
+
+<p>Ploinky supports seamless agent development with hot-reload capabilities and integrated debugging tools. The same containerized agents developed locally can be deployed to production with built-in health checks, ensuring consistency between development and production environments.</p>
+
+<h3>Interaction Models</h3>
+
+<p>Agents can be interacted with in two main ways:</p>
+
+<ul>
+    <li><strong>Individually:</strong> Run an agent's CLI directly using the <code>cli</code> command, passing inputs in any format the agent accepts (JSON, natural language, etc.).</li>
+    <li><strong>Integrated with Ploinky:</strong> Enable an agent to become part of the Ploinky workspace. The Ploinky server exposes the agent on a local port, allowing applications to interact with agents through a simple API.</li>
+</ul>
+
+<h3>Ploinky Shell</h3>
+
+<p>For quick interactions, Ploinky offers a dedicated shell mode for LLM command recommendations without full workspace initialization:</p>
+
+<pre><code>ploinky -shell       # interactive shell
+ploinky sh           # alias
+psh                  # alias
+ploinky -shell &lt;text&gt; # single-shot suggestion</code></pre>
+
+<p>This mode reads API keys from <code>.env</code> files and environment variables, and allows interactive configuration of LLM models and providers through the <code>/settings</code> command.</p>
+
+<h3>Why Ploinky Matters for AssistOS</h3>
+
+<p>Ploinky provides the secure, reproducible runtime that makes AssistOS practical. Without it, agents would need to be managed manually, with all the complexity of container orchestration, networking, and security handled by the user. Ploinky abstracts this complexity away, letting users focus on what they want to achieve rather than how to run it.</p>

@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/whitepaper.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <script src="../script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>AssistOS Whitepaper</title>
+</head>
+
+<body>
+<!--- Nav --->
+<nav class="main-nav" id="main-nav">
+    <div class="logo-img">
+        <a href="../index.html"><img src="../assets/images/assistos-logo.svg" alt="AssistOS" class="logo"></a>
+    </div>
+    <ul class="main-menu">
+        <li><a href="../vision.html">Vision</a></li>
+        <li><a href="../research.html">Research</a></li>
+        <li><a href="../toolchain.html">Toolchain</a></li>
+        <li><a href="../index.html#integrations">Ecosystem</a></li>
+        <li><a href="../developers.html">Developers</a></li>
+        <li><a href="index.html" class="active-nav">Whitepaper</a></li>
+        <li>
+            <a href="../index.html#contact">
+                <button class="btn-contact">Contact us</button>
+            </a>
+        </li>
+    </ul>
+    <div class="hamburger-lines" id="hamburger">
+        <span class="line" id="line1"></span>
+        <span class="line" id="line2"></span>
+        <span class="line" id="line3"></span>
+    </div>
+    <ul class="secondary-menu">
+        <li><a href="../vision.html">Vision</a></li>
+        <li><a href="../research.html">Research</a></li>
+        <li><a href="../toolchain.html">Toolchain</a></li>
+        <li><a href="../index.html#integrations">Ecosystem</a></li>
+        <li><a href="../developers.html">Developers</a></li>
+        <li><a href="index.html">Whitepaper</a></li>
+        <li>
+            <a href="../index.html#contact">
+                <button class="btn-contact">Contact us</button>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Whitepaper Content -->
+<section class="whitepaper-content">
+    <h1 class="whitepaper-title">AssistOS Whitepaper</h1>
+    <p class="whitepaper-subtitle">A comprehensive view of the AssistOS ecosystem, its vision, architecture, and roadmap.</p>
+
+    <div class="whitepaper-layout">
+        <!-- Chapter Navigation Sidebar -->
+        <aside class="chapter-sidebar">
+            <nav class="chapter-nav">
+                <ul id="chapter-list">
+                    <li class="chapter-item active" data-chapter="chapter-01-vision">
+                        <span class="chapter-number">1</span>
+                        <span class="chapter-label">Vision</span>
+                    </li>
+                    <li class="chapter-item" data-chapter="chapter-02-ide">
+                        <span class="chapter-number">2</span>
+                        <span class="chapter-label">Achilles IDE as AssistOS Explorer</span>
+                    </li>
+                    <li class="chapter-item" data-chapter="chapter-03-installation">
+                        <span class="chapter-number">3</span>
+                        <span class="chapter-label">Simple Installation</span>
+                    </li>
+                    <li class="chapter-item" data-chapter="chapter-04-observability">
+                        <span class="chapter-number">4</span>
+                        <span class="chapter-label">Observability</span>
+                    </li>
+                    <li class="chapter-item" data-chapter="chapter-05-ploinky">
+                        <span class="chapter-number">5</span>
+                        <span class="chapter-label">Ploinky Environment</span>
+                    </li>
+                    <li class="chapter-item" data-chapter="chapter-06-wormhole">
+                        <span class="chapter-number">6</span>
+                        <span class="chapter-label">Ploinky Wormhole</span>
+                    </li>
+                    <li class="chapter-item" data-chapter="chapter-07-cloud">
+                        <span class="chapter-number">7</span>
+                        <span class="chapter-label">Ploinky Cloud</span>
+                    </li>
+                    <li class="chapter-item" data-chapter="chapter-08-backup">
+                        <span class="chapter-number">8</span>
+                        <span class="chapter-label">Backup Agent</span>
+                    </li>
+                    <li class="chapter-item" data-chapter="chapter-09-research">
+                        <span class="chapter-number">9</span>
+                        <span class="chapter-label">AI Research Agents</span>
+                    </li>
+                    <li class="chapter-item" data-chapter="chapter-10-trustworthy">
+                        <span class="chapter-number">10</span>
+                        <span class="chapter-label">Trustworthy Agents</span>
+                    </li>
+                    <li class="chapter-item" data-chapter="chapter-11-security">
+                        <span class="chapter-number">11</span>
+                        <span class="chapter-label">Security Agents</span>
+                    </li>
+                    <li class="chapter-item" data-chapter="chapter-12-data">
+                        <span class="chapter-number">12</span>
+                        <span class="chapter-label">Data Sharing & Provenance</span>
+                    </li>
+                    <li class="chapter-item" data-chapter="chapter-13-mrpvm">
+                        <span class="chapter-number">13</span>
+                        <span class="chapter-label">MRP-VM</span>
+                    </li>
+                    <li class="chapter-item" data-chapter="chapter-14-conclusions">
+                        <span class="chapter-number">14</span>
+                        <span class="chapter-label">Conclusions</span>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Chapter Content Area -->
+        <main class="chapter-content-area" id="chapter-content">
+            <div class="chapter-loading">
+                <div class="loading-spinner"></div>
+                <p>Loading chapter...</p>
+            </div>
+        </main>
+    </div>
+
+    <div class="back-link">
+        <a href="../index.html">&larr; Back to Home</a>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const chapterItems = document.querySelectorAll('.chapter-item');
+    const contentArea = document.getElementById('chapter-content');
+    let currentChapter = 'chapter-01-vision';
+
+    // Check for hash in URL
+    const hash = window.location.hash.replace('#', '');
+    if (hash && hash.startsWith('chapter-')) {
+        currentChapter = hash;
+    }
+
+    function loadChapter(chapterId) {
+        currentChapter = chapterId;
+        window.location.hash = chapterId;
+
+        // Update active state
+        chapterItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.dataset.chapter === chapterId) {
+                item.classList.add('active');
+            }
+        });
+
+        // Show loading
+        contentArea.innerHTML = `
+            <div class="chapter-loading">
+                <div class="loading-spinner"></div>
+                <p>Loading chapter...</p>
+            </div>
+        `;
+
+        // Fetch chapter content
+        const chapterFile = `chapters/${chapterId}.html`;
+        fetch(chapterFile)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Chapter not found');
+                }
+                return response.text();
+            })
+            .then(html => {
+                contentArea.innerHTML = html;
+            })
+            .catch(error => {
+                contentArea.innerHTML = `
+                    <div class="chapter-error">
+                        <h2>Chapter Unavailable</h2>
+                        <p>This chapter is currently being prepared. Please check back later.</p>
+                    </div>
+                `;
+            });
+    }
+
+    // Add click handlers
+    chapterItems.forEach(item => {
+        item.addEventListener('click', function() {
+            loadChapter(this.dataset.chapter);
+        });
+    });
+
+    // Load initial chapter
+    loadChapter(currentChapter);
+});
+</script>
+
+<!-- Footer -->
+<footer class="footer" id="footer">
+    <div class="breakline"></div>
+    <div class="container-padding">
+        <ul>
+            <li><a href="https://www.youtube.com/@AssistOS-sv2db">YouTube</a></li>
+            <li><a href="../archive.html">Past vision and reports</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+
+</html>

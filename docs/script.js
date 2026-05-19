@@ -8,7 +8,7 @@ function addEvent() {
 }
 
 function initIframeSwitcher() {
-    const navButtons = document.querySelectorAll(".iframe-nav-button");
+    const navButtons = document.querySelectorAll("button.iframe-nav-button");
     const iframes = document.querySelectorAll(".integration-iframe");
 
     navButtons.forEach(button => {

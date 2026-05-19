@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/whitepaper.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>AssistOS Whitepaper</title>
+    <style>
+        body { background: #000; }
+        .embed-whitepaper { padding: 0; max-width: 100%; margin: 0; }
+        .embed-header { padding: 1rem 2rem; border-bottom: 1px solid #2E2F46; margin-bottom: 0; }
+        .embed-header h1 { color: #07A5E9; font-size: 1.5rem; margin: 0 0 0.25rem 0; }
+        .embed-header p { color: #D8D8E8; font-size: 0.85rem; margin: 0; }
+        .embed-layout { display: flex; gap: 0; height: calc(100vh - 70px); }
+        .embed-sidebar { width: 220px; flex-shrink: 0; overflow-y: auto; background: #0d1117; border-right: 1px solid #2E2F46; }
+        .embed-content { flex: 1; overflow-y: auto; padding: 1.5rem 2rem; min-width: 0; }
+        .embed-sidebar .chapter-nav { background: none; border: none; border-radius: 0; padding: 0.5rem 0; }
+        .embed-sidebar .chapter-item { padding: 0.5rem 0.75rem; }
+        .embed-sidebar .chapter-label { font-size: 0.78rem; }
+        .embed-content h2 { font-size: 1.5rem; margin-top: 0; }
+        .embed-content h3 { font-size: 1.15rem; }
+        .embed-content p, .embed-content li { font-size: 0.92rem; }
+        .embed-content .chapter-intro { font-size: 0.95rem; }
+        .back-link { display: none; }
+        @media (max-width: 768px) {
+            .embed-layout { flex-direction: column; height: auto; }
+            .embed-sidebar { width: 100%; max-height: 200px; border-right: none; border-bottom: 1px solid #2E2F46; }
+            .embed-content { padding: 1rem; }
+            .embed-sidebar .chapter-nav ul { display: flex; flex-wrap: wrap; gap: 0.25rem; }
+            .embed-sidebar .chapter-item { padding: 0.4rem 0.6rem; border-left: none; border-bottom: 3px solid transparent; }
+            .embed-sidebar .chapter-item:hover, .embed-sidebar .chapter-item.active { border-bottom-color: #07A5E9; background: rgba(7,165,233,0.1); }
+        }
+    </style>
+</head>
+<body>
+<div class="embed-whitepaper">
+    <div class="embed-header">
+        <h1>AssistOS Whitepaper</h1>
+        <p>Vision, architecture, and roadmap of the AssistOS ecosystem</p>
+    </div>
+    <div class="embed-layout">
+        <aside class="embed-sidebar">
+            <nav class="chapter-nav">
+                <ul id="chapter-list">
+                    <li class="chapter-item active" data-chapter="chapter-01-vision"><span class="chapter-number">1</span><span class="chapter-label">Vision</span></li>
+                    <li class="chapter-item" data-chapter="chapter-02-ide"><span class="chapter-number">2</span><span class="chapter-label">Achilles IDE as AssistOS Explorer</span></li>
+                    <li class="chapter-item" data-chapter="chapter-03-installation"><span class="chapter-number">3</span><span class="chapter-label">Simple Installation</span></li>
+                    <li class="chapter-item" data-chapter="chapter-04-observability"><span class="chapter-number">4</span><span class="chapter-label">Observability</span></li>
+                    <li class="chapter-item" data-chapter="chapter-05-ploinky"><span class="chapter-number">5</span><span class="chapter-label">Ploinky Environment</span></li>
+                    <li class="chapter-item" data-chapter="chapter-06-wormhole"><span class="chapter-number">6</span><span class="chapter-label">Ploinky Wormhole</span></li>
+                    <li class="chapter-item" data-chapter="chapter-07-cloud"><span class="chapter-number">7</span><span class="chapter-label">Ploinky Cloud</span></li>
+                    <li class="chapter-item" data-chapter="chapter-08-backup"><span class="chapter-number">8</span><span class="chapter-label">Backup Agent</span></li>
+                    <li class="chapter-item" data-chapter="chapter-09-research"><span class="chapter-number">9</span><span class="chapter-label">AI Research Agents</span></li>
+                    <li class="chapter-item" data-chapter="chapter-10-trustworthy"><span class="chapter-number">10</span><span class="chapter-label">Trustworthy Agents</span></li>
+                    <li class="chapter-item" data-chapter="chapter-11-security"><span class="chapter-number">11</span><span class="chapter-label">Security Agents</span></li>
+                    <li class="chapter-item" data-chapter="chapter-12-data"><span class="chapter-number">12</span><span class="chapter-label">Data Sharing & Provenance</span></li>
+                    <li class="chapter-item" data-chapter="chapter-13-mrpvm"><span class="chapter-number">13</span><span class="chapter-label">MRP-VM</span></li>
+                    <li class="chapter-item" data-chapter="chapter-14-conclusions"><span class="chapter-number">14</span><span class="chapter-label">Conclusions</span></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="embed-content" id="chapter-content">
+            <div class="chapter-loading"><div class="loading-spinner"></div><p>Loading chapter...</p></div>
+        </main>
+    </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const chapterItems = document.querySelectorAll('.chapter-item');
+    const contentArea = document.getElementById('chapter-content');
+    function loadChapter(chapterId) {
+        chapterItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.dataset.chapter === chapterId) item.classList.add('active');
+        });
+        contentArea.innerHTML = '<div class="chapter-loading"><div class="loading-spinner"></div><p>Loading chapter...</p></div>';
+        fetch('chapters/' + chapterId + '.html')
+            .then(r => r.ok ? r.text() : Promise.reject())
+            .then(html => { contentArea.innerHTML = html; })
+            .catch(() => { contentArea.innerHTML = '<div class="chapter-error"><h2>Chapter Unavailable</h2><p>This chapter is being prepared.</p></div>'; });
+    }
+    chapterItems.forEach(item => { item.addEventListener('click', function() { loadChapter(this.dataset.chapter); }); });
+    loadChapter('chapter-01-vision');
+});
+</script>
+</body>
+</html>
