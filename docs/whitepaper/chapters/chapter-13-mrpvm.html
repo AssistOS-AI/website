@@ -1,33 +1,66 @@
 <h2>Chapter 13: MRP-VM</h2>
 
-<p class="chapter-intro">MRP-VM (Multi-Role Pipeline Virtual Machine) represents a new paradigm for creating and configuring AI agents. Rather than building agents as monolithic applications, MRP-VM allows you to define agents as configurable systems that expose standard interfaces while encapsulating complex agentic architectures internally.</p>
+<p class="chapter-intro">MRP-VM (Meta-Rational Pragmatic Virtual Machine) is the execution model that turns natural-language-derived tasks into executable, controlled programs with interpreters, policies, traces, validation, and persistent state. It is the runtime that makes AssistOS agents not just conversational interfaces, but verifiable executors.</p>
 
-<div class="placeholder-notice">
-    <p><strong>Coming Soon:</strong> This chapter is currently being prepared. Detailed technical documentation about MRP-VM architecture, configuration patterns, and integration examples will be added in an upcoming update.</p>
-</div>
+<h3>The Core Idea</h3>
 
-<h3>A New Way to Create Agents</h3>
+<p>Today's AI agents typically work by passing natural language back and forth between an LLM and a set of tools. This is flexible but unverifiable — you cannot easily audit what the agent decided, why it made a decision, or whether it followed constraints. MRP-VM changes this by treating natural-language tasks as executable programs with explicit structure.</p>
 
-<p>MRP-VM agents expose standard interfaces to the outside world:</p>
+<p>An MRP-VM program has: an interpreter selected by task type, a policy that constrains execution, a trace of what happened, a validator that checks correctness, and persistent state that survives across interactions. The result is not just an answer — it is a verifiable execution record.</p>
 
-<ul>
-    <li><strong>MCP (Model Context Protocol):</strong> A standardized protocol for tool and resource access that allows agents to interact with external systems in a consistent way.</li>
-    <li><strong>OpenAI-Compatible APIs:</strong> Standard API endpoints that allow any OpenAI-compatible client to interact with MRP-VM agents, making them drop-in replacements for standard LLM calls.</li>
-</ul>
+<h3>Interpreters and Task Types</h3>
 
-<p>Behind these standard interfaces, however, lies the ability to configure complex agentic systems. An MRP-VM agent can internally orchestrate multiple sub-agents, use different models for different tasks, maintain state across interactions, and execute sophisticated pipelines all while presenting a simple, standard API to the outside world.</p>
-
-<h3>Configuration Over Code</h3>
-
-<p>The key insight behind MRP-VM is that complex agent behavior should be configurable rather than requiring custom code. By defining agent roles, pipelines, and behaviors through configuration, users can:</p>
+<p>MRP-VM does not use a single reasoning engine for all tasks. Instead, it selects specialized interpreters based on the nature of the problem:</p>
 
 <ul>
-    <li>Rapidly prototype new agent capabilities</li>
-    <li>Share and reuse agent configurations</li>
-    <li>Modify agent behavior without changing code</li>
-    <li>Maintain version control over agent configurations</li>
+    <li><strong>Research interpreters</strong> — for literature analysis, hypothesis generation, experiment design, and data exploration. NeuroVSA is one such interpreter, specialized in Vector Symbolic Architectures.</li>
+    <li><strong>Analysis interpreters</strong> — for statistical analysis, machine learning, genomic sequence processing, and structured data exploration.</li>
+    <li><strong>Legal interpreters</strong> — for document analysis, clause comparison, obligation extraction, and compliance checking.</li>
+    <li><strong>Security interpreters</strong> — for event stream analysis, anomaly detection, policy violation detection, and threat assessment.</li>
+    <li><strong>Workflow interpreters</strong> — for scientific protocol execution, data pipeline orchestration, and multi-step analysis.</li>
 </ul>
 
-<p>This approach aligns with the broader AssistOS vision of specification-driven development, where the configuration of a system is the primary artifact and the system itself is a general-purpose executor of those specifications.</p>
+<p>Each interpreter has its own representational machinery, validation methods, and knowledge accumulation patterns. The LLM provides linguistic flexibility and hypothesis generation; the interpreter provides the actual reasoning substrate.</p>
 
-<p>For more information about the AGISystem2 reasoning framework that underpins MRP-VM's validation capabilities, visit <a href="https://agisystem2.com/" target="_blank">agisystem2.com</a>.</p>
+<h3>Policies and Constraints</h3>
+
+<p>Every MRP-VM execution runs under a policy that defines what the interpreter can do, what data it can access, what outputs it can produce, and what validation steps are required. Policies can enforce:</p>
+
+<ul>
+    <li>Data access restrictions — what the interpreter can read and what is off-limits.</li>
+    <li>Output constraints — what formats, what level of detail, what must be excluded.</li>
+    <li>Validation requirements — what checks must pass before a result is accepted.</li>
+    <li>Audit requirements — what must be logged and what provenance must be recorded.</li>
+    <li>Human review gates — what requires human approval before proceeding.</li>
+</ul>
+
+<p>Policies are not suggestions — they are enforced by the MRP-VM runtime. An interpreter cannot bypass policy; it can only work within its constraints or refuse execution.</p>
+
+<h3>Traces and Validation</h3>
+
+<p>Every MRP-VM execution produces a trace: what inputs were used, what steps were taken, what decisions were made, what validation was applied, and what result was produced. This trace is not optional — it is the primary artifact of execution.</p>
+
+<p>Validation happens at multiple levels:</p>
+
+<ul>
+    <li><strong>Structural validation</strong> — does the output match the expected format and schema?</li>
+    <li><strong>Constraint validation</strong> — were all policy constraints respected?</li>
+    <li><strong>Semantic validation</strong> — does the result make sense given the inputs and the task?</li>
+    <li><strong>Reproducibility validation</strong> — can the execution be repeated with the same inputs and produce the same result?</li>
+</ul>
+
+<p>Results that fail validation are not silently accepted — they are flagged, explained, and either re-executed or escalated for human review.</p>
+
+<h3>Knowledge Accumulation</h3>
+
+<p>MRP-VM interpreters accumulate knowledge through Knowledge Units — auditable units of experimental knowledge that capture what worked, what failed, what conditions apply, and what the confidence level is. KUs are not just notes; they are structured, versioned, and linked to specific problem classes, representations, and validation outcomes.</p>
+
+<p>Over time, an interpreter becomes more effective not by vague adaptation, but by accumulating validated evidence and converting it into operational selection policies. This is how NeuroVSA learns which VSA representation works for which problem class, and how the Trustworthy AI Agent learns which verification methods are most effective for which model types.</p>
+
+<h3>Relation to AGISystem2</h3>
+
+<p>MRP-VM's validation capabilities are underpinned by the AGISystem2 reasoning framework, which provides formal reasoning and knowledge management. While MRP-VM handles the execution model — interpreters, policies, traces, and state — AGISystem2 provides the logical validation layer that ensures results are not just plausible, but formally sound.</p>
+
+<h3>Vision</h3>
+
+<p>MRP-VM represents a shift from conversational AI to executable AI. Instead of agents that talk about what they might do, MRP-VM produces agents that do things in a verifiable, auditable, reproducible way. Natural language becomes the interface; structured execution becomes the reality. This is what makes AssistOS agents not just intelligent, but trustworthy.</p>

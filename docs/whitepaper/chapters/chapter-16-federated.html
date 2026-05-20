@@ -1,0 +1,67 @@
+<h2>Chapter 16: Federated Learning Architecture</h2>
+
+<p class="chapter-intro">The Ploinky Federated Learning architecture enables organizations to collaboratively train AI models without sharing their raw data. Each participant keeps their data local in encrypted DPU packages, runs training in sandboxed environments, and exports only approved model updates — signed, verified, and auditable.</p>
+
+<h3>The Problem Federated Learning Solves</h3>
+
+<p>Many organizations have valuable data they cannot centralize: healthcare providers with patient records, financial institutions with transaction data, research labs with proprietary datasets. Yet training better models often requires learning from diverse data sources. Federated learning addresses this tension: train a model across multiple data sources without moving the data.</p>
+
+<p>Ploinky's approach adds three critical capabilities on top of standard federated learning: <strong>data sovereignty</strong> through encrypted local storage, <strong>policy enforcement</strong> at every step, and <strong>verifiable provenance</strong> for every round of training.</p>
+
+<h3>Architecture Overview</h3>
+
+<p>The system has five components:</p>
+
+<p><strong>Federated Learning Coordinator Agent</strong> defines the federation, invites participants, starts training rounds, collects approved updates, and aggregates the global model. It never sees raw data or local secrets.</p>
+
+<p><strong>DPU Agent</strong> at each participant is the local execution component. It holds encrypted data packages in LightDSU, verifies local policies, runs training in sandboxed environments, and decides what artifacts can leave the workspace.</p>
+
+<p><strong>Ploinky Wormhole</strong> provides the communication layer between independent workspaces. It transports federation plans, model updates, and confirmations — signed, encrypted, and verified. The Wormhole server only facilitates introductions; content flows peer-to-peer.</p>
+
+<p><strong>LightDSU</strong> is the local storage substrate. Each data package is encrypted with a BrickMap, content-addressed bricks, and a signed event anchor. Provenance is recorded for imports, transformations, training rounds, and exports.</p>
+
+<p><strong>Federated Training Skill</strong> is the executable unit that performs actual training. DPU Agent does not include all training types in its core — it runs declared, validated, policy-approved skills.</p>
+
+<h3>The Training Cycle</h3>
+
+<p><strong>Configuration:</strong> The coordinator defines the federation plan — model type, training skill, number of rounds, aggregation method, participation conditions, provenance requirements, and security constraints. The plan is signed and distributed through Wormhole.</p>
+
+<p><strong>Local Acceptance:</strong> Each DPU verifies whether it has compatible data, whether the package permits training, whether the policy allows update export, whether the skill is installed, and whether the sandbox can meet round requirements. Participation is accepted or refused locally.</p>
+
+<p><strong>Round Execution:</strong> The coordinator sends the current model and round specification. DPU Agent runs the training skill in sandbox over the local package, produces the update and metrics, records provenance, and requests local export approval for the update.</p>
+
+<p><strong>Update Transfer:</strong> Wormhole transfers the approved update to the coordinator or a Secure Aggregation Agent. The transfer is signed, encrypted, chunked, and confirmed.</p>
+
+<p><strong>Aggregation:</strong> The coordinator aggregates accepted updates, produces a new model version, and records aggregation provenance in the ModelDSU.</p>
+
+<p><strong>Finalization:</strong> The final model undergoes validation, export checks, and potentially human or organizational approval before use outside the federation.</p>
+
+<h3>Security Model</h3>
+
+<p>The security boundaries are explicit:</p>
+
+<ul>
+    <li><strong>Coordinator → DPU:</strong> The coordinator can request training, but the DPU verifies locally whether training is permitted.</li>
+    <li><strong>DPU → Coordinator:</strong> The DPU exports only approved updates and permitted metrics.</li>
+    <li><strong>Wormhole Server → Content:</strong> The server does not see final content; it only assists with rendezvous and signaling.</li>
+    <li><strong>Skill → Data:</strong> The skill sees data only within the sandbox, according to package policy.</li>
+    <li><strong>LightDSU → User/Agent:</strong> Keys and raw data are never exposed directly; access goes through DPU Agent.</li>
+</ul>
+
+<h3>Secure Aggregation</h3>
+
+<p>For sensitive scenarios — medical, genetic, or commercial data — secure aggregation ensures the coordinator receives the aggregate, not individual contributions. This is important because model updates can leak information about local data. In Ploinky, secure aggregation can be implemented as a separate agent or as a special mode of the coordinator.</p>
+
+<h3>Differential Privacy</h3>
+
+<p>Federated learning reduces data centralization but does not eliminate leakage risk through updates or the final model. The system supports policies requiring gradient clipping, noise addition, metric limits, minimum participant counts, and leakage checks. For v1, the minimum includes update clipping, format validation, prohibition of individual prediction exports, and complete round logging.</p>
+
+<h3>Provenance</h3>
+
+<p>Every local round produces provenance in the DPU: local dataset hashes, input model, executed skill, sandbox environment, parameters, metrics, produced update, and export decision. The coordinator produces aggregation provenance: which updates were included, aggregation method, participant dropouts, resulting global model, and applied verifications.</p>
+
+<p>Recommended profiles are AI_ML_EXPERIMENT, LIGHTDSU_MINIMAL, and W3C_PROV — capturing the relationships between entities (datasets, models), activities (training rounds, aggregation), and agents (coordinator, participants).</p>
+
+<h3>Vision</h3>
+
+<p>The federated learning architecture demonstrates the full power of the Ploinky stack: data stays local in encrypted LightDSU packages, training runs in sandboxed DPU environments, communication flows through Wormhole's P2P channels, and every step is signed, audited, and linked to a verifiable version. The coordinator aggregates only what participants explicitly approve. Local policy decides participation and export. This is collaborative AI with data sovereignty built in — not bolted on.</p>
