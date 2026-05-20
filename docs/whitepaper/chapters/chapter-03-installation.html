@@ -1,6 +1,6 @@
-<h2>Chapter 3: Simple Installation</h2>
+<h2>Chapter 3: Installation and Architecture</h2>
 
-<p class="chapter-intro">One of the core design principles of AssistOS is accessibility. The entire ecosystem should be installable and runnable with minimal friction. We believe that powerful tools should not require complex setup procedures to get started.</p>
+<p class="chapter-intro">AssistOS is built on a layered architecture where each component serves a specific purpose while seamlessly connecting with the others. This chapter describes both how to install the system and how the pieces fit together.</p>
 
 <h3>Getting Started</h3>
 
@@ -27,8 +27,68 @@
     <li>On macOS, <strong>seatbelt</strong> (sandbox-exec) offers similar lightweight isolation</li>
 </ul>
 
-<h3>Philosophy</h3>
+<p>This simplicity is intentional. We want researchers, designers, analysts, and professionals from any domain to be able to start working with AI agents without needing DevOps expertise.</p>
 
-<p>This simplicity is intentional. We want researchers, designers, analysts, and professionals from any domain to be able to start working with AI agents without needing DevOps expertise. The complex infrastructure concerns container management, networking, security are handled automatically, so users can focus on what matters: specifying what they want to create and reviewing the results.</p>
+<h3>The AssistOS Architecture</h3>
 
-<p>The installation process reflects our broader vision: AI tools should be as easy to start using as any modern application, while retaining the power and flexibility that technical users demand.</p>
+<p>AssistOS is organized around several interconnected layers, each addressing a critical aspect of AI-augmented work:</p>
+
+<h4>The Workspace Layer</h4>
+
+<p><strong>Achilles IDE (AssistOS Explorer)</strong> is the central interface — a file explorer, code editor, and agent orchestrator. It integrates confidential document management (with OnlyOffice for collaborative editing), GitHub repository control, the Achilles Copilot conversational interface, and the WebMeet audio-video conferencing system. It is the place where specifications are written, pipelines configured, agents orchestrated, and results reviewed.</p>
+
+<p><strong>Ploinky</strong> provides the secure runtime — containerized agent isolation, sandboxed execution, and workspace management. It is the foundation that makes it safe to run untrusted agents and code.</p>
+
+<h4>The Agent Layer</h4>
+
+<p><strong>AchillesAgentLib</strong> implements the cognitive architecture patterns — the building blocks for creating intelligent agents that can reason, plan, and execute complex tasks.</p>
+
+<p><strong>Achilles CLI / Copilot</strong> is the main control agent — a conversational interface for commands, skills, Knowledge Units, and calls to other agents available in the workspace.</p>
+
+<p><strong>Predefined domain agents</strong> — specialized agents for research, data analysis, security, trustworthiness, and more — are available and can be extended with custom agents integrated into the Copilot interface.</p>
+
+<p><strong>Backup Agent</strong> — a lightweight utility agent that handles automated workspace backups, ensuring your specifications, pipelines, and Knowledge Units are safely preserved and recoverable.</p>
+
+<h4>The Reasoning Layer</h4>
+
+<p><strong>AGISystem2</strong> provides formal reasoning and knowledge management — ensuring that agent outputs are not just plausible, but logically sound and verifiable.</p>
+
+<p><strong>MRP-VM</strong> (Meta-Rational Pragmatic Virtual Machine) is the execution model that turns natural-language-derived tasks into executable, controlled programs with interpreters, policies, traces, validation, and persistent state.</p>
+
+<h4>The Communication Layer</h4>
+
+<p><strong>Ploinky Wormhole</strong> is the decentralized communication protocol — replacing client-server messaging with direct peer-to-peer connections between agents. It enables modern email, chat, file transfer, and inter-organizational choreography without a central authority.</p>
+
+<p><strong>WebMeet</strong> provides audio-video conferencing with agent participation, blackboard control, and AudioAgent voice integration for seamless human-agent conversation.</p>
+
+<h4>The Data Sovereignty Layer</h4>
+
+<p><strong>LightDSU</strong> provides encrypted storage with verifiable provenance — data units stored as encrypted bricks with signed event anchors and support for multiple provenance profiles (W3C PROV, FHIR, GxP, RO-Crate, and more).</p>
+
+<p><strong>DPU Agent</strong> is the data protection component — owning sensitive data locally, exposing it through controlled interfaces, running sandboxed computations, and enforcing access policies.</p>
+
+<h4>The Verification Layer</h4>
+
+<p><strong>Trustworthy AI Agent</strong> inspects datasets, models, and runtime behavior to produce auditable findings, risk reports, and compliance mapping to frameworks like EU AI Act, NIST AI RMF, and ISO/IEC 42001.</p>
+
+<p><strong>Security Guardian Agent</strong> monitors code, dependencies, containers, models, configurations, network activity, user behavior, and agent behavior across the entire workspace.</p>
+
+<h4>The Knowledge Layer</h4>
+
+<p><strong>AKU (Agentic Knowledge Units)</strong> organizes agent memory and knowledge through deterministic local indexing and BM25F search — making agent context transparent, auditable, and fast without relying on opaque vector embeddings.</p>
+
+<h3>How the Layers Connect</h3>
+
+<p>The architecture is designed so that each layer can be understood independently, but their power comes from integration:</p>
+
+<ul>
+    <li>The <strong>Workspace Layer</strong> is where you interact — writing specifications, reviewing results, managing agents.</li>
+    <li>The <strong>Agent Layer</strong> executes your intent — running skills, calling other agents, producing artifacts.</li>
+    <li>The <strong>Reasoning Layer</strong> ensures correctness — validating outputs, maintaining logical consistency.</li>
+    <li>The <strong>Communication Layer</strong> connects agents and humans — peer-to-peer, encrypted, decentralized.</li>
+    <li>The <strong>Data Sovereignty Layer</strong> protects your data — encrypted at rest, sandboxed in execution, audited in access.</li>
+    <li>The <strong>Verification Layer</strong> builds trust — inspecting, testing, reporting, and mapping to compliance frameworks.</li>
+    <li>The <strong>Knowledge Layer</strong> accumulates learning — every finding, experiment, and decision becomes a reusable unit.</li>
+</ul>
+
+<p>Together, these layers form a complete environment for AI-augmented work — one where every component is designed to work with the others, and where the whole is significantly more powerful than the sum of its parts.</p>
