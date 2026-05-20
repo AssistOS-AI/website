@@ -1,21 +1,76 @@
 <h2>Chapter 12: Data Sharing & Provenance</h2>
 
-<p class="chapter-intro">Data Sharing and Provenance addresses the critical need for tracking the origin, transformation, and sharing of data and artifacts within the AssistOS ecosystem. In a world where AI agents create and modify content, knowing where something came from and how it evolved is essential.</p>
+<p class="chapter-intro">LightDSU is the encrypted data substrate of the Ploinky ecosystem — a local library for storing, versioning, auditing, and controlling access to encrypted data units. Together with DPU Agent, European Data Spaces integration, and the Data Sharing Plugin, it forms a complete architecture for sensitive data management, provenance tracking, and controlled sharing across organizations.</p>
 
-<div class="placeholder-notice">
-    <p><strong>Coming Soon:</strong> This chapter is currently being prepared. Detailed documentation about provenance tracking mechanisms, data sharing protocols, and integration with version control systems will be added in an upcoming update.</p>
-</div>
+<h3>Encrypted Data Units: LightDSU</h3>
 
-<h3>The Provenance Challenge</h3>
+<p>LightDSU stores data as encrypted bricks — content-addressed blocks that can only be reconstructed with the right keys. A special brick called the BrickMap maintains the virtual file system structure, references to data bricks, and the symmetric keys needed for reconstruction. The entire system is anchored by a cryptographically signed, append-only event log.</p>
 
-<p>When AI agents are involved in creating content, traditional notions of authorship and origin become more complex. AssistOS addresses this through:</p>
+<p>Access is controlled through three types of keys, derived hierarchically from a single master secret:</p>
 
 <ul>
-    <li>Complete lineage tracking for all artifacts from specification to final output</li>
-    <li>Agent attribution: which agents contributed to which parts of an artifact</li>
-    <li>Model attribution: which AI models were used in the generation process</li>
-    <li>Version-controlled specifications that serve as the "source of truth"</li>
-    <li>Secure sharing mechanisms that preserve provenance information</li>
+    <li><strong>lkey</strong> — full control: write, grant, revoke, read, verify.</li>
+    <li><strong>rkey</strong> — read-only: decrypt the BrickMap, read files, verify the anchor.</li>
+    <li><strong>lza</strong> — zero-access: verify the anchor's existence and history without seeing any content.</li>
 </ul>
 
-<p>This framework ensures that every artifact produced by AssistOS carries with it a complete, verifiable history of its creation.</p>
+<p>This hierarchy enables a powerful pattern: you can give someone proof that a dataset exists and has a certain history (lza) without giving them access to the data itself. You can grant read access (rkey) without giving write privileges. And you retain full control (lkey) for administration.</p>
+
+<h3>Provenance Profiles</h3>
+
+<p>Every operation on a LightDSU data unit produces a signed event in the anchor. For detailed provenance, LightDSU supports multiple profiles — each mapping to established standards for different domains:</p>
+
+<ul>
+    <li><strong>LIGHTDSU_MINIMAL</strong> — lightweight provenance for technical audit: what operation, on what resource, by whom, when, with what inputs and outputs.</li>
+    <li><strong>W3C_PROV</strong> — general provenance interoperability using the W3C PROV model of entities, activities, and agents.</li>
+    <li><strong>FHIR_PROVENANCE / FHIR_AUDIT_EVENT</strong> — healthcare and clinical data provenance using HL7 FHIR standards.</li>
+    <li><strong>GXP_AUDIT_TRAIL</strong> — pharmaceutical and regulated environments, supporting FDA 21 CFR Part 11 and EU GMP Annex 11 requirements.</li>
+    <li><strong>GA4GH_DATA_USE</strong> — genomic data with standardized usage terms through the GA4GH Data Use Ontology.</li>
+    <li><strong>RO_CRATE</strong> — FAIR research objects and publishing using RO-Crate metadata.</li>
+    <li><strong>AI_ML_EXPERIMENT</strong> — machine learning experiment provenance: datasets, models, code, parameters, metrics, and results.</li>
+</ul>
+
+<p>Each profile is stored as an encrypted brick, referenced by the compact anchor event. The anchor stays small and inspectable; the detailed provenance stays encrypted and domain-specific.</p>
+
+<h3>DPU Agent: Protecting Sensitive Data</h3>
+
+<p>DPU Agent is the data protection component of a Ploinky workspace. It owns sensitive data locally and exposes it to other agents only through controlled interfaces. Research agents never receive raw data — they receive references: packageRef, taskRef, resultRef.</p>
+
+<p>DPU Agent manages:</p>
+
+<ul>
+    <li><strong>Secret Vault</strong> — API keys, passwords, tokens, credentials. Secrets are encrypted at rest and injected into tasks, not exposed to agents.</li>
+    <li><strong>Confidential Object Store</strong> — files and folders with granular permissions (Access, Read, Comment, Write) modeled after Google Docs-style sharing.</li>
+    <li><strong>LightDSU Package Store</strong> — encrypted data packages with policies, grants, and provenance.</li>
+    <li><strong>Sandbox Execution</strong> — tasks run over sensitive data in isolated environments. The requesting agent gets only the permitted output, not the raw data.</li>
+    <li><strong>Audit & Provenance</strong> — every access, task, export, and policy change is logged and verifiable.</li>
+</ul>
+
+<h3>European Data Spaces Integration</h3>
+
+<p>Ploinky integrates with European Data Spaces through two cooperating agents:</p>
+
+<p><strong>EDS Adapter Agent</strong> is the external-facing component. It searches DCAT/DCAT-AP catalogues, describes datasets, summarizes usage policies, initiates access requests, attaches grants, and prepares imports. It translates external data-space concepts into stable Ploinky primitives — dataset descriptors, policy summaries, access grants, and transfer plans.</p>
+
+<p><strong>DPU Agent</strong> receives approved data and materializes it as encrypted LightDSU packages. It enforces policies, runs sandboxed computations, and records provenance for imports, transformations, and results.</p>
+
+<p>The separation is deliberate: the adapter handles external interoperability; the DPU handles sensitive data locally. Research agents operate through DPU task tools and never require direct access to external data spaces or raw sensitive data.</p>
+
+<h3>Data Sharing Plugin</h3>
+
+<p>The Data Sharing Plugin provides a minimal UI for researchers to publish FAIR metadata descriptions of datasets, search metadata published by others, and request access to relevant data. All operations are executed by a local Data Sharing Agent through MCP tools.</p>
+
+<p>The plugin has four screens:</p>
+
+<ul>
+    <li><strong>My Shared Data</strong> — datasets the user wants to make visible through metadata.</li>
+    <li><strong>Create FAIR Metadata</strong> — guided form for generating metadata: title, description, domain, keywords, data type, provenance, access conditions, ethical/legal restrictions.</li>
+    <li><strong>Search Data Network</strong> — search in the local index built from metadata published by the user and discovered through other agents in the Ploinky network.</li>
+    <li><strong>Requests & Bookmarks</strong> — saved datasets, sent requests, received requests, and their status.</li>
+</ul>
+
+<p>Metadata is published to a dedicated GitHub repository — without publishing the raw data. Other researchers can discover the metadata, request access, and if approved, receive the data through Ploinky Wormhole's secure P2P channels.</p>
+
+<h3>Vision</h3>
+
+<p>Together, LightDSU, DPU Agent, EDS Adapter, and the Data Sharing Plugin form a complete data sovereignty stack: encrypted storage with verifiable provenance, controlled access through sandboxed execution, interoperability with European Data Spaces, and a discovery layer that connects researchers through metadata — not through exposed data. The result is a system where data can be shared, analyzed, and trusted without ever leaving the control of its owner.</p>
