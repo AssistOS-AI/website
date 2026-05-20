@@ -609,6 +609,25 @@ section.footer {
     margin-left: 60px;
 }
 
+.footer-text {
+    color: #FFFFFF;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.footer-disclaimer {
+    color: #888;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+.footer-copyright {
+    color: #666;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+}
+
 .footer ul {
     margin: 1rem 0;
     display: flex;
