@@ -1,21 +1,43 @@
-<h2>Chapter 11: Security Agents</h2>
+<h2>Chapter 11: Security Guardian Agent</h2>
 
-<p class="chapter-intro">Security Agents are specialized agents focused on identifying vulnerabilities, enforcing security policies, and maintaining the security posture of the AssistOS environment and the artifacts it produces.</p>
+<p class="chapter-intro">The Security Guardian Agent is Ploinky's intelligent security layer for the entire workspace. It watches code, dependencies, containers, models, configurations, network activity, user behavior, and agent behavior — functioning as a guardian that observes, scans, tests, correlates, validates, and reports.</p>
 
-<div class="placeholder-notice">
-    <p><strong>Coming Soon:</strong> This chapter is currently being prepared. Detailed documentation about Security Agents' threat detection capabilities, policy enforcement mechanisms, and integration with the Ploinky security model will be added in an upcoming update.</p>
-</div>
+<h3>A Mixed Approach: Deterministic + Intelligent</h3>
 
-<h3>Security in an AI-Native Environment</h3>
+<p>SecurityGuardian Agent combines symbolic verification, explicit rules, declarative policies, signatures, deterministic scans, and baselines with LLM-assisted triage, alert explanation, context identification, and false-positive reduction. Critical checks remain auditable and deterministic. Ambiguous cases become easier to interpret.</p>
 
-<p>The AssistOS ecosystem introduces unique security considerations:</p>
+<p>This hybrid approach ensures that security decisions are both reliable and efficient — rules catch what they can, and intelligence handles the rest.</p>
 
-<ul>
-    <li>Agent isolation and sandboxing through Ploinky's container architecture</li>
-    <li>API key and credential management</li>
-    <li>Input validation and prompt injection prevention</li>
-    <li>Output filtering and data leak prevention</li>
-    <li>Audit logging and compliance reporting</li>
-</ul>
+<h3>What It Protects</h3>
 
-<p>Security Agents will operate at multiple levels within the AssistOS stack, from infrastructure security to content-level policy enforcement.</p>
+<p>The agent operates across three regimes:</p>
+
+<p><strong>Development security:</strong> It scans source code for vulnerable patterns, detects secrets in repositories and files, identifies vulnerable dependencies and license issues, verifies container images and deployment configurations, and enforces secure coding policies.</p>
+
+<p><strong>Supply chain security:</strong> It produces and verifies SBOMs, tracks vulnerabilities across components, monitors license compliance, and links every finding to the affected artifact — repository, image, package, model, or dataset.</p>
+
+<p><strong>Runtime security:</strong> It monitors processes, containers, system calls, logs, network connections, and agent behavior. It detects anomalies, intrusion attempts, policy violations, and deviations from approved baselines. It builds incident timelines that connect system events, tool calls, users, and external connections.</p>
+
+<h3>Penetration Testing</h3>
+
+<p>The agent runs authorized penetration tests against workspace endpoints, APIs, plugins, and public-facing interfaces. It manages scope, testing windows, intensity, and reporting. It verifies what is actually exposed, not just what is supposed to be.</p>
+
+<h3>Policy Enforcement</h3>
+
+<p>SecurityGuardian Agent reads administrator policies and verifies compliance in execution. Policies define which agents can access the internet, which folders they can read, which tools they can call, which models they can use, what data can be exported, and what actions require approval. The agent signals both direct violations and operational deviations — like an agent reading massive data before an unusual external connection.</p>
+
+<h3>Monitoring Users and Agents</h3>
+
+<p>In an ecosystem with many agents and users, the guardian watches both. It detects unusual access patterns, abnormal volumes, suspicious authentication, risky configuration changes, and lateral movement. For agents, it monitors tool calls, file access, network connections, prompt injection attempts, cost anomalies, and actions that deviate from their defined purpose.</p>
+
+<h3>GxP and Regulated Environments</h3>
+
+<p>For regulated contexts, the agent produces evidence for qualification, validation, change control, audit trails, and data integrity. It supports compliance with frameworks like 21 CFR Part 11 and EU GMP Annex 11 by generating structured evidence that connects security controls to regulatory requirements.</p>
+
+<h3>Knowledge Accumulation</h3>
+
+<p>Every scan, incident, and remediation produces reusable knowledge. The agent extracts Knowledge Units about detection rules, false-positive patterns, validated remediation steps, secure baselines, incident patterns, and policy-control mappings. These accumulate and improve future scans.</p>
+
+<h3>Vision</h3>
+
+<p>SecurityGuardian Agent is not a collection of separate scanners. It is a unified security intelligence layer for the workspace — one agent that understands the relationships between code, dependencies, containers, models, users, agents, policies, and network activity. It produces actionable findings, not just alerts. It accumulates knowledge, not just logs. It turns workspace security from a reactive practice into a proactive, continuously improving system.</p>

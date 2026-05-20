@@ -1,21 +1,33 @@
-<h2>Chapter 10: Trustworthy Agents</h2>
+<h2>Chapter 10: Trustworthy AI Agent</h2>
 
-<p class="chapter-intro">Trustworthy Agents are designed to ensure that AI outputs are reliable, verifiable, and aligned with specified requirements. In an era where AI-generated content is increasingly common, the ability to trust and verify agent outputs is critical.</p>
+<p class="chapter-intro">The Trustworthy AI Agent is Ploinky's built-in verification layer for AI systems. It inspects datasets, models, and runtime behavior to produce auditable findings, risk reports, and actionable recommendations — helping teams ship AI that is not just powerful, but responsible.</p>
 
-<div class="placeholder-notice">
-    <p><strong>Coming Soon:</strong> This chapter is currently being prepared. Detailed documentation about Trustworthy Agents' verification mechanisms, validation frameworks, and integration with AGISystem2 will be added in an upcoming update.</p>
-</div>
+<h3>Why Trustworthy AI Matters</h3>
 
-<h3>The Trust Challenge</h3>
+<p>Building AI is getting easier. Trusting it is not. A model can have excellent benchmark scores and still fail in production due to bias, data leakage, prompt injection, or behavior drift. Regulatory frameworks like the EU AI Act, NIST AI RMF, and ISO/IEC 42001 are making trustworthy AI a requirement, not an option.</p>
 
-<p>As AI agents take on more responsibility in creating artifacts from code to documents to analyses the question of trust becomes paramount. Trustworthy Agents address this through:</p>
+<p>The Trustworthy AI Agent operationalizes these requirements. Instead of manual checklists and ad-hoc reviews, it provides continuous, automated verification across the entire lifecycle of an AI system — from training data to deployment to runtime monitoring.</p>
 
-<ul>
-    <li>Formal verification of agent outputs against specifications</li>
-    <li>Logical consistency checking using neurosymbolic reasoning</li>
-    <li>Provenance tracking for all generated content</li>
-    <li>Explainable decision-making processes</li>
-    <li>Alignment verification with human intent</li>
-</ul>
+<h3>What It Checks</h3>
 
-<p>The integration with <a href="https://agisystem2.com/" target="_blank">AGISystem2</a> provides the formal reasoning backbone that makes this trust framework possible.</p>
+<p>The agent works across three phases:</p>
+
+<p><strong>Before training:</strong> It inspects datasets for quality issues, bias, contamination with test data, privacy risks, and suitability for the intended task. It flags PII, sensitive fields, licensing gaps, and class imbalances that could cause problems downstream.</p>
+
+<p><strong>Before deployment:</strong> It audits model candidates for performance across subgroups, robustness to perturbations, fairness metrics, explainability, and safety. For LLMs, it tests for hallucinations, prompt injection resistance, format compliance, and toxic outputs.</p>
+
+<p><strong>During operation:</strong> It monitors deployed models for data drift, performance degradation, behavior changes, security incidents, cost anomalies, and policy violations. It catches problems before they become incidents.</p>
+
+<h3>Reports and Findings</h3>
+
+<p>The agent produces structured reports at multiple levels. A short report for quick decisions. A technical report with metrics, tests, and examples. An audit report with full evidence, execution traces, and compliance mapping. A remediation report with prioritized actions and retest criteria.</p>
+
+<p>Each finding has a stable structure: what was checked, what was observed, severity, supporting evidence, and recommended remediation. Findings are mapped to external frameworks — ALTAI, NIST AI RMF, EU AI Act, ISO/IEC 42001 — so teams can demonstrate compliance without extra work.</p>
+
+<h3>Knowledge Accumulation</h3>
+
+<p>Every audit produces reusable knowledge. The agent extracts Knowledge Units about effective tests, failure patterns, useful benchmarks, detection rules, and validated remediation steps. These accumulate over time, making each verification smarter than the last.</p>
+
+<h3>Vision</h3>
+
+<p>The Trustworthy AI Agent is not a one-time scanner. It is the continuous verification layer of the Ploinky ecosystem — an agent that analyzes every important dataset, model, and pipeline, produces auditable evidence, and accumulates knowledge that improves future verifications. It turns trustworthy AI from a compliance burden into an operational habit.</p>
