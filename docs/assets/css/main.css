@@ -193,6 +193,9 @@ section {
     font-size: 0.9rem;
     line-height: 1.4;
     color: #D8D8E8;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
 }
 
 .vision-box p.truncated {
@@ -227,8 +230,10 @@ section {
 /* ========= PAGE CONTENT (for sub-pages) ========= */
 .page-content {
     padding-top: 80px;
-    max-width: 900px;
+    max-width: 960px;
     margin: 0 auto;
+    padding-left: 3%;
+    padding-right: 3%;
 }
 
 .page-title {
@@ -237,24 +242,34 @@ section {
     font-weight: 600;
     margin-bottom: 1.5rem;
     text-align: center;
+    letter-spacing: -0.02em;
 }
 
 .content-block {
     background: #181c2b;
     border: 1px solid #2E2F46;
     border-radius: 6px;
-    padding: 1.25rem;
-    margin-bottom: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.content-block + .content-block {
+    margin-top: 0.25rem;
 }
 
 .content-block.intro-block {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    background: linear-gradient(135deg, #181c2b 0%, #1a1f30 100%);
+    border-color: rgba(7, 165, 233, 0.3);
 }
 
 .intro-text p {
     margin-bottom: 1rem;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
 }
 
 .intro-text p:last-child {
@@ -266,6 +281,9 @@ section {
     background: rgba(34, 43, 231, 0.1);
     border-left: 3px solid #222BE7;
     border-radius: 0 4px 4px 0;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
 }
 
 .vision-diagram {
@@ -304,12 +322,21 @@ section {
     color: #07A5E9;
     font-size: 1.3rem;
     margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(46, 47, 70, 0.5);
+}
+
+.content-block:first-child h2 {
+    margin-top: 0;
 }
 
 .content-block p {
     font-size: 1rem;
     line-height: 1.6;
     color: #D8D8E8;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
 }
 
 .content-block a {
@@ -368,6 +395,8 @@ section {
 .back-link {
     margin-top: 2rem;
     text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(46, 47, 70, 0.5);
 }
 
 .back-link a {
@@ -476,10 +505,12 @@ section {
 }
 
 .historic-intro {
-    text-align: center;
+    text-align: justify;
     font-size: 1.2rem;
     color: #D8D8E8;
     margin-bottom: 3rem;
+    hyphens: auto;
+    -webkit-hyphens: auto;
 }
 
 .historic-video-container {
@@ -614,6 +645,8 @@ section.footer {
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 0.5rem;
+    text-align: left;
+    max-width: 800px;
 }
 
 .footer-disclaimer {
@@ -626,6 +659,9 @@ section.footer {
     color: #666;
     font-size: 0.85rem;
     margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(46, 47, 70, 0.5);
+    display: inline-block;
 }
 
 .footer ul {

@@ -14,6 +14,7 @@
     font-weight: 600;
     margin-bottom: 0.5rem;
     text-align: center;
+    letter-spacing: -0.02em;
 }
 
 .whitepaper-subtitle {
@@ -24,12 +25,14 @@
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.6;
 }
 
 .whitepaper-layout {
     display: flex;
     gap: 2rem;
     align-items: flex-start;
+    margin-top: 1rem;
 }
 
 /* Chapter Sidebar */
@@ -40,6 +43,23 @@
     top: 80px;
     max-height: calc(100vh - 100px);
     overflow-y: auto;
+}
+
+.chapter-sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.chapter-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chapter-sidebar::-webkit-scrollbar-thumb {
+    background: #2E2F46;
+    border-radius: 2px;
+}
+
+.chapter-sidebar::-webkit-scrollbar-thumb:hover {
+    background: #07A5E9;
 }
 
 .chapter-nav {
@@ -112,8 +132,12 @@
     background: #181c2b;
     border: 1px solid #2E2F46;
     border-radius: 8px;
-    padding: 2rem;
+    padding: 2rem 2.5rem;
     min-height: 500px;
+}
+
+.chapter-content-area > h2:first-child {
+    margin-top: 0;
 }
 
 .chapter-loading {
@@ -164,8 +188,24 @@
     color: #5BC4F1;
     font-size: 1.3rem;
     font-weight: 500;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     margin-bottom: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(46, 47, 70, 0.5);
+}
+
+.chapter-content-area h3:first-of-type {
+    margin-top: 2rem;
+    padding-top: 0;
+    border-top: none;
+}
+
+.chapter-content-area h4 {
+    color: #5BC4F1;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .chapter-content-area p {
@@ -188,6 +228,21 @@
 .chapter-content-area li {
     margin-bottom: 0.5rem;
     line-height: 1.6;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content-area ul li {
+    list-style-type: disc;
+}
+
+.chapter-content-area ul ul li {
+    list-style-type: circle;
+}
+
+.chapter-content-area ol li {
+    list-style-type: decimal;
 }
 
 .chapter-content-area a {
@@ -205,32 +260,43 @@
 
 .chapter-content-area code {
     background: #0d1117;
-    padding: 0.2rem 0.4rem;
+    padding: 0.2rem 0.5rem;
     border-radius: 4px;
-    font-family: monospace;
-    font-size: 0.9em;
+    font-family: 'Courier New', monospace;
+    font-size: 0.88em;
     color: #5BC4F1;
+    border: 1px solid rgba(46, 47, 70, 0.5);
 }
 
 .chapter-content-area pre {
     background: #0d1117;
-    padding: 1rem;
+    padding: 1.25rem;
     border-radius: 6px;
     overflow-x: auto;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(46, 47, 70, 0.5);
 }
 
 .chapter-content-area pre code {
     background: none;
     padding: 0;
+    border: none;
 }
 
 .chapter-content-area blockquote {
     border-left: 3px solid #07A5E9;
-    padding-left: 1rem;
-    margin: 1rem 0;
+    padding: 1rem 1rem 1rem 1.5rem;
+    margin: 1.5rem 0;
     color: #a0a0b0;
     font-style: italic;
+    background: rgba(7, 165, 233, 0.05);
+    border-radius: 0 6px 6px 0;
+}
+
+.chapter-content-area blockquote p {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
 }
 
 .chapter-content-area .chapter-intro {
@@ -238,19 +304,29 @@
     line-height: 1.8;
     color: #c0c0d0;
     margin-bottom: 1.5rem;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    padding: 1rem 1.25rem;
+    background: rgba(7, 165, 233, 0.05);
+    border-left: 3px solid #07A5E9;
+    border-radius: 0 6px 6px 0;
 }
 
 .chapter-content-area .placeholder-notice {
     background: rgba(34, 43, 231, 0.1);
     border-left: 3px solid #222BE7;
-    padding: 1rem;
-    border-radius: 0 4px 4px 0;
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
     margin-bottom: 1.5rem;
 }
 
 .chapter-content-area .placeholder-notice p {
     color: #a0a0b0;
     margin-bottom: 0;
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
 }
 
 /* Responsive */
@@ -303,5 +379,13 @@
 
     .chapter-content-area h2 {
         font-size: 1.5rem;
+    }
+
+    .chapter-content-area h3 {
+        font-size: 1.15rem;
+    }
+
+    .chapter-content-area .chapter-intro {
+        padding: 0.75rem 1rem;
     }
 }
