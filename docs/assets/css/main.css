@@ -809,3 +809,127 @@ section.footer {
         font-size: 1.2rem;
     }
 }
+
+/* ========= MODALS ========= */
+.custom-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-modal.show {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.custom-modal-content {
+    background: #181c2b;
+    border: 1px solid #2E2F46;
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.custom-modal-content h3 {
+    color: #07A5E9;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.custom-modal-content p {
+    color: #D8D8E8;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.custom-modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn-modal-no {
+    background: transparent;
+    border: 1px solid #D8D8E8;
+    color: #D8D8E8;
+    padding: 10px 20px;
+    border-radius: 35px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-modal-no:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.btn-modal-yes {
+    background: #07A5E9;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 35px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-modal-yes:hover {
+    background: #222BE7;
+}
+
+.video-content {
+    max-width: 800px;
+    width: 95%;
+    padding: 1rem;
+}
+
+.close-modal {
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    color: #D8D8E8;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: #07A5E9;
+}
+
+.iframe-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    margin-top: 15px;
+    border-radius: 6px;
+}
+
+.iframe-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

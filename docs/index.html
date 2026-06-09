@@ -28,6 +28,9 @@
         <li><a href="whitepaper/index.html">Whitepaper</a></li>
         <li><a href="wormhole.html">Wormhole</a></li>
         <li>
+            <button class="btn-contact" style="background: linear-gradient(270deg, #222BE7 6.45%, #07A5E9 100%); margin-right: 10px;" onclick="openVideoModal()"><i class="fa-solid fa-play"></i> Watch Vision</button>
+        </li>
+        <li>
             <a href="#contact">
                 <button class="btn-contact">Contact us</button>
             </a>
@@ -46,6 +49,9 @@
         <li><a href="developers.html">Developers</a></li>
         <li><a href="whitepaper/index.html">Whitepaper</a></li>
         <li><a href="wormhole.html">Wormhole</a></li>
+        <li>
+            <button class="btn-contact" style="background: linear-gradient(270deg, #222BE7 6.45%, #07A5E9 100%);" onclick="openVideoModal()"><i class="fa-solid fa-play"></i> Watch Vision</button>
+        </li>
         <li>
             <a href="#contact">
                 <button class="btn-contact">Contact us</button>
@@ -119,7 +125,6 @@
     </div>
 </section>
 
-<!-- Footer -->
 <footer class="footer" id="footer">
     <div class="breakline"></div>
     <div class="container-padding">
@@ -128,6 +133,28 @@
         <p class="footer-text footer-copyright">&copy; Axiologic Research</p>
     </div>
 </footer>
+
+<!-- Video Prompt Modal -->
+<div id="video-prompt-modal" class="custom-modal">
+    <div class="custom-modal-content">
+        <h3>Welcome to AssistOS!</h3>
+        <p>Would you like to watch a short video presenting the AssistOS vision?</p>
+        <div class="custom-modal-actions">
+            <button class="btn-modal-no" onclick="closeVideoPrompt(false)">No, thanks</button>
+            <button class="btn-modal-yes" onclick="closeVideoPrompt(true)">Yes, play video</button>
+        </div>
+    </div>
+</div>
+
+<!-- Video Player Modal -->
+<div id="video-player-modal" class="custom-modal">
+    <div class="custom-modal-content video-content">
+        <span class="close-modal" onclick="closeVideoModal()">&times;</span>
+        <div class="iframe-responsive">
+            <iframe id="youtube-iframe" width="560" height="315" src="" title="AssistOS Vision" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
 
 </body>
 

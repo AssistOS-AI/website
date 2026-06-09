@@ -65,7 +65,60 @@ function initPage() {
 }
 
 // Run initialization when the DOM is fully loaded
-document.addEventListener("DOMContentLoaded", initPage);
+document.addEventListener("DOMContentLoaded", () => {
+    initPage();
+    initVideoPrompt();
+});
+
+// --- Video Modal Logic ---
+function initVideoPrompt() {
+    // Only show on the index page where the modal exists
+    const promptModal = document.getElementById('video-prompt-modal');
+    if (!promptModal) return;
+
+    const hasBeenAsked = localStorage.getItem('assistos_video_asked');
+    if (!hasBeenAsked) {
+        // Show prompt after a short delay
+        setTimeout(() => {
+            promptModal.classList.add('show');
+        }, 1000);
+    }
+}
+
+function closeVideoPrompt(playVideo) {
+    localStorage.setItem('assistos_video_asked', 'true');
+    const promptModal = document.getElementById('video-prompt-modal');
+    if (promptModal) {
+        promptModal.classList.remove('show');
+    }
+    
+    if (playVideo) {
+        openVideoModal();
+    }
+}
+
+function openVideoModal() {
+    const videoModal = document.getElementById('video-player-modal');
+    const iframe = document.getElementById('youtube-iframe');
+    if (videoModal && iframe) {
+        // Automatically mark as asked if they open it manually
+        localStorage.setItem('assistos_video_asked', 'true');
+        
+        iframe.src = "https://www.youtube.com/embed/-mTZYD3n07I?autoplay=1";
+        videoModal.classList.add('show');
+    }
+}
+
+function closeVideoModal() {
+    const videoModal = document.getElementById('video-player-modal');
+    const iframe = document.getElementById('youtube-iframe');
+    if (videoModal && iframe) {
+        videoModal.classList.remove('show');
+        // Stop video playback
+        iframe.src = "";
+    }
+}
+
 
 // --- Potentially Unused Functions (Kept for reference) ---
 
