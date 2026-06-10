@@ -104,7 +104,7 @@ function openVideoModal() {
         // Automatically mark as asked if they open it manually
         localStorage.setItem('assistos_video_asked', 'true');
         
-        iframe.src = "https://www.youtube.com/embed/-mTZYD3n07I?autoplay=1";
+        iframe.src = "https://www.youtube.com/embed/25bR9o8iWa4?autoplay=1";
         videoModal.classList.add('show');
     }
 }
