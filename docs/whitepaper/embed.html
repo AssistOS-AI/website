@@ -62,28 +62,117 @@
                 </ul>
             </nav>
         </aside>
-        <main class="embed-content" id="chapter-content">
-            <div class="chapter-loading"><div class="loading-spinner"></div><p>Loading chapter...</p></div>
+        <main class="embed-content">
+            <header class="chapter-reader-header">
+                <h2 class="chapter-reader-title" id="chapter-title" aria-live="polite">Chapter 1: Vision</h2>
+                <div class="chapter-reader-controls" aria-label="Chapter navigation">
+                    <span class="chapter-position" id="chapter-position">1 / 16</span>
+                    <button class="chapter-step-button" id="previous-chapter" type="button" aria-label="Previous chapter" title="Previous chapter">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M14.5 6.5 9 12l5.5 5.5"/>
+                        </svg>
+                    </button>
+                    <button class="chapter-step-button" id="next-chapter" type="button" aria-label="Next chapter" title="Next chapter">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m9.5 6.5 5.5 5.5-5.5 5.5"/>
+                        </svg>
+                    </button>
+                </div>
+            </header>
+            <div class="chapter-scroll-content" id="chapter-content">
+                <div class="chapter-loading"><div class="loading-spinner"></div><p>Loading chapter...</p></div>
+            </div>
         </main>
     </div>
 </div>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const chapterItems = document.querySelectorAll('.chapter-item');
+    const chapterItems = Array.from(document.querySelectorAll('.chapter-item'));
     const contentArea = document.getElementById('chapter-content');
+    const chapterTitle = document.getElementById('chapter-title');
+    const chapterPosition = document.getElementById('chapter-position');
+    const previousButton = document.getElementById('previous-chapter');
+    const nextButton = document.getElementById('next-chapter');
+    const chapterIds = chapterItems.map(item => item.dataset.chapter);
+    let currentChapter = 'chapter-01-vision';
+
+    const hash = window.location.hash.replace('#', '');
+    if (chapterIds.includes(hash)) {
+        currentChapter = hash;
+    }
+
+    function updateReaderHeader(chapterId, loadedTitle) {
+        const chapterIndex = chapterIds.indexOf(chapterId);
+        if (chapterIndex === -1) return;
+
+        const fallbackTitle = `Chapter ${chapterIndex + 1}: ${chapterItems[chapterIndex].querySelector('.chapter-label').textContent.trim()}`;
+        chapterTitle.textContent = loadedTitle || fallbackTitle;
+        chapterPosition.textContent = `${chapterIndex + 1} / ${chapterIds.length}`;
+
+        previousButton.hidden = chapterIndex === 0;
+        nextButton.hidden = chapterIndex === chapterIds.length - 1;
+
+        if (chapterIndex > 0) {
+            const previousLabel = chapterItems[chapterIndex - 1].querySelector('.chapter-label').textContent.trim();
+            previousButton.title = `Previous: ${previousLabel}`;
+            previousButton.setAttribute('aria-label', `Previous chapter: ${previousLabel}`);
+        }
+
+        if (chapterIndex < chapterIds.length - 1) {
+            const nextLabel = chapterItems[chapterIndex + 1].querySelector('.chapter-label').textContent.trim();
+            nextButton.title = `Next: ${nextLabel}`;
+            nextButton.setAttribute('aria-label', `Next chapter: ${nextLabel}`);
+        }
+    }
+
     function loadChapter(chapterId) {
+        currentChapter = chapterId;
+        window.location.hash = chapterId;
+
         chapterItems.forEach(item => {
             item.classList.remove('active');
             if (item.dataset.chapter === chapterId) item.classList.add('active');
         });
+
+        updateReaderHeader(chapterId);
         contentArea.innerHTML = '<div class="chapter-loading"><div class="loading-spinner"></div><p>Loading chapter...</p></div>';
+
         fetch('chapters/' + chapterId + '.html')
             .then(r => r.ok ? r.text() : Promise.reject())
-            .then(html => { contentArea.innerHTML = html; })
+            .then(html => {
+                const parsedChapter = document.createElement('div');
+                parsedChapter.innerHTML = html;
+                const loadedHeading = parsedChapter.querySelector('h2');
+                const loadedTitle = loadedHeading ? loadedHeading.textContent.trim() : '';
+
+                if (loadedHeading) {
+                    loadedHeading.remove();
+                }
+
+                contentArea.innerHTML = parsedChapter.innerHTML;
+                contentArea.scrollTo({ top: 0, behavior: 'auto' });
+                updateReaderHeader(chapterId, loadedTitle);
+            })
             .catch(() => { contentArea.innerHTML = '<div class="chapter-error"><h2>Chapter Unavailable</h2><p>This chapter is being prepared.</p></div>'; });
     }
+
     chapterItems.forEach(item => { item.addEventListener('click', function() { loadChapter(this.dataset.chapter); }); });
-    loadChapter('chapter-01-vision');
+
+    previousButton.addEventListener('click', function() {
+        const chapterIndex = chapterIds.indexOf(currentChapter);
+        if (chapterIndex > 0) {
+            loadChapter(chapterIds[chapterIndex - 1]);
+        }
+    });
+
+    nextButton.addEventListener('click', function() {
+        const chapterIndex = chapterIds.indexOf(currentChapter);
+        if (chapterIndex < chapterIds.length - 1) {
+            loadChapter(chapterIds[chapterIndex + 1]);
+        }
+    });
+
+    loadChapter(currentChapter);
 });
 </script>
 </body>
