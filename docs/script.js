@@ -3,6 +3,7 @@ function addEvent() {
     if (hamburger) {
         hamburger.addEventListener('click', () => {
             document.querySelector('.secondary-menu').classList.toggle("toggle");
+            hamburger.setAttribute('aria-expanded', document.querySelector('.secondary-menu').classList.contains('toggle'));
         });
     }
 }
@@ -60,8 +61,85 @@ function copyCurrentLink() {
 }
 
 function initPage() {
+    initSiteNavigation();
     addEvent();
     initIframeSwitcher();
+    initResearchEmbed();
+}
+
+function initSiteNavigation() {
+    const nav = document.querySelector('.main-nav');
+    if (!nav) return;
+
+    const page = window.location.pathname.split('/').pop() || 'index.html';
+    const prefix = window.location.pathname.includes('/whitepaper/') ? '../' : '';
+    const homeActive = ['index.html', 'vision.html', 'developers.html', 'embed.html'].includes(page) || window.location.pathname.includes('/whitepaper/');
+    const researchActive = ['research.html', 'toolchain.html', 'wormhole.html', 'archive.html'].includes(page);
+    const homeClass = homeActive ? ' active-nav' : '';
+    const researchClass = researchActive ? ' active-nav' : '';
+    const toolLinks = [
+        ['AGISystem2', 'agisystem'], ['AchillesAgentLib', 'agentlib'], ['Ploinky', 'ploinky'],
+        ['Achilles IDE', 'ide'], ['Achilles CLI (Copilot)', 'cli'], ['SOPlang Pipeline', 'soplang'],
+        ['AchillesCopilotBasicSkills', 'basicskills']
+    ].map(([label, tool]) => `<li><a href="${prefix}research.html?tool=${tool}">${label}</a></li>`).join('');
+
+    nav.innerHTML = `
+        <div class="logo-img"><a href="${prefix}index.html"><img src="${prefix}assets/images/assistos-logo.svg" alt="AssistOS" class="logo"></a></div>
+        <ul class="main-menu menu-desktop">
+            <li class="nav-dropdown"><button class="nav-trigger${homeClass}" type="button" aria-expanded="false">Home <span aria-hidden="true">⌄</span></button>
+                <ul class="nav-submenu">
+                    <li><a href="${prefix}vision.html">Vision</a></li>
+                    <li><a href="${prefix}whitepaper/index.html">Whitepaper</a></li>
+                    <li><a href="${prefix}developers.html">Developers</a></li>
+                </ul>
+            </li>
+            <li class="nav-dropdown"><button class="nav-trigger${researchClass}" type="button" aria-expanded="false">Research <span aria-hidden="true">⌄</span></button>
+                <ul class="nav-submenu nav-submenu-wide">
+                    <li><a href="${prefix}research.html">Research Foundation</a></li>
+                    <li><a href="${prefix}toolchain.html">Integrated Toolchain</a></li>
+                    <li><a href="${prefix}wormhole.html">Ploinky Wormhole</a></li>
+                    <li class="nav-submenu-label">Ecosystem tools</li>${toolLinks}
+                </ul>
+            </li>
+            <li><a href="${prefix}index.html#contact" class="nav-contact">Contact us</a></li>
+        </ul>
+        <button class="hamburger-lines" id="hamburger" type="button" aria-label="Open navigation" aria-expanded="false"><span class="line"></span><span class="line"></span><span class="line"></span></button>
+        <ul class="secondary-menu">
+            <li class="mobile-menu-title">Home</li>
+            <li><a href="${prefix}vision.html">Vision</a></li><li><a href="${prefix}whitepaper/index.html">Whitepaper</a></li><li><a href="${prefix}developers.html">Developers</a></li>
+            <li class="mobile-menu-title">Research</li>
+            <li><a href="${prefix}research.html">Research Foundation</a></li><li><a href="${prefix}toolchain.html">Integrated Toolchain</a></li><li><a href="${prefix}wormhole.html">Ploinky Wormhole</a></li>
+            ${toolLinks}
+            <li><a href="${prefix}index.html#contact" class="nav-contact">Contact us</a></li>
+        </ul>`;
+
+    nav.querySelectorAll('.nav-trigger').forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const isOpen = trigger.parentElement.classList.toggle('is-open');
+            trigger.setAttribute('aria-expanded', String(isOpen));
+        });
+    });
+}
+
+function initResearchEmbed() {
+    const host = document.querySelector('[data-research-embed]');
+    if (!host) return;
+    const tools = {
+        agisystem: ['AGISystem2', 'https://agisystem2.com/', 'Logical reasoning and validation environment.'],
+        agentlib: ['AchillesAgentLib', 'https://assistos-ai.github.io/AchillesAgentLib/', 'Cognitive architecture patterns for building agents.'],
+        ploinky: ['Ploinky', 'https://ploinky.com/', 'Runtime and deployment environment for AI agents.'],
+        ide: ['Achilles IDE', 'https://assistos-ai.github.io/AssistOSExplorer/', 'A workspace for building and inspecting agentic projects.'],
+        cli: ['Achilles CLI (Copilot)', 'https://assistos-ai.github.io/AchillesCLI/', 'Command-line automation for the AssistOS ecosystem.'],
+        soplang: ['SOPlang Pipeline', 'https://assistos-ai.github.io/soplang/', 'Specification-oriented language and pipeline research.'],
+        basicskills: ['AchillesCopilotBasicSkills', 'https://assistos-ai.github.io/AchillesCopilotBasicSkills/', 'Reusable core skills for AssistOS agents.']
+    };
+    const tool = tools[new URLSearchParams(window.location.search).get('tool')];
+    if (!tool) return;
+    const [title, url, description] = tool;
+    document.title = `${title} — AssistOS Research`;
+    host.innerHTML = `<div class="embed-heading"><p class="eyebrow">AssistOS Research / Ecosystem tool</p><h1>${title}</h1><p>${description}</p><a href="${url}" target="_blank" rel="noopener">Open in a new window <span aria-hidden="true">↗</span></a></div><div class="research-iframe-shell"><iframe src="${url}" title="${title}" loading="lazy"></iframe></div>`;
+    const defaultContent = document.querySelector('[data-research-default]');
+    if (defaultContent) defaultContent.hidden = true;
 }
 
 // Run initialization when the DOM is fully loaded

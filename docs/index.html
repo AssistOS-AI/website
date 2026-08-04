@@ -1,161 +1,46 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/main.css">
-    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
     <script src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <title>AssistOS</title>
 </head>
+<body>
+<nav class="main-nav" id="main-nav"></nav>
 
-<body>   
-<!--- Nav --->
-<nav class="main-nav" id="main-nav">
-    <div class="logo-img">
-        <img src="./assets/images/assistos-logo.svg" alt="AssistOS" class="logo">
-    </div>
-    <ul class="main-menu">
-        <li><a href="index.html" class="active-nav">Home</a></li>
-        <li><a href="vision.html">Vision</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="toolchain.html">Toolchain</a></li>
-        <li><a href="developers.html">Developers</a></li>
-        <li><a href="whitepaper/index.html">Whitepaper</a></li>
-        <li><a href="wormhole.html">Wormhole</a></li>
-        <li>
-            <button class="btn-contact" style="background: linear-gradient(270deg, #222BE7 6.45%, #07A5E9 100%); margin-right: 10px;" onclick="openVideoModal()"><i class="fa-solid fa-play"></i> Watch Vision</button>
-        </li>
-        <li>
-            <a href="#contact">
-                <button class="btn-contact">Contact us</button>
-            </a>
-        </li>
-    </ul>
-    <div class="hamburger-lines" id="hamburger">
-        <span class="line" id="line1"></span>
-        <span class="line" id="line2"></span>
-        <span class="line" id="line3"></span>
-    </div>
-    <ul class="secondary-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="vision.html">Vision</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="toolchain.html">Toolchain</a></li>
-        <li><a href="developers.html">Developers</a></li>
-        <li><a href="whitepaper/index.html">Whitepaper</a></li>
-        <li><a href="wormhole.html">Wormhole</a></li>
-        <li>
-            <button class="btn-contact" style="background: linear-gradient(270deg, #222BE7 6.45%, #07A5E9 100%);" onclick="openVideoModal()"><i class="fa-solid fa-play"></i> Watch Vision</button>
-        </li>
-        <li>
-            <a href="#contact">
-                <button class="btn-contact">Contact us</button>
-            </a>
-        </li>
-    </ul>
-</nav>
+<main class="vision-paper home-intro">
+    <header class="paper-masthead">
+        <p class="eyebrow">Axiologic Research / AssistOS</p>
+        <h1><span>A sovereign place</span> to run intelligence.</h1>
+        <p class="paper-deck">AssistOS brings projects, agents, models, files, processes, and permissions into one open operating layer—local when control matters, hybrid when scale helps.</p>
+        <p class="paper-meta">Models change. The project remains.</p>
+        <p style="margin-top: 2rem"><a class="nav-contact" href="vision.html">Read the vision</a></p>
+    </header>
 
-
-
-<!-- Vision Section -->
-<section id="vision" class="vision-section">
-    <div class="vision-box">
-        <h2><a href="vision.html">The AssistOS Vision</a></h2>
-        <p class="truncated">AssistOS is an integrated ecosystem that bridges the gap between cutting-edge AI research and practical, real-world deployment. It brings together the structured, ethical framework of the Achilles research project with a powerful suite of tools designed for building, deploying, and managing advanced AI agents.</p>
-        <span class="more-link" onclick="toggleMore(this)">More...</span>
+    <div class="paper-layout" style="margin-top:3rem">
+        <aside class="paper-toc"><p>Explore AssistOS</p><a href="vision.html">Vision</a><a href="whitepaper/index.html">Technical whitepaper</a><a href="developers.html">Developers</a><a href="research.html">Research foundation</a></aside>
+        <article class="paper-content">
+            <section>
+                <p class="eyebrow">The proposition</p>
+                <h2>Work should outlive the model.</h2>
+                <p>AssistOS is a project-centred workspace and ecosystem for agentic computing. It makes intelligence installable, governable, portable, and useful across devices, organizations, and models.</p>
+                <p>Instead of another isolated chat window, AssistOS keeps the artifacts of work at the center: documents, source code, datasets, decisions, versions, evidence, and the processes that connect them. Agents act through visible permissions, not invisible access.</p>
+            </section>
+            <section>
+                <p class="eyebrow">Explore</p>
+                <h2>One platform. Clear layers.</h2>
+                <p><strong>Home</strong> contains the public Vision, technical Whitepaper, and developer resources. <strong>Research</strong> contains the research foundation, architecture, Wormhole, archive, and the wider ecosystem of AssistOS tools. Each external tool opens on its own focused Research page, inside a framed workspace that preserves the AssistOS context.</p>
+                <p class="paper-quote">Local-first does not mean cloud-free. It means location, access, and continuity remain choices.</p>
+            </section>
+        </article>
     </div>
-    <div class="vision-box">
-        <h2><a href="research.html">Research Foundation</a></h2>
-        <p class="truncated">Drawing from the insights of the Achilles research project and Axiologic Research, AssistOS is built on a foundation of ethical, human-centric AI. It aims to create not just powerful, but also responsible and reliable AI solutions, turning theoretical research into tangible, production-ready tools.</p>
-        <span class="more-link" onclick="toggleMore(this)">More...</span>
-    </div>
-    <div class="vision-box">
-        <h2><a href="toolchain.html">Integrated Toolchain</a></h2>
-        <p class="truncated">At its core, AssistOS orchestrates a complete toolchain: the Achilles IDE for development, AchillesAgentLib for cognitive architecture, AGISystem2 for logical reasoning and validation, and Ploinky for secure deployment. Finally, Achilles CLI and AchillesCopilotBasicSkills provide the necessary automation and core capabilities for intelligent agents. While each component is powerful individually, their true strength lies in their seamless integration.</p>
-        <span class="more-link" onclick="toggleMore(this)">More...</span>
-    </div>
-</section>
+</main>
 
-<!-- Integrations Section -->
-<section id="integrations" class="integrations-section">
-    <div class="iframe-nav">
-        <button class="iframe-nav-button active" data-target="whitepaper-iframe" data-url="whitepaper/index.html?embed=1">Whitepaper</button>
-        <button class="iframe-nav-button" data-target="agisystem-iframe" data-url="https://agisystem2.com/">AGISystem2</button>
-        <button class="iframe-nav-button" data-target="agentlib-iframe" data-url="https://assistos-ai.github.io/AchillesAgentLib/">AchillesAgentLib</button>
-        <button class="iframe-nav-button" data-target="ploinky-iframe" data-url="https://ploinky.com/">Ploinky</button>
-        <button class="iframe-nav-button" data-target="ide-iframe" data-url="https://assistos-ai.github.io/AssistOSExplorer/">Achilles IDE</button>
-        <button class="iframe-nav-button" data-target="cli-iframe" data-url="https://assistos-ai.github.io/AchillesCLI/">Achilles CLI (Copilot)</button>
-        <button class="iframe-nav-button" data-target="soplang-pipeline-iframe" data-url="https://assistos-ai.github.io/soplang/">SOPlang Pipeline</button>
-        <button class="iframe-nav-button" data-target="basicskills-iframe" data-url="https://assistos-ai.github.io/AchillesCopilotBasicSkills/">AchillesCopilotBasicSkills</button>
-    </div>
-    <div class="copy-link-container">
-        <button class="copy-link-btn" onclick="copyCurrentLink()"><i class="fa-solid fa-link"></i> Copy link</button>
-    </div>
-    <div class="iframe-container">
-        <iframe id="whitepaper-iframe" src="whitepaper/index.html?embed=1" class="integration-iframe active" loading="lazy"></iframe>
-        <iframe id="agisystem-iframe" src="https://agisystem2.com/" class="integration-iframe" loading="lazy"></iframe>
-        <iframe id="agentlib-iframe" src="https://assistos-ai.github.io/AchillesAgentLib/" class="integration-iframe" loading="lazy"></iframe>
-        <iframe id="ploinky-iframe" src="https://ploinky.com/" class="integration-iframe" loading="lazy"></iframe>
-        <iframe id="ide-iframe" src="https://assistos-ai.github.io/AssistOSExplorer/" class="integration-iframe" loading="lazy"></iframe>
-        <iframe id="cli-iframe" src="https://assistos-ai.github.io/AchillesCLI/" class="integration-iframe" loading="lazy"></iframe>
-        <iframe id="soplang-pipeline-iframe" src="https://assistos-ai.github.io/soplang/" class="integration-iframe" loading="lazy"></iframe>
-        <iframe id="basicskills-iframe" src="https://assistos-ai.github.io/AchillesCopilotBasicSkills/" class="integration-iframe" loading="lazy"></iframe>
-    </div>
-</section>
-
-
-
-<!-- Contact -->
-<section class="contact" id="contact">
-    <h1><span>Have a question? </span>Don't hesitate to reach out!</h1>
-    <div class="contact-container">
-        <div class="contact-information">
-            <div class="image">
-                <img src="./assets/images/contact-mail.svg" alt="mail">
-            </div>
-            <div class="text">
-                <span>office@axiologic.net</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer class="footer" id="footer">
-    <div class="breakline"></div>
-    <div class="container-padding">
-        <p class="footer-text">Research conducted by Axiologic Research as part of the European research project Achilles.</p>
-        <p class="footer-text footer-disclaimer">Disclaimer: This documentation was generated with AI assistance (LLMs) and may contain errors or hallucinations.</p>
-        <p class="footer-text footer-copyright">&copy; Axiologic Research</p>
-    </div>
-</footer>
-
-<!-- Video Prompt Modal -->
-<div id="video-prompt-modal" class="custom-modal">
-    <div class="custom-modal-content">
-        <h3>Welcome to AssistOS!</h3>
-        <p>Would you like to watch a short video presenting the AssistOS vision?</p>
-        <div class="custom-modal-actions">
-            <button class="btn-modal-no" onclick="closeVideoPrompt(false)">No, thanks</button>
-            <button class="btn-modal-yes" onclick="closeVideoPrompt(true)">Yes, play video</button>
-        </div>
-    </div>
-</div>
-
-<!-- Video Player Modal -->
-<div id="video-player-modal" class="custom-modal">
-    <div class="custom-modal-content video-content">
-        <span class="close-modal" onclick="closeVideoModal()">&times;</span>
-        <div class="iframe-responsive">
-            <iframe id="youtube-iframe" width="560" height="315" src="" title="AssistOS Vision" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-    </div>
-</div>
-
+<section class="contact" id="contact"><h1><span>Have a question? </span>Don't hesitate to reach out!</h1><div class="contact-container"><div class="contact-information"><div class="image"><img src="./assets/images/contact-mail.svg" alt="mail"></div><div class="text"><span>office@axiologic.net</span></div></div></div></section>
+<footer class="footer"><div class="breakline"></div><div class="container-padding"><p class="footer-text">Research conducted by Axiologic Research as part of the European research project Achilles.</p><p class="footer-text footer-disclaimer">Disclaimer: This documentation was generated with AI assistance (LLMs) and may contain errors or hallucinations.</p><p class="footer-text footer-copyright">© Axiologic Research</p></div></footer>
 </body>
-
 </html>
