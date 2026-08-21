@@ -97,7 +97,7 @@ function initSiteNavigation() {
         ['AGISystem2', 'agisystem'], ['AchillesAgentLib', 'agentlib'], ['Ploinky', 'ploinky'],
         ['Achilles IDE', 'ide'], ['Achilles CLI (Copilot)', 'cli'], ['SOPlang Pipeline', 'soplang'],
         ['AchillesCopilotBasicSkills', 'basicskills'], ['DocumentationSkills', 'documentation-skills'],
-        ['PloinkySkills', 'ploinky-skills']
+        ['PloinkySkills', 'ploinky-skills'], ['Proxies', 'proxies']
     ].map(([label, tool]) => `<li><a href="${prefix}research.html?tool=${tool}">${label}</a></li>`).join('');
 
     nav.innerHTML = `
@@ -144,7 +144,8 @@ function initResearchEmbed() {
         soplang: ['SOPlang Pipeline', 'https://assistos-ai.github.io/soplang/', 'Specification-oriented language and pipeline research.'],
         basicskills: ['AchillesCopilotBasicSkills', 'https://assistos-ai.github.io/AchillesCopilotBasicSkills/', 'Reusable core skill-construction contracts for AssistOS agents.'],
         'documentation-skills': ['DocumentationSkills', 'https://assistos-ai.github.io/DocumentationSkills/', 'Portable skills for documentation, specifications, technical review, and research-article production.'],
-        'ploinky-skills': ['PloinkySkills', 'https://assistos-ai.github.io/PloinkySkills/', 'Portable security and WebSkel UI-engineering skills for Ploinky agents.']
+        'ploinky-skills': ['PloinkySkills', 'https://assistos-ai.github.io/PloinkySkills/', 'Portable security and WebSkel UI-engineering skills for Ploinky agents.'],
+        proxies: ['Proxies', 'https://assistos-ai.github.io/proxies/', 'Proxy services and integrations for the AssistOS ecosystem.']
     };
     const tool = tools[new URLSearchParams(window.location.search).get('tool')];
     if (!tool) return;
