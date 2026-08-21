@@ -89,7 +89,7 @@ section {
 .nav-trigger.active-nav,
 .nav-trigger:hover { color: #07A5E9; }
 
-.nav-dropdown.is-open .nav-trigger span { transform: rotate(180deg); }
+.nav-dropdown:hover .nav-trigger span { transform: rotate(180deg); }
 
 .nav-submenu {
     position: absolute;
@@ -106,8 +106,7 @@ section {
     box-shadow: 0 18px 40px rgba(0, 0, 0, .4);
 }
 
-.nav-dropdown:hover .nav-submenu,
-.nav-dropdown.is-open .nav-submenu { display: block; }
+.nav-dropdown:hover .nav-submenu { display: block; }
 
 .nav-submenu li { margin: 0; }
 .nav-submenu a {

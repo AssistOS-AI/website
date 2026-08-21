@@ -1,11 +1,27 @@
 function addEvent() {
     const hamburger = document.querySelector("#hamburger");
-    if (hamburger) {
-        hamburger.addEventListener('click', () => {
-            document.querySelector('.secondary-menu').classList.toggle("toggle");
-            hamburger.setAttribute('aria-expanded', document.querySelector('.secondary-menu').classList.contains('toggle'));
-        });
-    }
+    const secondaryMenu = document.querySelector('.secondary-menu');
+    if (!hamburger || !secondaryMenu) return;
+
+    const closeMobileMenu = () => {
+        secondaryMenu.classList.remove('toggle');
+        hamburger.setAttribute('aria-expanded', 'false');
+    };
+
+    hamburger.addEventListener('click', () => {
+        secondaryMenu.classList.toggle('toggle');
+        hamburger.setAttribute('aria-expanded', String(secondaryMenu.classList.contains('toggle')));
+    });
+
+    document.addEventListener('click', event => {
+        if (!hamburger.contains(event.target) && !secondaryMenu.contains(event.target)) {
+            closeMobileMenu();
+        }
+    });
+
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') closeMobileMenu();
+    });
 }
 
 function initIframeSwitcher() {
@@ -113,12 +129,6 @@ function initSiteNavigation() {
             <li><a href="${prefix}index.html#contact" class="nav-contact">Contact us</a></li>
         </ul>`;
 
-    nav.querySelectorAll('.nav-trigger').forEach(trigger => {
-        trigger.addEventListener('click', () => {
-            const isOpen = trigger.parentElement.classList.toggle('is-open');
-            trigger.setAttribute('aria-expanded', String(isOpen));
-        });
-    });
 }
 
 function initResearchEmbed() {
