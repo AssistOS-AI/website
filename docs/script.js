@@ -96,7 +96,8 @@ function initSiteNavigation() {
     const toolLinks = [
         ['AGISystem2', 'agisystem'], ['AchillesAgentLib', 'agentlib'], ['Ploinky', 'ploinky'],
         ['Achilles IDE', 'ide'], ['Achilles CLI (Copilot)', 'cli'], ['SOPlang Pipeline', 'soplang'],
-        ['AchillesCopilotBasicSkills', 'basicskills']
+        ['AchillesCopilotBasicSkills', 'basicskills'], ['DocumentationSkills', 'documentation-skills'],
+        ['PloinkySkills', 'ploinky-skills']
     ].map(([label, tool]) => `<li><a href="${prefix}research.html?tool=${tool}">${label}</a></li>`).join('');
 
     nav.innerHTML = `
@@ -141,7 +142,9 @@ function initResearchEmbed() {
         ide: ['Achilles IDE', 'https://assistos-ai.github.io/AssistOSExplorer/', 'A workspace for building and inspecting agentic projects.'],
         cli: ['Achilles CLI (Copilot)', 'https://assistos-ai.github.io/AchillesCLI/', 'Command-line automation for the AssistOS ecosystem.'],
         soplang: ['SOPlang Pipeline', 'https://assistos-ai.github.io/soplang/', 'Specification-oriented language and pipeline research.'],
-        basicskills: ['AchillesCopilotBasicSkills', 'https://assistos-ai.github.io/AchillesCopilotBasicSkills/', 'Reusable core skills for AssistOS agents.']
+        basicskills: ['AchillesCopilotBasicSkills', 'https://assistos-ai.github.io/AchillesCopilotBasicSkills/', 'Reusable core skill-construction contracts for AssistOS agents.'],
+        'documentation-skills': ['DocumentationSkills', 'https://assistos-ai.github.io/DocumentationSkills/', 'Portable skills for documentation, specifications, technical review, and research-article production.'],
+        'ploinky-skills': ['PloinkySkills', 'https://assistos-ai.github.io/PloinkySkills/', 'Portable security and WebSkel UI-engineering skills for Ploinky agents.']
     };
     const tool = tools[new URLSearchParams(window.location.search).get('tool')];
     if (!tool) return;
