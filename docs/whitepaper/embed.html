@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../assets/css/whitepaper.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <title>AssistOS Whitepaper</title>
+    <title>AssistOS whitepaper</title>
     <style>
         body { background: #000; }
         .embed-whitepaper { padding: 0; max-width: 100%; margin: 0; }
@@ -19,9 +19,9 @@
         .embed-content { flex: 1; overflow-y: auto; padding: 1.5rem 2rem 2rem; min-width: 0; }
         .embed-content h2 { font-size: 1.5rem; margin-top: 0; color: #07A5E9; }
         .embed-content h3 { font-size: 1.15rem; color: #5BC4F1; margin-top: 1.5rem; }
-        .embed-content p, .embed-content li { font-size: 0.92rem; text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
-        .embed-content blockquote p { text-align: left; hyphens: none; -webkit-hyphens: none; }
-        .embed-content .chapter-intro { font-size: 0.95rem; text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+        .embed-content p, .embed-content li { font-size: 1rem; text-align: justify; hyphens: auto; line-height: 1.75; }
+        .embed-content blockquote p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+        .embed-content .chapter-intro { font-size: 1.05rem; text-align: justify; hyphens: auto; line-height: 1.75; }
         .back-link { display: none; }
         @media (max-width: 768px) {
             .embed-layout { flex-direction: column; height: auto; }
@@ -32,12 +32,13 @@
             .embed-sidebar .chapter-item:hover, .embed-sidebar .chapter-item.active { border-bottom-color: #07A5E9; background: rgba(7,165,233,0.1); }
         }
     </style>
+    <link rel="icon" href="../assets/images/assistos-mark.svg" type="image/svg+xml">
 </head>
 <body>
 <div class="embed-whitepaper">
     <div class="embed-header">
-        <h1>AssistOS Whitepaper</h1>
-        <p>Vision, architecture, and roadmap of the AssistOS ecosystem</p>
+        <h1>AssistOS whitepaper</h1>
+        <p>Virtual workers, implementation and research directions.</p>
     </div>
     <div class="embed-layout">
         <aside class="embed-sidebar">
@@ -45,19 +46,19 @@
                 <ul id="chapter-list">
                     <li class="chapter-item active" data-chapter="chapter-01-vision"><span class="chapter-number">1</span><span class="chapter-label">Vision</span></li>
                     <li class="chapter-item" data-chapter="chapter-02-ide"><span class="chapter-number">2</span><span class="chapter-label">Achilles IDE</span></li>
-                    <li class="chapter-item" data-chapter="chapter-03-installation"><span class="chapter-number">3</span><span class="chapter-label">Installation and Architecture</span></li>
+                    <li class="chapter-item" data-chapter="chapter-03-installation"><span class="chapter-number">3</span><span class="chapter-label">Installation and architecture</span></li>
                     <li class="chapter-item" data-chapter="chapter-04-observability"><span class="chapter-number">4</span><span class="chapter-label">Observability</span></li>
-                    <li class="chapter-item" data-chapter="chapter-05-ploinky"><span class="chapter-number">5</span><span class="chapter-label">Ploinky Environment</span></li>
+                    <li class="chapter-item" data-chapter="chapter-05-ploinky"><span class="chapter-number">5</span><span class="chapter-label">Ploinky environment</span></li>
                     <li class="chapter-item" data-chapter="chapter-06-wormhole"><span class="chapter-number">6</span><span class="chapter-label">Ploinky Wormhole</span></li>
                     <li class="chapter-item" data-chapter="chapter-07-cloud"><span class="chapter-number">7</span><span class="chapter-label">Ploinky Cloud</span></li>
-                    <li class="chapter-item" data-chapter="chapter-08-research"><span class="chapter-number">8</span><span class="chapter-label">AI Research Agents</span></li>
-                    <li class="chapter-item" data-chapter="chapter-09-trustworthy"><span class="chapter-number">9</span><span class="chapter-label">Trustworthy Agents</span></li>
-                    <li class="chapter-item" data-chapter="chapter-10-security"><span class="chapter-number">10</span><span class="chapter-label">Security Agents</span></li>
-                    <li class="chapter-item" data-chapter="chapter-11-data"><span class="chapter-number">11</span><span class="chapter-label">Data Sharing & Provenance</span></li>
+                    <li class="chapter-item" data-chapter="chapter-08-research"><span class="chapter-number">8</span><span class="chapter-label">AI research agents</span></li>
+                    <li class="chapter-item" data-chapter="chapter-09-trustworthy"><span class="chapter-number">9</span><span class="chapter-label">Trustworthy agents</span></li>
+                    <li class="chapter-item" data-chapter="chapter-10-security"><span class="chapter-number">10</span><span class="chapter-label">Security agents</span></li>
+                    <li class="chapter-item" data-chapter="chapter-11-data"><span class="chapter-number">11</span><span class="chapter-label">Data sharing and provenance</span></li>
                     <li class="chapter-item" data-chapter="chapter-12-mrpvm"><span class="chapter-number">12</span><span class="chapter-label">MRP-VM</span></li>
                     <li class="chapter-item" data-chapter="chapter-13-neurovsa"><span class="chapter-number">13</span><span class="chapter-label">NeuroVSA</span></li>
-                    <li class="chapter-item" data-chapter="chapter-14-federated"><span class="chapter-number">14</span><span class="chapter-label">Federated Learning</span></li>
-                    <li class="chapter-item" data-chapter="chapter-15-aku"><span class="chapter-number">15</span><span class="chapter-label">Agentic Knowledge Units</span></li>
+                    <li class="chapter-item" data-chapter="chapter-14-federated"><span class="chapter-number">14</span><span class="chapter-label">Federated learning</span></li>
+                    <li class="chapter-item" data-chapter="chapter-15-aku"><span class="chapter-number">15</span><span class="chapter-label">Agentic knowledge units</span></li>
                     <li class="chapter-item" data-chapter="chapter-16-conclusions"><span class="chapter-number">16</span><span class="chapter-label">Conclusions</span></li>
                 </ul>
             </nav>
@@ -126,11 +127,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function loadChapter(chapterId) {
+        if (!chapterIds.includes(chapterId)) return;
         currentChapter = chapterId;
         window.location.hash = chapterId;
 
         chapterItems.forEach(item => {
             item.classList.remove('active');
+            if (item.dataset.chapter === chapterId) item.setAttribute('aria-current', 'page');
+            else item.removeAttribute('aria-current');
             if (item.dataset.chapter === chapterId) item.classList.add('active');
         });
 
@@ -140,6 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch('chapters/' + chapterId + '.html')
             .then(r => r.ok ? r.text() : Promise.reject())
             .then(html => {
+                if (chapterId !== currentChapter) return;
                 const parsedChapter = document.createElement('div');
                 parsedChapter.innerHTML = html;
                 const loadedHeading = parsedChapter.querySelector('h2');
@@ -153,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 contentArea.scrollTo({ top: 0, behavior: 'auto' });
                 updateReaderHeader(chapterId, loadedTitle);
             })
-            .catch(() => { contentArea.innerHTML = '<div class="chapter-error"><h2>Chapter Unavailable</h2><p>This chapter is being prepared.</p></div>'; });
+            .catch(() => { if (chapterId !== currentChapter) return; contentArea.innerHTML = '<div class="chapter-error"><h2>Chapter unavailable</h2><p>The chapter could not be loaded. Check your connection and try again.</p></div>'; });
     }
 
     chapterItems.forEach(item => { item.addEventListener('click', function() { loadChapter(this.dataset.chapter); }); });
@@ -172,6 +177,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    chapterItems.forEach(item => {
+        item.tabIndex = 0;
+        item.setAttribute('role', 'button');
+        item.addEventListener('keydown', event => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                loadChapter(item.dataset.chapter);
+            }
+        });
+    });
+    window.addEventListener('hashchange', () => {
+        const next = window.location.hash.slice(1);
+        if (chapterIds.includes(next) && next !== currentChapter) loadChapter(next);
+    });
     loadChapter(currentChapter);
 });
 </script>

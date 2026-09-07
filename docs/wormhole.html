@@ -4,140 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
     <script src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <title>Ploinky Wormhole — AssistOS</title>
+    <title>Ploinky Wormhole. AssistOS</title>
+    <link rel="icon" href="assets/images/assistos-mark.svg" type="image/svg+xml">
 </head>
 
 <body>
 <!--- Nav --->
-<nav class="main-nav" id="main-nav">
-    <div class="logo-img">
-        <a href="index.html"><img src="./assets/images/assistos-logo.svg" alt="AssistOS" class="logo"></a>
-    </div>
-    <ul class="main-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="vision.html">Vision</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="toolchain.html">Toolchain</a></li>
-        <li><a href="developers.html">Developers</a></li>
-        <li><a href="whitepaper/index.html">Whitepaper</a></li>
-        <li><a href="wormhole.html" class="active-nav">Wormhole</a></li>
-        <li>
-            <a href="index.html#contact">
-                <button class="btn-contact">Contact us</button>
-            </a>
-        </li>
-    </ul>
-    <div class="hamburger-lines" id="hamburger">
-        <span class="line" id="line1"></span>
-        <span class="line" id="line2"></span>
-        <span class="line" id="line3"></span>
-    </div>
-    <ul class="secondary-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="vision.html">Vision</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="toolchain.html">Toolchain</a></li>
-        <li><a href="developers.html">Developers</a></li>
-        <li><a href="whitepaper/index.html">Whitepaper</a></li>
-        <li><a href="wormhole.html">Wormhole</a></li>
-        <li>
-            <a href="index.html#contact">
-                <button class="btn-contact">Contact us</button>
-            </a>
-        </li>
-    </ul>
+<nav class="main-nav" id="main-nav" aria-label="Main navigation">
+    <div class="logo-img"><a href="index.html"><img src="assets/images/assistos-logo.svg" alt="AssistOS" class="logo"></a></div>
+    <ul class="main-menu"><li><a href="index.html">Home</a></li><li><a href="vision.html">Vision</a></li><li><a href="installation.html">Installation</a></li><li><a href="research.html">Documentation</a></li></ul>
 </nav>
 
 <!-- Page Content -->
 <section class="page-content">
-    <h1 class="page-title">Ploinky Wormhole</h1>
-
-    <div class="content-block intro-block">
-        <div class="intro-text">
-            <p class="chapter-intro">Ploinky Wormhole is a decentralized communication protocol built for an agentic world. It replaces the traditional client-server paradigm with direct peer-to-peer connections between autonomous agents, enabling modern messaging, secure file transfer, and cross-organizational choreography — all without a central authority controlling your data.</p>
-        </div>
-    </div>
-
-    <div class="content-block">
-        <h2>Why P2P in an Agentic World</h2>
-        <p>The rise of AI agents changes everything about how systems communicate. When software agents act on behalf of humans, projects, or organizations, the old client-server model becomes a bottleneck. Every message routed through a central server adds latency, creates a single point of failure, and forces trust in infrastructure you don't control.</p>
-        <p>Wormhole flips this model: <strong>agents connect directly to each other</strong>. There is no central mailbox, no server-side inbox, no cloud storage of your conversations. Instead, each agent runs locally in its workspace, owns its identity, and negotiates directly with peer agents what to share, how to share it, and under what conditions.</p>
-        <p>This is not just a technical improvement — it is a fundamental shift in how decentralized systems should communicate when autonomy, privacy, and sovereignty matter.</p>
-    </div>
-
-    <div class="content-block">
-        <h2>Two Components, One Protocol</h2>
-        <p>Wormhole has exactly two moving parts:</p>
-        <ul>
-            <li><strong>Ploinky Server Wormhole</strong> — a lightweight rendezvous and signaling service. It does not store messages, does not read content, does not decide who is trusted. Its only job is to help agents find each other and establish a direct WebRTC connection. Think of it as a phone book and a dial tone, not a post office.</li>
-            <li><strong>Ploinky Agent Wormhole</strong> — the local service running inside each workspace. It owns identities, manages contacts, enforces policies, negotiates with peer agents, and transfers content directly over P2P channels. All decisions about trust, acceptance, and data handling happen here — at the edge, under your control.</li>
-        </ul>
-        <p>The server makes the introduction. The agents do the actual work. Once connected, the server is out of the picture entirely.</p>
-    </div>
-
-    <div class="content-block">
-        <h2>DIDs: Modern Identity for Decentralized Communication</h2>
-        <p>Every participant in Wormhole is identified by a <strong>Decentralized Identifier (DID)</strong> in the form:</p>
-        <p style="text-align: center; font-family: monospace; background: rgba(7,165,233,0.1); padding: 0.75rem; border-radius: 4px; margin: 1rem 0;">did:wormhole:&lt;server-domain&gt;:&lt;identifier&gt;</p>
-        <p>A DID is not an email address, not a username, not an account on someone else's platform. It is a <strong>cryptographic identity</strong> that you control. The server only publishes the public key — the private key never leaves your agent.</p>
-        <p>DIDs support key rotation with cryptographic proof, so if you need to change keys, the history is verifiable. Your contacts can see that the key changed and decide whether to re-confirm trust. This is how identity works when no central authority vouches for you: the cryptography speaks for itself.</p>
-        <p>A single workspace can have many DIDs — one per user, one per agent, one per project, one per functional inbox. Each has its own identity, its own policies, and its own mailbox.</p>
-    </div>
-
-    <div class="content-block">
-        <h2>A Modern Replacement for Email</h2>
-        <p>Wormhole Mail gives you the structured communication experience of email — subjects, recipients, CC/BCC, attachments, threads, tags, filters — but without the infrastructure baggage. No IMAP servers, no spam filters you don't control, no provider lock-in.</p>
-        <p>When you send a Wormhole message, your agent contacts the recipient's agent directly. If the recipient knows you, the message flows through. If not, it arrives as a <strong>connection request</strong> — the recipient sees who wants to talk and decides whether to accept, reject, or block. No spam, no guessing, no server-side filtering that might lose important messages.</p>
-        <p>Messages are signed and encrypted end-to-end. The server never sees the content. The recipient's agent organizes everything locally in a SQLite mailbox that you own and can back up, migrate, or audit.</p>
-    </div>
-
-    <div class="content-block">
-        <h2>Communication and Choreography Between Organizations</h2>
-        <p>Wormhole is not just for person-to-person messaging. It is designed for <strong>inter-organizational communication</strong> — companies talking to companies, workspaces talking to workspaces, agents talking to agents.</p>
-        <p>Imagine a research consortium where five organizations collaborate without sharing their raw data. Each organization runs its own DPU Agent with local data. The Wormhole protocol enables them to coordinate federated learning rounds: the coordinator sends model updates through Wormhole, each participant trains locally, and only the approved model updates travel back — never the data.</p>
-        <p>Or consider a supply chain where manufacturers, suppliers, and logistics providers need to exchange documents, status updates, and automated task requests. Each party controls its own workspace, its own policies, and its own data. Wormhole provides the communication layer that makes this possible without a central platform.</p>
-        <p>This is <strong>organizational choreography</strong>: independent entities coordinating through a protocol that respects their autonomy, enforces their policies, and keeps their data local.</p>
-    </div>
-
-    <div class="content-block">
-        <h2>Federated Learning Over Wormhole</h2>
-        <p>One of the most powerful use cases for Wormhole is federated learning — training AI models across organizations without centralizing data. The architecture works like this:</p>
-        <ul>
-            <li><strong>Coordinator Agent</strong> defines the federation, invites participants, and starts training rounds. It never sees raw data.</li>
-            <li><strong>DPU Agent</strong> at each participant runs training locally in a sandbox, over encrypted local data stored in LightDSU. It decides what can leave the workspace.</li>
-            <li><strong>Wormhole</strong> transports the plan, the model, and the approved updates between participants — signed, encrypted, and verified.</li>
-            <li><strong>LightDSU</strong> stores data, results, updates, and full provenance locally. Keys never leave the DPU.</li>
-        </ul>
-        <p>Each round is auditable. Each update is signed. Each participant controls its own data and its own export policy. The coordinator aggregates only what participants explicitly approve. This is how collaborative AI should work when data sovereignty matters.</p>
-    </div>
-
-    <div class="content-block">
-        <h2>Security by Design</h2>
-        <p>Wormhole's security model is simple and explicit:</p>
-        <ul>
-            <li><strong>Servers are not trusted for content.</strong> They only facilitate introductions. All content is end-to-end encrypted and signed.</li>
-            <li><strong>Agents decide everything.</strong> Trust, acceptance, policies, data handling — all at the edge, under your control.</li>
-            <li><strong>Minimal server visibility.</strong> The server sees only that DID A wants to talk to DID B. It does not see what they will say, what files they will share, or what tasks they will negotiate.</li>
-            <li><strong>Key rotation with proof.</strong> When a key changes, the cryptographic history is preserved. Contacts can verify the rotation and decide whether to re-confirm trust.</li>
-            <li><strong>Workspace policies enforced locally.</strong> Every workspace can define its own rules: who can connect, what can be shared, what requires approval, what is blocked entirely.</li>
-        </ul>
-    </div>
-
-    <div class="content-block">
-        <h2>What Wormhole Is Not</h2>
-        <p>Wormhole is not a cloud messaging platform. It does not store your messages on someone else's servers. It does not scan your content for advertising. It does not decide who you can talk to. It does not replace your existing tools by force — it gives you a protocol that your tools can use when decentralization matters.</p>
-        <p>Wormhole is infrastructure for a world where agents are first-class communicators, where organizations retain sovereignty over their data, and where trust is cryptographic, not institutional.</p>
-    </div>
-
-    <div class="back-link">
-        <a href="index.html">&larr; Back to Home</a>
-    </div>
+<h1 class="page-title">Ploinky Wormhole</h1>
+<div class="content-block intro-block"><p class="chapter-intro">Wormhole is a protocol under development for direct communication between AssistOS workspaces. It aims to support messages, file transfers and shared tasks while each organization controls its own data and access rules.</p></div>
+<div class="content-block"><h2>Why connect workspaces directly?</h2><p>A research team may need to send an approved result to a partner without putting both organizations' files on the same platform. Wormhole separates the service that introduces the peers from the agents that exchange their content.</p><p>This is a design for controlled communication across organizations. It is not a claim that direct connections eliminate outages, metadata exposure or security risks.</p></div>
+<div class="content-block"><h2>The server introduces. The local agent decides.</h2><p>Ploinky Server Wormhole handles rendezvous and signaling for WebRTC connections. In the proposed design, it publishes connection information and public keys without storing message content.</p><p>Ploinky Agent Wormhole runs in each workspace. It manages identities, contacts, local policy and transfers. The receiving workspace decides whether to accept a connection and which data may leave.</p></div>
+<div class="content-block"><h2>Identity and contacts</h2><p>A participant uses a decentralized identifier, or DID, with this format:</p><pre><code>did:wormhole:&lt;server-domain&gt;:&lt;identifier&gt;</code></pre><p>The public key is discoverable through the server. The private key stays with the local agent. A workspace can keep separate identities for people, Robots, projects and inboxes.</p><p>The design includes signed key-rotation records. Contacts can inspect a change and decide whether to confirm trust again. A valid signature identifies a key; the recipient still needs a policy for trusting its owner.</p></div>
+<div class="content-block"><h2>Mail and chat</h2><p>Wormhole Mail keeps familiar fields such as subject, recipients, CC/BCC, attachments and threads. Messages are intended to be signed and encrypted end to end, with a local SQLite mailbox for storage and backup.</p><p>An unknown sender appears as a connection request. The recipient can accept, reject or block it. This gives the recipient control over admission; it does not make unwanted or malicious communication impossible.</p><p>Wormhole Chat applies the same identity and policy model to live conversations and file transfers.</p></div>
+<div class="content-block"><h2>Work between organizations</h2><p>A supplier could send a quality report to a manufacturer. A research partner could share an approved analysis. Each workspace would apply its own rules to the request, the recipient and the exported files.</p><p>Federated learning is a longer-term use case. A coordinator would distribute a model and training plan. Each participant's DPU Agent would run the approved computation locally, keep records in LightDSU and return permitted updates through Wormhole.</p><p>Keeping raw datasets local is only part of the problem. Model updates may also reveal information, so that workflow needs export checks and separate privacy controls.</p></div>
+<div class="content-block"><h2>Boundaries the implementation must preserve</h2><ul><li>Sign and encrypt transferred content between the endpoints.</li><li>Keep private keys and mailbox storage under local control.</li><li>Make connection requests and trust changes visible.</li><li>Enforce each workspace's rules before it shares data.</li><li>Document what connection metadata the signaling service can observe.</li></ul><p>The protocol needs implementation tests before these properties can support production claims. The <a href="whitepaper/index.html#chapter-06-wormhole">Wormhole chapter</a> describes the architecture and the <a href="whitepaper/index.html#chapter-14-federated">federated learning chapter</a> covers the proposed training workflow.</p></div>
+<div class="back-link"><a href="index.html">&larr; Back to home</a></div>
 </section>
 
 <!-- Footer -->
@@ -145,7 +39,7 @@
     <div class="breakline"></div>
     <div class="container-padding">
         <p class="footer-text">Research conducted by Axiologic Research as part of the European research project Achilles.</p>
-        <p class="footer-text footer-disclaimer">Disclaimer: This documentation was generated with AI assistance (LLMs) and may contain errors or hallucinations.</p>
+        <p class="footer-text footer-disclaimer">Written with AI assistance. Check implementation details against the linked project documentation.</p>
         <p class="footer-text footer-copyright">&copy; Axiologic Research</p>
     </div>
 </footer>

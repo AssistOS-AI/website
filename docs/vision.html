@@ -3,160 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
-    <script src="script.js"></script>
-    <title>AssistOS — The Operating Layer for Sovereign Intelligence</title>
+    <meta name="description" content="Follow Sam through a working day with AssistOS: a RoboTeam for writing, marketing and research, with work he can watch, review and keep.">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/workplace.css">
+    <link rel="stylesheet" href="assets/css/vision.css">
+    <link rel="icon" href="assets/images/assistos-mark.svg" type="image/svg+xml">
+    <script src="script.js" defer></script>
+    <title>Sam's day with AssistOS. Our vision</title>
 </head>
-<body>
-<nav class="main-nav" id="main-nav"></nav>
+<body class="workplace-page vision-reading-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+    <div class="logo-img"><a href="index.html"><img src="assets/images/assistos-logo.svg" alt="AssistOS" class="logo"></a></div>
+    <ul class="main-menu"><li><a href="index.html">Home</a></li><li><a href="vision.html">Vision</a></li><li><a href="installation.html">Installation</a></li><li><a href="research.html">Documentation</a></li></ul>
+</nav>
 
-<main class="vision-paper">
-    <header class="paper-masthead">
-        <p class="eyebrow">Axiologic Research / AssistOS</p>
-        <h1>THE OPERATING LAYER FOR <span>SOVEREIGN INTELLIGENCE</span></h1>
-        <p class="paper-deck">How local AI, open agent ecosystems, and programmable workspaces can reshape personal computing, research, and enterprise infrastructure.</p>
-    </header>
+    <main id="main" class="workplace-main vision-reading-main">
+        <article aria-labelledby="vision-title">
+            <header class="vision-reading-header">
+                <p class="kicker">The AssistOS vision</p>
+                <h1 id="vision-title">Sam's day with AssistOS</h1>
+                <p class="vision-reading-intro">An imagined working day with a virtual team.</p>
+                <a class="text-link" href="index.html#film">Watch the story in the film <span aria-hidden="true">↗</span></a>
+            </header>
 
-    <div class="paper-layout">
-        <aside class="paper-toc" aria-label="Contents">
-            <p>Contents</p>
-            <a href="#reader">A Note to the Reader</a>
-            <a href="#missing-layer">The Missing Layer</a>
-            <a href="#intelligence-home">Intelligence Comes Home</a>
-            <a href="#market">Abundance Without a Market</a>
-            <a href="#fragility">Why AI Apps Are Fragile</a>
-            <a href="#workspace">The Living Workshop</a>
-            <a href="#process">From Prompt to Process</a>
-            <a href="#agents">Agents Need an OS</a>
-            <a href="#internet-agents">The Internet of Agents</a>
-            <a href="#sovereignty">Digital Sovereignty</a>
-            <a href="#beyond-chat">Beyond the Chat Window</a>
-            <a href="#opportunity">The Opportunity</a>
-            <a href="#epilogue">Epilogue</a>
-        </aside>
+            <div class="vision-reading-story">
+                <span id="reader" class="story-anchor" aria-hidden="true"></span>
+                <span id="missing-layer" class="story-anchor" aria-hidden="true"></span>
+                <p id="a-working-day">Sam writes books, coordinates marketing for his books and leads a research team. This morning, a chapter, a book launch, an experiment and a European project budget all need his attention. He already uses AI, but still spends hours finding files, repeating context and carrying decisions between tools.</p>
 
-        <article class="paper-content">
-            <section id="reader">
-                <h2>A category only beginning to take shape</h2>
-                <p>This book is an argument about a category that sits between the traditional operating system, the AI agent platform, the collaborative workspace, and the software marketplace. Its purpose is to make intelligence installable, governable, portable, and useful across devices, organizations, and models.</p>
-                <p>AssistOS is not presented as a finished answer to every problem in agentic computing. Some components are operational, some are under active development, and some are research directions requiring experimental validation. The distinction is intentional: infrastructure is built by turning a coherent thesis into increasingly mature products, not by pretending every long-term ambition already exists.</p>
-            </section>
+                <p>In AssistOS, Sam opens WebChat, the interface to the Copilot, and describes what needs doing. Copilot coordinates the team's virtual workers, called Robots, and assigns their tasks. Books, Marketing and Research have separate team workspaces. Each project has its own AssistOS workspace and meeting rooms, with access limited to the people and Robots involved.</p>
 
-            <section id="missing-layer">
-                <h2>The Missing Layer</h2>
-                <p>Every major computing transition creates a brief period in which the new capability is obvious but the control layer around it is not. The web arrived before browsers, search engines, and commerce found durable forms. Cloud computing arrived before containers and Kubernetes made remote fleets programmable. The greatest opportunities were often not in the raw resource, but in the systems that made it accessible, composable, and safe enough for ordinary use.</p>
-                <p>Artificial intelligence has entered such a period. The world has models, APIs, agents, and open-source communities producing new tools every day. What it does not yet have is a stable, open, user-controlled place where this intelligence can live and work.</p>
-                <p>A chat window revealed how naturally people can express intent in language. But it does not define which document version is authoritative, which files an agent may read, which actions require approval, how a result can be reproduced, or what remains when the model is replaced.</p>
-                <p class="paper-quote">As intelligence becomes abundant, durable value moves toward process, trust, and distribution.</p>
-                <p>AssistOS is the attempt to build that layer: a workspace where projects and artifacts are central, while models and agents appear as replaceable capabilities governed by visible permissions. Around it sit a runtime, package format, marketplace, process engine, and trust infrastructure.</p>
-            </section>
+                <span id="intelligence-home" class="story-anchor" aria-hidden="true"></span>
+                <span id="market" class="story-anchor" aria-hidden="true"></span>
+                <p id="robots">For the book, Sam builds a RoboTeam. SCRIPTA helps write, Proof reviews and Layout prepares the pages. He or his IT team chooses agents from the AssistOS catalog or adds custom code, then sets each Robot's role, permitted skills and access. The Robot keeps its home and task history; its underlying agents and tools can change.</p>
 
-            <section id="intelligence-home">
-                <h2>Intelligence Comes Home</h2>
-                <h3>From centralized AI to hybrid intelligence</h3>
-                <p>Training frontier models will remain capital-intensive and centralized. Using intelligence is a different economic activity. Document classification, extraction, semantic search, private retrieval, interface control, and portions of coding or analysis can increasingly run on laptops, workstations, private servers, and edge devices.</p>
-                <p>The important shift is not from cloud to local. It is from cloud-only to hybrid intelligence. A credible local-first strategy does not promise that the cloud will disappear. It begins locally when that is sufficient, explains when it is not, and escalates only the information required for the next step.</p>
-                <p>Once intelligence can run locally, it becomes a persistent capability of the machine: available when the network is absent, able to work beside private files, and able to preserve a project across model upgrades. Location becomes a policy decision shaped by data, economics, latency, and trust.</p>
-                <h3>The Linux moment for intelligence</h3>
-                <p>Linux became fundamental because it was an open and portable substrate on which many organizations could build. Red Hat proved that enterprises pay for a curated distribution, lifecycle management, security updates, certification, interoperability, and accountability while the source remains open. AssistOS aims at a different layer: models, agents, tools, projects, permissions, histories, and workflows across existing operating systems.</p>
-            </section>
+                <span id="process" class="story-anchor" aria-hidden="true"></span>
+                <p>While the Robots prepare a book preview, Sam follows their progress in WebChat. They can run command-line tasks, coding agents or agents that check sources and results. He can redirect, pause or stop the work, then return when there is something to review.</p>
 
-            <section id="market">
-                <h2>Abundance Without a Market</h2>
-                <p>The AI ecosystem now faces the opposite of the early software industry’s problem. There are models, agents, connectors, benchmarks, orchestration frameworks, coding assistants, and research prototypes in overwhelming quantity. Abundance should make adoption easier; very often it makes adoption slower because code has created a scarcity of confidence.</p>
-                <p>A repository is not a product. It may contain a brilliant idea and still require the correct Python version, accelerator, model format, environment variables, dependency graph, and security configuration. A useful capability needs to become an operational unit with declared purpose, compatible models, requirements, permissions, tests, evaluations, license, price, version history, and support terms.</p>
-                <p>The AssistOS Package is that contract among developer, runtime, marketplace, user, and organization. The marketplace packages responsibility, not only code.</p>
-                <table class="paper-table"><thead><tr><th>Thin feature</th><th>Durable system</th></tr></thead><tbody><tr><td>Prompt wrapper</td><td>Versioned process and evidence</td></tr><tr><td>Single model API</td><td>Model-neutral routing and evaluation</td></tr><tr><td>Chat history</td><td>Portable project memory</td></tr><tr><td>Broad credential</td><td>Capability-scoped agent identity</td></tr><tr><td>Demo popularity</td><td>Measured outcomes and support</td></tr></tbody></table>
-                <p>When models become cheaper and more interchangeable, differentiation moves to context, execution, integration, verification, distribution, and memory. AssistOS does not need to predict which model wins. It needs to make model replacement ordinary.</p>
-            </section>
+                <span id="beyond-chat" class="story-anchor" aria-hidden="true"></span>
+                <p id="workspace">Sam opens the draft in Explorer, beside its sources and revisions. That is the IDE idea: an integrated development environment brings creation tools and checks together. AssistOS applies it to books, research and other work as well as code. Sam makes the editorial decisions. When he approves the finished book, SCRIPTA publishes it on scriptahub.com.</p>
 
-            <section id="workspace">
-                <h2>The Computer Becomes a Living Workshop</h2>
-                <p>A project is not a sequence of messages. It is a place with files, sources, versions, people, tools, decisions, and unfinished results. The AssistOS vision begins with the project and the artifact.</p>
-                <p>In the workspace, the active object sits at the center: a document, source file, table, diagram, image, notebook, recording, or model. People and agents with access are visible beside it. Below sits the history: request, plan, execution, validation, versions, comments, and approvals. Chat remains valuable, but it is attached to inspectable context.</p>
-                <p>AssistOS should combine language with forms, editors, diagrams, direct manipulation, and visualisation. Language is an orchestration layer, not a mandate to abandon every interface that works. The interface needs to answer three questions continuously: what exists, what is happening, and who is allowed to do what?</p>
-            </section>
+                <p id="your-work">He then switches to Marketing, where Scout researches publications in its browser. Sam can watch, take control and review the outreach before sending it. In Research, Pip prepares the European project budget in a desktop spreadsheet. Sam can observe that work too, and check the figures with the project officer before submission.</p>
 
-            <section id="fragility">
-                <h2>Why the AI Application Is Fragile</h2>
-                <p>The first generation of AI-native products taught the market a remarkable lesson: a demonstration that once required a research team can now be assembled over a weekend. That lowers the cost of experimentation, but it also creates fragility. A feature whose differentiation is primarily a prompt, a single model API, or a thin chat interface can be copied, absorbed by a platform provider, or recreated locally when the economics change.</p>
-                <p>The investor’s question is not whether a product uses AI. It is what remains when the model changes. Durable systems own a trusted relationship with the work: versions, source material, approvals, tests, integrations, evidence, and the institutional memory of why a decision was accepted. They separate intent, process, artifacts, evaluation, and policy from the model that happens to be best this quarter.</p>
-                <p>That separation creates a healthier market. An agent can win because it produces better outcomes, costs less, is safer, or is better supported—not because it captured the only usable copy of a customer’s work. Commercial services earn revenue through operation, integration, certification, collaboration, and experience, while projects remain portable enough to survive a change in vendor.</p>
-            </section>
+                <span id="fragility" class="story-anchor" aria-hidden="true"></span>
+                <p id="sovereignty">In the study's AssistOS workspace, Ada compares baseline and smoothed outputs from large language models while Check evaluates the results. Any workspace folder can be put in a GitHub repository or remain local. The researchers share their scripts through GitHub so colleagues can review changes, while keeping private notes on their own storage.</p>
 
-            <section id="process">
-                <h2>From Prompt to Reproducible Process</h2>
-                <p>A prompt is an instruction. A process is a sequence of decisions, transformations, tests, and approvals that produces a result for which someone can take responsibility. Serious work has state: hypotheses, sources, data, methods, objections, approvals, and versions.</p>
-                <p>Intent expressed in natural language should become a plan that the system can inspect, resume, evaluate, and repair. The user does not need to write a traditional program; the system needs a representation clear enough to know which stage comes next, which artifacts are inputs, which tools are allowed, and what counts as success.</p>
-                <p>MRP-VM explores this direction as a pragmatic virtual machine for natural-language-derived programs. Its interpreters may be models, deterministic tools, code, rules, people, or combinations of them. A small local model may classify documents, a stronger model may frame a hypothesis, and a human may approve a sensitive conclusion—inside one accountable workflow.</p>
-                <p class="paper-quote">Generation is becoming cheap. Assurance, evaluation, and repair are becoming the scarce capabilities.</p>
-            </section>
+                <span id="internet-agents" class="story-anchor" aria-hidden="true"></span>
+                <p>To discuss the findings, Sam joins his colleagues and the RoboTeam in WebMeet. The Robots are visible participants in the video call. A colleague asks Check to add another test to the shared plan, and everyone sees the change. The room keeps the discussion and work within the study's approved context.</p>
 
-            <section id="agents">
-                <h2>Agents Need an Operating System</h2>
-                <p>A model that answers a question can be wrong. An agent that acts can create consequences. Once software reads files, runs code, uses credentials, accesses the network, sends messages, or changes a project, security cannot be an afterthought.</p>
-                <p>Agents need isolation, identity, permissions, resource limits, lifecycle management, and logs. Ploinky explores this role as a language-neutral runtime: workspaces are mounted explicitly, network access is denied or limited by policy, secrets are scoped to actions, and time, memory, token use, and cost can be bounded.</p>
-                <p>The principle is least capability: an agent receives what is necessary for the task, not what might be convenient. Autonomy is earned gradually—advice, proposal, bounded execution, then selected background processes—while sensitive actions remain approval-gated.</p>
-                <p>Open protocols such as MCP and A2A can connect agents and tools. AssistOS adds the surrounding local policy, identity, provenance, project history, and human operating context. The goal is not protocol competition; it is a governable environment around interoperability.</p>
-            </section>
+                <p>A team can share an AssistOS installation on a private server or in the cloud. Colleagues connect from a laptop or phone, manage Robots together and follow each other's tasks across the subprojects they can access. Linux containers help isolate agent code and protect the machine hosting the workspace by limiting access to its resources.</p>
 
-            <section id="sovereignty">
-                <h2>Digital Sovereignty Is Economic Resilience</h2>
-                <p>Cloud dependence is not inherently a mistake. The risk appears when the cloud becomes the only possible way to function and an organization no longer knows what can continue without a particular supplier, connection, account, or jurisdiction.</p>
-                <p>Sovereignty is a practical ability to decide where computation happens, who can inspect data, how a process is audited, and how to leave a supplier without losing accumulated work. It is an architecture of continuity, not an anti-cloud slogan.</p>
-                <p>For a family, this can mean organizing photographs locally. For research institutions, it can mean collaborating across borders without pooling raw data. For enterprises, it means controlled infrastructure, model optionality, audit, policy, and a credible exit path. The same core need appears at different scales: use intelligence without losing control over the consequences.</p>
-            </section>
+                <span id="agents" class="story-anchor" aria-hidden="true"></span>
+                <p id="operating-layer">As Sam moves between teams, their work stays organized. This is the OS idea. An operating system manages programs and resources; AssistOS aims to manage virtual workers, their homes, tasks and permissions. It runs above existing operating systems. Teams keep their files and history when they change agents, models or where the work runs.</p>
 
-            <section id="internet-agents">
-                <h2>The Internet of Agents</h2>
-                <p>Agents can discover tools, interpret descriptions, compare alternatives, and act on behalf of a user. They can also initiate thousands of requests and cross several systems in one task. This creates pressure higher in the internet stack, where semantics, identity, authority, and evidence become critical. Who is the agent? On whose behalf is it acting? Which capability is being offered? What can be revoked, and how can the result be tied to a specific execution?</p>
-                <p>MCP helps AI applications discover and use tools, resources, and workflows. A2A helps agents built by different vendors or organizations communicate and coordinate. These protocols are complementary, but they do not by themselves isolate an execution, preserve project history, establish organizational trust, or explain a decision to the person ultimately responsible.</p>
-                <p>AssistOS should adopt such open standards while surrounding them with a runtime, workspace permissions, identity, provenance, private transport, and an understandable human interface. The transport does not need to understand the research workflow; the tool does not need every user permission; the agent must not be able to rewrite its own identity; and the person should not need a packet trace to approve a document.</p>
-                <p>Ploinky Wormhole explores a local-first pattern for cross-organizational communication. A light rendezvous service introduces participants, while the local workspace keeps identity, contacts, and policy. The server helps agents find each other; the participants negotiate their relationship and retain control over content. This is choreography rather than central orchestration.</p>
-            </section>
+                <span id="opportunity" class="story-anchor" aria-hidden="true"></span>
+                <p id="epilogue">Sam still writes, researches and makes decisions. His Robots take on more of the supporting work, so he spends less time moving information and more time guiding his teams. That is the AssistOS vision: useful work he can delegate, inspect and keep.</p>
 
-            <section id="beyond-chat">
-                <h2>Beyond the Chat Window</h2>
-                <p>Modern videoconferencing recreates a meeting room on a screen, but decisions must still be extracted, documents updated, tasks assigned, and evidence checked after the call. The first wave of AI meeting products added transcription and summarization. The larger opportunity is an agent that becomes an identifiable participant with a role, permissions, and access to the project artifacts on which a group is working.</p>
-                <p>In an AssistOS work session, people and agents collaborate around the same objects. A literature agent retrieves sources; a statistical agent tests an interpretation; a project agent updates proposed next steps. Changes appear as proposals, approvals become history, and the outcome is a set of versioned artifacts connected to claims, decisions, and responsibilities—not only a recording.</p>
-                <p>Appropriate autonomy is more valuable than maximum autonomy. Every process should show where an agent acts, where it proposes, where review is requested, and where a person remains the final authority. The interface should preserve the points at which people can understand, challenge, and shape the work.</p>
-            </section>
+                <p>There is already code behind this vision. Axiologic Research developed AssistOS within Achilles, a European research project, as an environment for controlling AI agents. The platform is open source, and its <a href="https://github.com/AssistOS-AI/">source code is available on GitHub</a>. The agents it runs can have different licenses, including proprietary code.</p>
+            </div>
 
-            <section id="opportunity">
-                <h2>The Opportunity to Build the Missing Layer</h2>
-                <p>Several transitions are converging: on-device AI in major platforms, open model runtimes, a growing population of agents and tools, emerging interoperability standards, and enterprises moving from demonstrations toward governed deployment. The control points of this category are not yet fixed.</p>
-                <h3>A staged path</h3>
-                <p><strong>First:</strong> the AssistOS Workspace makes the category visible through project-centered work, local model management, secure execution, plugins, and excellent workflows. <strong>Next:</strong> the Runtime and Marketplace add formal packages, identity, policy, audit, private registries, and enterprise controls. <strong>Then:</strong> the operating layer coordinates intelligence across devices, teams, organizations, edge infrastructure, and cloud services.</p>
-                <p>The commercial model follows the open-infrastructure precedent: an open substrate for adoption and continuity; enterprise distributions, certifications, private marketplaces, fleet management, support, managed execution, and vertical products for durable revenue.</p>
-            </section>
-
-            <section id="epilogue">
-                <h2>The Computer We Can Still Choose</h2>
-                <p>Artificial intelligence can be organized as remote services that offer convenience while making projects, histories, and agency inseparable from accounts users do not control. There is another possible architecture: hybrid, open, portable intelligence, close to data when that matters; agents with explicit identities and permissions; projects that outlive the models that contributed to them.</p>
-                <p>Local execution alone does not produce sovereignty. Open source alone does not produce a usable product. A protocol alone does not create trust. The value lies in the system that composes them.</p>
-                <p class="paper-quote">The models will change. Human projects, institutions, and responsibilities must continue through those changes.</p>
-                <p>AssistOS exists to make intelligence a capability people and organizations can genuinely operate—not merely a service they are permitted to visit. The future computer should remember whom it serves.</p>
-            </section>
-
-            <section>
-                <h2>What AssistOS Would Feel Like</h2>
-                <p>A researcher starts with a question rather than an empty chat. She creates a project, grants a research package access to selected paper collections and approved models, and receives an inspectable specification: collect competing evidence, record inclusion criteria, reproduce key experiments, and request expert review before publication. Sources, notes, code, datasets, failed attempts, and unresolved questions remain project artifacts.</p>
-                <p>A manufacturer operates a private marketplace. Packages enter only after security review, permission inspection, compatibility testing, and licensing approval. Employees install approved capabilities in their workspaces; agents receive separate identities and temporary credentials; administrators can trace a design change to a model and package version, or revoke a vulnerable package centrally.</p>
-                <p>A family indexes photographs, letters, records, and home videos locally. A personal knowledge package finds duplicates and answers questions without uploading the collection by default. When a cloud model is useful, the interface says exactly what would leave the device and asks for approval. The encrypted project can be backed up and restored independently of any single account.</p>
-                <p>These scenes share one common object—the project—and one common infrastructure: identity, permission, execution, memory, and distribution. Different users experience different levels of complexity, but rely on the same operating principles.</p>
-            </section>
-
-            <section>
-                <h2>Context for the vision</h2>
-                <p>The argument draws on current developments in local AI and on-device inference, the Hugging Face and GitHub ecosystems, MCP and A2A, open-source strategy in Europe, the Red Hat enterprise model, and patterns demonstrated by self-hosted workspaces, durable agent workflows, JupyterLab, LiveKit, specification-driven development, decentralized identifiers, and research in VSA/HDC and state-space models.</p>
-                <p>AssistOS documentation and research papers are primary evidence of the team’s intentions and architecture, not independent proof of maturity or performance. Future capabilities in this document are product requirements and strategic direction; they are not audited guarantees, completed certifications, or committed release dates.</p>
-            </section>
+            <p class="vision-reading-note" id="road-ahead">This story describes the experience we are building. Some components work today; others remain in development or research.</p>
+            <nav class="vision-reading-links" aria-label="Further reading">
+                <a href="installation.html">Install AssistOS</a>
+                <a href="https://github.com/AssistOS-AI/">Browse the source code</a>
+            </nav>
         </article>
-    </div>
-</main>
+    </main>
 
-<footer class="footer"><div class="breakline"></div><div class="container-padding"><p class="footer-text">Research conducted by Axiologic Research as part of the European research project Achilles.</p><p class="footer-text footer-disclaimer">This manuscript presents product, market, and research directions; it does not make audited security or performance claims.</p><p class="footer-text footer-copyright">© Axiologic Research / AssistOS</p></div></footer>
+    <footer class="workplace-footer">
+        <a href="index.html" aria-label="AssistOS home"><img src="assets/images/assistos-logo.svg" alt="AssistOS" width="172" height="32"></a>
+        <p>Axiologic Research · European research project Achilles</p>
+        <a href="research.html?tool=ide">Explorer documentation <span aria-hidden="true">↗</span></a>
+    </footer>
 </body>
 </html>

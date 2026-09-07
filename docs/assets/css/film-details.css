@@ -1,0 +1,132 @@
+/* A bright office window and observable browser/desktop actions. */
+.office-window { display: block; left: 38px; top: 24px; width: 303px; height: 318px; border: 8px solid #f6f5e8; border-radius: 3px; box-shadow: -6px 5px 0 #b6c8b1, 5px 7px 15px #819e7d28; background: #a2d6e5; overflow: hidden; }
+.office-window svg { display: block; width: 100%; height: 100%; }
+.office-window::before { inset: 0 auto 0 49%; width: 7px; height: auto; background: #f6f5e8; }
+.office-window::after { top: auto; bottom: 0; height: 5px; background: #f6f5e8; }
+.city-clouds { animation: city-clouds 35s ease-in-out infinite; }
+@keyframes city-clouds { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(16px); } }
+
+.browser-scene { overflow: hidden; }
+.browser-toolbar { display: flex; align-items: center; gap: 9px; height: 43px; padding: 6px 12px; background: #e0e6df; border-bottom: 1px solid #c5d1c3; }
+.browser-toolbar > span { display: grid; place-items: center; width: 24px; height: 26px; font-size: 20px; border-radius: 5px; color: #476151; }
+.browser-toolbar .browser-forward { color: #a2afa1; }
+.browser-toolbar .browser-address { flex: 1; min-width: 0; height: 28px; margin: 0; padding: 5px 8px; display: flex; gap: 8px; border-radius: 15px; position: relative; overflow: hidden; font-size: 11px; background: #f9fbf1; }
+.address-lock { color: #7b967c; }
+.browser-url { position: absolute; left: 27px; top: 6px; white-space: nowrap; }
+.browser-document { position: relative; height: 226px; overflow: hidden; background: #fbf8ee; }
+.browser-site-header { padding: 12px 20px; display: flex; justify-content: space-between; border-bottom: 1px solid #e0ded0; font-size: 10px; color: #526154; }
+.browser-site-header b { letter-spacing: .07em; }
+.browser-page { position: absolute; top: 42px; left: 0; right: 0; bottom: 0; padding: 15px 24px; overflow: hidden; }
+.browser-page h3 { font-size: 24px; font-weight: 550; letter-spacing: -.035em; margin: 0 0 15px; }
+.browser-feature { display: flex; align-items: center; gap: 25px; }
+.browser-feature b { font-size: 14px; font-weight: 500; }
+.browser-fake-link { display: block; margin-top: 17px; padding: 9px 12px; border: 1px solid #c5d5ba; border-radius: 5px; color: #356847; font-size: 12px; background: #e6edd8; }
+.browser-book-art { display: flex; align-items: flex-end; justify-content: center; gap: 8px; width: 155px; height: 99px; background: #ebe2cf; border-radius: 6px; }
+.browser-book-art i { display: block; height: 80px; width: 32px; background: #cf997f; border-left: 4px solid #b98069; border-bottom: 4px solid #fff4d4; border-radius: 2px; transform: rotate(-7deg); }
+.browser-book-art i:nth-child(2) { height: 92px; background: #84b6bd; border-color: #679a9e; transform: rotate(4deg); }
+.browser-book-art i:nth-child(3) { height: 74px; background: #c0accc; border-color: #a18db0; transform: rotate(9deg); }
+.browser-detail-page { visibility: hidden; }
+.browser-page-label { font-size: 9px; letter-spacing: .08em; color: #8c967d; }
+.browser-article h3 { margin-top: 7px; }
+.browser-text-lines { display: grid; gap: 8px; margin: 10px 0 16px; }
+.browser-text-lines i { height: 5px; width: 92%; background: #d5ddc9; border-radius: 4px; }
+.browser-text-lines i:nth-child(2) { width: 82%; }
+.browser-text-lines i:nth-child(3) { width: 64%; }
+.browser-submission { display: flex; justify-content: space-between; padding: 12px; background: #e7d9b8; color: #6a684b; font-size: 12px; border-radius: 5px; }
+.browser-scrollbar { position: absolute; right: 3px; top: 45px; bottom: 4px; width: 4px; background: #e6e8df; }
+.browser-scrollbar i { display: block; width: 4px; height: 60px; border-radius: 4px; background: #adbdab; }
+.browser-watch { display: flex; align-items: center; gap: 8px; padding: 12px 15px; background: #355749; color: #edf6e7; font-size: 11px; }
+.browser-watch i { width: 6px; height: 6px; background: #b1dba5; border-radius: 50%; }
+.browser-watch b { margin-left: auto; font-weight: 400; color: #c6dbc0; }
+.browser-robot-cursor, .computer-robot-cursor { position: absolute; z-index: 5; font-size: 30px; color: #407c85; text-shadow: 1px 1px white, -1px -1px white; left: 335px; top: 222px; line-height: 1; }
+.browser-robot-cursor > span, .computer-robot-cursor > span { display: block; position: absolute; top: 25px; left: 18px; padding: 4px 7px; border-radius: 4px; color: white; background: #43838b; font-size: 10px; text-shadow: none; }
+.browser-robot-cursor > i, .computer-robot-cursor > i { position: absolute; width: 30px; height: 30px; left: -8px; top: -7px; border: 2px solid currentColor; border-radius: 50%; opacity: 0; }
+.film[data-view="browser"] .browser-home-page { animation: browser-home 12s step-end infinite; }
+.film[data-view="browser"] .browser-detail-page { animation: browser-detail 12s step-end infinite; }
+.film[data-view="browser"] .browser-article { animation: browser-scroll 12s ease-in-out infinite; }
+.film[data-view="browser"] .browser-scrollbar i { animation: browser-scroll-thumb 12s ease-in-out infinite; }
+.film[data-view="browser"] .browser-robot-cursor { animation: browser-navigate 12s ease-in-out infinite; }
+.film[data-view="browser"] .browser-robot-cursor > i { animation: browser-click 12s ease-out infinite; }
+.film[data-view="browser"] .browser-back { animation: browser-back 12s step-end infinite; }
+.film[data-view="browser"] .browser-forward { animation: browser-forward 12s step-end infinite; }
+@keyframes browser-home { 0%, 48% { visibility: visible; } 18%, 64% { visibility: hidden; } }
+@keyframes browser-detail { 0%, 48% { visibility: hidden; } 18%, 64% { visibility: visible; } }
+@keyframes browser-scroll { 0%, 22%, 48%, 68%, 100% { transform: translateY(0); } 33%, 44%, 80%, 94% { transform: translateY(-38px); } }
+@keyframes browser-scroll-thumb { 0%, 22%, 48%, 68%, 100% { transform: translateY(0); } 33%, 44%, 80%, 94% { transform: translateY(65px); } }
+@keyframes browser-navigate { 0%, 12%, 18% { left: 326px; top: 219px; } 27%, 36% { left: 438px; top: 202px; } 44%, 48% { left: 18px; top: 42px; } 59%, 64% { left: 50px; top: 42px; } 76%, 90%, 100% { left: 399px; top: 204px; } }
+@keyframes browser-click { 0%, 13%, 20%, 43%, 51%, 59%, 67%, 100% { opacity: 0; transform: scale(.5); } 17%, 47%, 63% { opacity: .8; transform: scale(1.2); } }
+@keyframes browser-back { 0% { color: #a2afa1; background: transparent; } 18%, 64% { color: #476151; background: transparent; } 44% { color: #244f3b; background: #bad4b5; } 48% { color: #a2afa1; background: transparent; } }
+@keyframes browser-forward { 0%, 64% { color: #a2afa1; background: transparent; } 48% { color: #476151; background: transparent; } 59% { color: #244f3b; background: #bad4b5; } }
+
+.computer-scene { overflow: hidden; }
+.desktop-surface { position: relative; height: 261px; background: #b0d6d6; overflow: hidden; }
+.desktop-wallpaper { position: absolute; inset: 0; background: linear-gradient(145deg, #a7d0dc, #d9e8c8); }
+.desktop-wallpaper::before, .desktop-wallpaper::after { content: ''; position: absolute; width: 420px; height: 350px; background: #81b4b0; border-radius: 45%; left: 240px; top: 80px; transform: rotate(-30deg); opacity: .5; }
+.desktop-wallpaper::after { left: 90px; top: 160px; background: #9ec592; }
+.desktop-shortcuts { position: absolute; left: 14px; top: 16px; display: grid; gap: 18px; width: 70px; }
+.desktop-shortcuts > div { display: grid; place-items: center; gap: 6px; }
+.desktop-shortcuts i { font-style: normal; display: grid; place-items: center; width: 35px; height: 40px; border-radius: 4px; color: #fff8de; background: #d7b37d; font-size: 27px; box-shadow: 2px 3px 0 #688e7833; }
+.desktop-shortcuts span { font-size: 10px; color: #2b574e; }
+.desktop-budget-file i { background: #357c5c; font-size: 24px; border-right: 5px solid #65a380; }
+.excel-window { position: absolute; inset: 10px 10px 11px 87px; background: #f9fcf2; border: 1px solid #74a28a; border-radius: 5px; box-shadow: 0 7px 15px #28534633; overflow: hidden; visibility: hidden; transform-origin: 0 40%; }
+.excel-title { height: 28px; display: flex; align-items: center; gap: 9px; padding: 0 10px; background: #367859; color: #f6f9ef; font-size: 11px; }
+.excel-title b { font-size: 17px; }
+.excel-title i { margin-left: auto; font-style: normal; font-size: 13px; }
+.excel-ribbon { padding: 7px 10px; color: #4e6752; font-size: 10px; border-bottom: 1px solid #d6dfd0; }
+.excel-formula { display: flex; align-items: center; gap: 9px; padding: 5px 8px; font-size: 10px; background: #edf2e8; border-bottom: 1px solid #d6dfd0; }
+.excel-formula > span { width: 37px; padding: 3px; background: white; border: 1px solid #d3dfca; }
+.excel-formula code { font: 10px monospace; }
+.excel-window .sheet-grid { grid-template-columns: 22px 1.7fr 1fr 1fr; font-size: 11px; line-height: 1.15; }
+.excel-window .sheet-grid > * { padding: 5px 6px; }
+.excel-window .sheet-grid .active-cell { padding: 3px 4px; animation: none; }
+.excel-tabs { padding: 5px 28px; font-size: 9px; color: #3d7050; }
+.excel-tabs span { margin-left: 20px; }
+.excel-calculation { visibility: hidden; }
+.desktop-taskbar { height: 31px; display: flex; align-items: center; gap: 18px; padding: 0 14px; background: #e6eee5dd; color: #507864; font-size: 17px; }
+.excel-task-icon { font-size: 14px; color: #357c5c; border-bottom: 2px solid #357c5c; visibility: hidden; }
+.desktop-taskbar .desktop-clock { margin-left: auto; font-size: 10px; }
+.computer-robot-cursor { left: 51px; top: 131px; color: #aa764b; }
+.computer-robot-cursor > span { background: #aa764b; }
+.monitor-excel { visibility: hidden; }
+.film[data-view="computer"] .excel-window { animation: open-excel 12s ease-in-out infinite; }
+.film[data-view="computer"] .excel-task-icon, .film[data-view="computer"] .monitor-excel { animation: excel-visible 12s step-end infinite; }
+.film[data-view="computer"] .excel-calculation { animation: excel-result 12s step-end infinite; }
+.film[data-view="computer"] .computer-robot-cursor { animation: desktop-open-file 12s ease-in-out infinite; }
+.film[data-view="computer"] .computer-robot-cursor > i { animation: desktop-double-click 12s ease-out infinite; }
+.film[data-view="computer"] .desktop-budget-file { animation: desktop-select-file 12s ease-in-out infinite; }
+@keyframes open-excel { 0%, 17%, 100% { visibility: hidden; opacity: 0; transform: scale(.3); } 23%, 97% { visibility: visible; opacity: 1; transform: scale(1); } }
+@keyframes excel-visible { 0% { visibility: hidden; } 23% { visibility: visible; } }
+@keyframes excel-result { 0% { visibility: hidden; } 54% { visibility: visible; } }
+@keyframes desktop-open-file { 0% { left: 116px; top: 81px; } 10%, 18% { left: 47px; top: 130px; } 30%, 37% { left: 322px; top: 151px; } 46%, 60% { left: 343px; top: 221px; } 73%, 100% { left: 412px; top: 220px; } }
+@keyframes desktop-double-click { 0%, 9%, 13%, 17%, 100% { opacity: 0; transform: scale(.5); } 11%, 15% { opacity: .9; transform: scale(1.25); } }
+@keyframes desktop-select-file { 0%, 8%, 22%, 100% { background: transparent; } 10%, 18% { background: #eef8e766; outline: 1px solid #f7fff1; } }
+@media (max-width: 680px) { .office-window { display: block; left: 29px; top: 312px; width: 562px; height: 206px; } }
+@media (prefers-reduced-motion: reduce) {
+    .browser-home-page { visibility: hidden; }
+    .browser-detail-page, .excel-window, .excel-task-icon, .excel-calculation, .monitor-excel { visibility: visible; }
+    .excel-window { opacity: 1; transform: none; }
+}
+
+.workspace-boundary { display: flex; align-items: center; justify-content: center; gap: 10px; }
+.workspace-boundary svg { width: 42px; height: 26px; fill: none; stroke: #65896f; stroke-width: 2; }
+.sam-finger { transform-box: fill-box; transform-origin: left center; animation: finger-tap 1.4s ease-in-out infinite; }
+.finger-near-middle { animation-delay: -.35s; }
+.finger-near-ring { animation-delay: -.72s; }
+.finger-far-index { animation-delay: -.95s; }
+.finger-far-middle { animation-delay: -.5s; }
+.sam-mouth-surprised { opacity: 0; }
+.film:is([data-view="dispatch"], [data-view="configure"]) .sam-head-motion { animation: sam-discover 10s ease-in-out infinite; }
+.film:is([data-view="dispatch"], [data-view="configure"]) .sam-gaze { transform-box: view-box; transform-origin: 120px 83px; animation: sam-wide-eyes 10s ease-in-out infinite; }
+.film:is([data-view="dispatch"], [data-view="configure"]) .sam-brows { animation: sam-raised-brows 10s ease-in-out infinite; }
+.film:is([data-view="dispatch"], [data-view="configure"]) .sam-mouth-surprised { animation: sam-surprised 10s ease-in-out infinite; }
+.film:is([data-view="dispatch"], [data-view="configure"]) .sam-mouth-neutral { animation: sam-discovery-neutral 10s ease-in-out infinite; }
+.film:is([data-view="dispatch"], [data-view="configure"]) .sam-smile { animation: sam-discovery-smile 10s ease-in-out infinite; }
+.film:is([data-view="editor"], [data-view="meeting"], [data-view="results"]) .sam-finger { animation-name: finger-rest; animation-duration: 8s; }
+@keyframes finger-tap { 0%, 34%, 100% { transform: rotate(0); } 15% { transform: rotate(-8deg) translateY(-.6px); } 23% { transform: rotate(3deg); } }
+@keyframes finger-rest { 0%, 100% { transform: rotate(0); } 25%, 40% { transform: rotate(-3deg); } }
+@keyframes sam-discover { 0%, 10%, 70%, 100% { transform: rotate(0); } 20%, 28% { transform: rotate(-4deg); } 45%, 56% { transform: rotate(3deg); } }
+@keyframes sam-wide-eyes { 0%, 10%, 38%, 100% { transform: scale(1); } 19%, 28% { transform: translate(1px,-.5px) scale(1.12); } }
+@keyframes sam-raised-brows { 0%, 10%, 38%, 100% { transform: translateY(0); } 19%, 28% { transform: translateY(-2px); } }
+@keyframes sam-surprised { 0%, 12%, 35%, 100% { opacity: 0; } 19%, 27% { opacity: 1; } }
+@keyframes sam-discovery-neutral { 0%, 12%, 35%, 65%, 100% { opacity: 1; } 19%, 27%, 44%, 56% { opacity: 0; } }
+@keyframes sam-discovery-smile { 0%, 35%, 65%, 100% { opacity: 0; } 44%, 56% { opacity: 1; } }

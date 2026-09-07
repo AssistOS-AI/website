@@ -1,62 +1,16 @@
-<h2>Chapter 16: Conclusions</h2>
-
-<p class="chapter-intro">AssistOS represents a comprehensive vision for the future of human-AI collaboration — an ecosystem where intelligent agents are not just tools, but partners in a structured, transparent, and reproducible workflow. The chapters of this whitepaper describe a complete architecture: from the IDE that serves as your workspace, through the agents that verify, secure, and execute your work, to the communication protocols, data sovereignty layers, and context management systems that make it all possible.</p>
-
-<h3>Where We Are Today</h3>
-
-<p>Most of the components described in this whitepaper are <strong>designed and in various stages of maturation</strong>. Some are already functional:</p>
-
-<ul>
-    <li><strong>Achilles IDE</strong> is a working development environment with file management, OnlyOffice integration, confidential document handling, and agent copilot.</li>
-    <li><strong>Ploinky</strong> provides containerized agent isolation and workspace management.</li>
-    <li><strong>WebMeet</strong> offers audio-video conferencing with agent participation and blackboard control.</li>
-    <li><strong>AGISystem2</strong> delivers formal reasoning and knowledge management capabilities.</li>
-    <li><strong>AxiFace</strong> provides lightweight agent visual presence for chat and video interfaces.</li>
-</ul>
-
-<p>Other components are <strong>actively under development</strong>:</p>
-
-<ul>
-    <li><strong>Wormhole</strong> — the decentralized communication protocol — has its architecture defined and core mechanisms specified.</li>
-    <li><strong>Trustworthy AI Agent</strong> and <strong>Security Guardian Agent</strong> — their verification frameworks and monitoring capabilities are being implemented.</li>
-    <li><strong>LightDSU and DPU Agent</strong> — the encrypted data substrate and sandboxed execution layer are in active development.</li>
-    <li><strong>ModelAutoResearcher Agent</strong> — the autonomous modeling laboratory is being built with its seven-phase cycle.</li>
-    <li><strong>NeuroVSA</strong> — the neuro-symbolic research agent has its architecture and research agenda defined.</li>
-    <li><strong>AKU</strong> — the context management system with BM25F search is being implemented as a local library.</li>
-    <li><strong>MRP-VM</strong> — the execution model for natural-language-derived programs is being refined.</li>
-    <li><strong>Federated Learning</strong> — the architecture for cross-organizational model training is designed and awaiting implementation.</li>
-</ul>
-
-<h3>What Makes AssistOS Different</h3>
-
-<ul>
-    <li><strong>Specification-Driven:</strong> Specifications are the primary artifact — telling AI what to build, not how.</li>
-    <li><strong>Pipeline-Based:</strong> Build pipelines function as SOPs — reproducible, auditable, continuously improving.</li>
-    <li><strong>Open Foundation:</strong> Core components are open source, ensuring transparency and community-driven development.</li>
-    <li><strong>Provider-Agnostic:</strong> Support for multiple LLM providers prevents vendor lock-in.</li>
-    <li><strong>Trust-Focused:</strong> Formal reasoning, comprehensive observability, and continuous verification ensure outputs are verifiable.</li>
-    <li><strong>Secure by Design:</strong> Containerized isolation, encrypted storage, sandboxed execution, and decentralized communication.</li>
-    <li><strong>Data Sovereignty:</strong> Your data stays under your control — encrypted, audited, and never leaving your workspace without explicit approval.</li>
-</ul>
-
-<h3>Call to Collaboration</h3>
-
-<p>AssistOS is not a closed product — it is an <strong>open research and development ecosystem</strong>. We believe that the future of AI cannot be built by a single organization. It requires the collective effort of researchers, developers, and organizations who share a vision of AI that is transparent, trustworthy, and fundamentally human-centric.</p>
-
-<p><strong>For the open source community:</strong> We invite you to explore our repositories, contribute code, report issues, and help us build the components that will make AssistOS a reality. Whether you are interested in agent architectures, security protocols, data sovereignty, or context management, there is a place for your expertise.</p>
-
-<p><strong>For researchers:</strong> The Achilles project and Axiologic Research offer a unique platform for advancing AI research into production. Our work on neurosymbolic reasoning, trustworthy AI, federated learning, and Vector Symbolic Architectures is open to collaboration. If your research aligns with our vision, we want to work with you.</p>
-
-<p><strong>For entrepreneurs and organizations:</strong> We welcome organizations that want to deploy AssistOS components, integrate them into their workflows, or build on top of the platform. Whether you are in healthcare, finance, research, or any domain where AI trust and data sovereignty matter, we want to hear from you.</p>
-
-<h3>The Road Ahead</h3>
-
-<p>AssistOS will continue to evolve as we learn from real-world usage, research insights, and community contributions. Many components described here will mature, some will change direction, and new capabilities will emerge that we cannot yet predict. This is the nature of building at the frontier of AI.</p>
-
-<p>What will not change is our commitment to the core principles: specifications drive creation, pipelines ensure quality, agents execute with precision, and every output is the result of a validated, reproducible process. We are building not just tools, but a new way of working — one where humans and AI collaborate as partners, not as master and servant.</p>
-
-<p>For questions, collaboration opportunities, or early access to upcoming features, please <a href="../index.html#contact">contact us</a>.</p>
-
-<blockquote>
-    <p>AssistOS: Where specifications drive creation, pipelines ensure quality, and AI amplifies human potential. Built openly, for everyone who believes AI should be trustworthy, transparent, and under human control.</p>
-</blockquote>
+<h2>Chapter 16: Next steps</h2>
+<p class="chapter-intro">The product test is an ordinary working day. Can a person give a Robot a bounded task, inspect its progress, step in when needed and keep a useful result in the project? The architecture should make that experience repeatable.</p>
+<h3>The foundation</h3>
+<p>Explorer and Ploinky provide the workspace and capability runtime. The documentation also describes WebMeet collaboration, AGISystem2 reasoning experiments and AxiFace visual identities. Individual repositories are the place to check supported behavior and setup.</p>
+<p>A working component does not imply that every integration or end-to-end workflow in this whitepaper is complete.</p>
+<h3>Development and research</h3>
+<p>Wormhole, LightDSU and the DPU Agent address communication and data controls. ModelAutoResearcher, the Trustworthy AI Agent and Security Guardian describe broader research, evaluation and monitoring workflows.</p>
+<p>MRP-VM investigates structured task execution. NeuroVSA explores representation choice through experiments. AKU organizes local knowledge. The federated learning architecture describes training across organizations with local participation and export decisions.</p>
+<p>These projects have different levels of maturity. Their claims need implementation tests, evaluations and documentation tied to a specific version.</p>
+<h3>What to prove next</h3>
+<ol><li>Make one user productive with a few Robots on one machine.</li><li>Make background, browser and computer-use tasks visible and interruptible.</li><li>Keep team workspaces, project files and WebMeet rooms coherent and separate.</li><li>Validate identity, access, budgets, failure reporting and recovery.</li><li>Expand the capability catalog as supported workflows earn adoption.</li></ol>
+<p>Reviewable artifacts matter more than the appearance of autonomy. A task that stops at a sensible human decision may be more useful than one that proceeds without enough context.</p>
+<h3>Work with us</h3>
+<p>Developers can help package capabilities, test installation and report failures. Researchers can contribute reproducible experiments and comparisons. Teams can bring a recurring workflow with known inputs, stopping conditions and acceptance criteria.</p>
+<p>A useful pilot measures human effort, completion rate, required corrections, intervention frequency and execution cost. Those results tell us what to improve and what should remain human-led.</p>
+<p>For collaboration, deployment or availability questions, <a href="../index.html#contact">contact the team</a>.</p>

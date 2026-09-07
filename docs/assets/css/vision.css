@@ -1,0 +1,93 @@
+/* A continuous reading layout for the story behind the homepage film. */
+.vision-reading-main {
+    padding-bottom: 64px;
+}
+
+.vision-reading-header {
+    padding: 56px 0 32px;
+    border-bottom: 1px solid var(--wp-line);
+}
+
+.vision-reading-header .kicker {
+    margin-bottom: 18px;
+    letter-spacing: .08em;
+}
+
+.vision-reading-header h1 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 550;
+    line-height: 1.15;
+    letter-spacing: -.035em;
+    text-wrap: balance;
+}
+
+.vision-reading-intro {
+    margin: 20px 0 18px;
+    color: var(--wp-muted);
+    font-size: 1.05rem;
+    line-height: 1.65;
+}
+
+.vision-reading-story {
+    padding-top: 32px;
+    color: #cedbd5;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    text-align: justify;
+    text-align-last: start;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.vision-reading-story p {
+    margin: 0 0 1.3em;
+    scroll-margin-top: 28px;
+}
+
+.vision-reading-story p:first-of-type {
+    color: var(--wp-ink);
+}
+
+.vision-reading-story p:last-child {
+    margin-bottom: 0;
+}
+
+.story-anchor {
+    display: block;
+    height: 0;
+    scroll-margin-top: 28px;
+}
+
+.vision-reading-note {
+    text-align: justify;
+    text-align-last: start;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    margin: 32px 0 20px;
+    padding-top: 24px;
+    border-top: 1px solid var(--wp-line);
+    color: var(--wp-muted);
+    font-size: .9rem;
+    line-height: 1.7;
+    scroll-margin-top: 28px;
+}
+
+.vision-reading-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 28px;
+    font-size: .9rem;
+    line-height: 1.6;
+}
+
+.vision-reading-links a {
+    color: var(--wp-mint);
+    text-underline-offset: 4px;
+}
+
+@media (max-width: 680px) {
+    .vision-reading-header { padding-top: 36px; }
+    .vision-reading-story { font-size: 1.0625rem; line-height: 1.75; }
+    .vision-reading-main { padding-bottom: 44px; }
+}

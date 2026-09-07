@@ -1,95 +1,24 @@
 <h2>Chapter 6: Ploinky Wormhole</h2>
-
-<p class="chapter-intro">Ploinky Wormhole is a decentralized communication protocol designed for a world where AI agents are first-class participants. It replaces the client-server messaging paradigm with direct peer-to-peer connections, giving you the familiar experience of email and chat while keeping all data under your control — at the edge, in your workspace.</p>
-
-<h3>The Problem with Today's Communication</h3>
-
-<p>Every email you send, every message you write, every file you share passes through servers you don't control. Your inbox lives on someone else's infrastructure. Your contacts are stored in someone else's database. Your communication metadata is visible to your provider, to intermediaries, and potentially to anyone who gains access to those servers.</p>
-
-<p>This model worked when humans were the only communicators. But in an agentic world — where software agents act on behalf of users, projects, and organizations — the limitations become critical:</p>
-
-<ul>
-    <li><strong>Latency and bottlenecks.</strong> Every message routed through a central server adds delay. When agents need to coordinate in real-time, milliseconds matter.</li>
-    <li><strong>Single points of failure.</strong> If the server goes down, communication stops. There is no fallback, no redundancy, no direct path.</li>
-    <li><strong>No data sovereignty.</strong> You cannot truly own your communication if it is stored, indexed, and processed on infrastructure you do not control.</li>
-    <li><strong>Agent incompatibility.</strong> Existing protocols were designed for humans reading screens, not for agents negotiating, transferring data, and executing tasks autonomously.</li>
-</ul>
-
-<p>Wormhole addresses all of these problems by flipping the model: <strong>agents connect directly to each other</strong>, and servers exist only to facilitate the introduction.</p>
-
-<h3>How Wormhole Works</h3>
-
-<p>Wormhole has exactly two components, each with a single, clear responsibility:</p>
-
-<p><strong>Ploinky Server Wormhole</strong> is a lightweight rendezvous and signaling service. It does not store messages. It does not read content. It does not decide who is trusted or blocked. Its only job is to help agents find each other and establish a direct WebRTC connection. Think of it as a phone book and a dial tone — not a post office.</p>
-
-<p><strong>Ploinky Agent Wormhole</strong> runs locally inside each workspace. It owns cryptographic identities (DIDs), manages contacts, enforces workspace policies, negotiates with peer agents, and transfers content directly over P2P channels. All decisions about trust, acceptance, and data handling happen here — at the edge, under your control.</p>
-
-<p>The server makes the introduction. The agents do the actual work. Once connected, the server is completely out of the picture.</p>
-
-<h3>Familiar Interfaces, Decentralized Infrastructure</h3>
-
-<p>Wormhole does not ask you to change how you communicate. It gives you the interfaces you already know — but with fundamentally different infrastructure underneath.</p>
-
-<p><strong>Wormhole Mail</strong> provides the structured, asynchronous communication experience of email: subjects, recipients, CC/BCC, attachments, conversation threads, tags, and filters. But there are no IMAP servers, no provider lock-in, and no spam filters you don't control. Messages are signed and encrypted end-to-end. Your mailbox is a SQLite file that you own and can back up, migrate, or audit.</p>
-
-<p><strong>Wormhole Chat</strong> provides the fast, synchronous experience of modern messaging apps — but without a central platform. Conversations happen directly between agents. Files transfer peer-to-peer. There is no cloud storage of your messages, no algorithmic feed, and no advertising.</p>
-
-<p>The key difference is what happens when someone you don't know tries to reach you. In email, spam arrives in your inbox and you deal with it. In Wormhole, unknown senders arrive as <strong>connection requests</strong>. You see who wants to talk and decide whether to accept, reject, or block. No spam reaches your actual inbox. No guessing. No server-side filtering that might lose important messages.</p>
-
-<h3>Identity You Control: DIDs</h3>
-
-<p>Every participant in Wormhole is identified by a <strong>Decentralized Identifier (DID)</strong>:</p>
-
-<p style="text-align: center; font-family: monospace; background: rgba(7,165,233,0.1); padding: 0.75rem; border-radius: 4px; margin: 1rem 0;">did:wormhole:&lt;server-domain&gt;:&lt;identifier&gt;</p>
-
-<p>A DID is not an email address. It is not a username on someone else's platform. It is a <strong>cryptographic identity</strong> that you control. The server publishes your public key so others can find you — but your private key never leaves your agent.</p>
-
-<p>DIDs support key rotation with cryptographic proof. If you need to change keys, the history is verifiable. Your contacts can see that the key changed and decide whether to re-confirm trust. This is how identity works when no central authority vouches for you: the cryptography speaks for itself.</p>
-
-<p>A single workspace can have many DIDs — one per user, one per agent, one per project, one per functional inbox. Each has its own identity, its own policies, and its own mailbox.</p>
-
-<h3>Communication Between Organizations</h3>
-
-<p>Wormhole is not just for person-to-person messaging. It is designed for <strong>inter-organizational communication</strong> — companies talking to companies, workspaces talking to workspaces, agents talking to agents.</p>
-
-<p>Consider a research consortium where five organizations collaborate without sharing their raw data. Each organization runs its own workspace with local data. Wormhole enables them to coordinate complex workflows: sharing documents, exchanging status updates, and running joint analyses — all without a central platform that holds everyone's data.</p>
-
-<p>Or a supply chain where manufacturers, suppliers, and logistics providers need to exchange purchase orders, shipping notifications, and quality reports. Each party controls its own workspace, its own policies, and its own data. Wormhole provides the communication layer that makes this possible.</p>
-
-<p>This is <strong>organizational choreography</strong>: independent entities coordinating through a protocol that respects their autonomy, enforces their policies, and keeps their data local.</p>
-
-<h3>Federated Learning and Sophisticated Protocols</h3>
-
-<p>One of the most powerful capabilities enabled by Wormhole is <strong>federated learning</strong> — training AI models across organizations without centralizing data.</p>
-
-<p>The architecture works naturally on top of Wormhole's P2P infrastructure:</p>
-
-<ul>
-    <li>A <strong>Coordinator Agent</strong> defines the federation, invites participants, and starts training rounds. It never sees raw data.</li>
-    <li>A <strong>DPU Agent</strong> at each participant runs training locally in a sandbox, over encrypted local data. It decides what can leave the workspace.</li>
-    <li><strong>Wormhole</strong> transports the plan, the model, and the approved updates between participants — signed, encrypted, and verified.</li>
-    <li><strong>LightDSU</strong> stores data, results, updates, and full provenance locally. Keys never leave the DPU.</li>
-</ul>
-
-<p>Each round is auditable. Each update is signed. Each participant controls its own data and its own export policy. The coordinator aggregates only what participants explicitly approve. This is how collaborative AI should work when data sovereignty matters.</p>
-
-<p>But federated learning is just one example. Wormhole enables any protocol that requires secure, direct communication between autonomous agents: distributed data analysis, multi-party computation, coordinated automation, and more. The protocol is the transport; the agents decide what to build on top.</p>
-
-<h3>Security by Design</h3>
-
-<p>Wormhole's security model is simple and explicit:</p>
-
-<ul>
-    <li><strong>Servers are not trusted for content.</strong> They only facilitate introductions. All content is end-to-end encrypted and signed.</li>
-    <li><strong>Agents decide everything.</strong> Trust, acceptance, policies, data handling — all at the edge, under your control.</li>
-    <li><strong>Minimal server visibility.</strong> The server sees only that DID A wants to talk to DID B. It does not see what they will say, what files they will share, or what tasks they will negotiate.</li>
-    <li><strong>Key rotation with proof.</strong> When a key changes, the cryptographic history is preserved. Contacts can verify the rotation and decide whether to re-confirm trust.</li>
-    <li><strong>Workspace policies enforced locally.</strong> Every workspace defines its own rules: who can connect, what can be shared, what requires approval, what is blocked entirely.</li>
-</ul>
-
-<h3>What Wormhole Is Not</h3>
-
-<p>Wormhole is not a cloud messaging platform. It does not store your messages on someone else's servers. It does not scan your content for advertising. It does not decide who you can talk to. It does not replace your existing tools by force — it gives you a protocol that your tools can use when decentralization, sovereignty, and agent autonomy matter.</p>
-
-<p>Wormhole is infrastructure for a world where agents are first-class communicators, where organizations retain sovereignty over their data, and where trust is cryptographic, not institutional.</p>
+<p class="chapter-intro">Ploinky Wormhole is a protocol under development for direct communication between workspaces. The design separates connection setup from message storage and trust decisions. Each workspace controls its identities, contacts and accepted transfers.</p>
+<h3>The problem it addresses</h3>
+<p>Two organizations may need to exchange approved files or coordinate tasks without moving all their work into the same service. Wormhole proposes a direct route between their local agents, with a server to help establish the connection.</p>
+<p>Direct communication changes where data and trust decisions live. It does not remove network failures, hostile peers or the need to operate the endpoints securely.</p>
+<h3>Server and local agent</h3>
+<p>Ploinky Server Wormhole handles rendezvous and WebRTC signaling. The proposed server publishes connection information and public keys without storing message content or deciding which contacts a workspace trusts.</p>
+<p>Ploinky Agent Wormhole runs inside the workspace. It manages cryptographic identities, contacts, local policies and transfers. Once the peers establish a direct channel, they exchange content through that channel. Connection metadata remains a separate privacy concern.</p>
+<h3>Mail and chat</h3>
+<p>Wormhole Mail retains subjects, recipients, CC/BCC, attachments, conversation threads, tags and filters. The design stores the mailbox locally in SQLite so its owner can back it up, migrate it or inspect it.</p>
+<p>Wormhole Chat uses the same identity and transfer model for live conversations and files. Messages are intended to be signed and encrypted end to end.</p>
+<p>An unknown sender appears as a connection request. The recipient can accept, reject or block it. Admission controls reduce unwanted access, but cannot guarantee that every accepted sender or message is safe.</p>
+<h3>Decentralized identifiers</h3>
+<p>A participant uses a decentralized identifier, or DID:</p>
+<pre><code>did:wormhole:&lt;server-domain&gt;:&lt;identifier&gt;</code></pre>
+<p>The server publishes the public key; the private key stays with the local agent. A workspace may use separate DIDs for people, Robots, projects and inboxes.</p>
+<p>Signed key-rotation records let contacts inspect a change and decide whether to confirm trust again. A signature establishes control of a key. It does not establish that the holder is a trustworthy person or organization.</p>
+<h3>Coordination between organizations</h3>
+<p>A research consortium could exchange approved analyses while each partner keeps its source data locally. A supply chain could use the same mechanism for purchase orders, shipping updates and quality reports. Each workspace would enforce its own rules before a transfer.</p>
+<p>Federated learning is a further research direction. A coordinator would distribute the model and plan. Each participant's DPU Agent would run the allowed training task locally, store its records in LightDSU and return approved updates through Wormhole.</p>
+<p>Model updates can also leak information. That workflow needs privacy and export checks in addition to encrypted transport.</p>
+<h3>Boundaries to test</h3>
+<ul><li>The signaling service should not receive plaintext message content.</li><li>Local agents should retain private keys, mailbox storage and contact policy.</li><li>Peers should verify signatures and apply access rules before accepting transfers.</li><li>Workspaces should record key changes, approvals and relevant transfer events.</li><li>The deployment should document its connection metadata and network dependencies.</li></ul>
+<p>These are design requirements, not audited guarantees. The public <a href="../wormhole.html">Wormhole overview</a> introduces the idea; the federated learning chapter describes the proposed training protocol.</p>

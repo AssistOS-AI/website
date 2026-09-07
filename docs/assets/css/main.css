@@ -1951,3 +1951,23 @@ section.contact {
     .paper-masthead { padding: 1.25rem; }
     .research-iframe-shell { height: calc(100vh - 190px); min-height: 480px; }
 }
+
+/* An off-screen menu must not enlarge the document or defeat mobile scaling. */
+.secondary-menu:not(.toggle) { display: none; }
+.nav-dropdown:focus-within .nav-submenu { display: block; }
+.hamburger-lines { border: 0; background: transparent; }
+/* Keep long passages readable and aligned on both edges. */
+.content-block p, .github-box p { max-width: 78ch; text-align: justify; text-align-last: start; line-height: 1.75; }
+.content-block li { line-height: 1.7; text-align: justify; text-align-last: start; hyphens: auto; -webkit-hyphens: auto; }
+.content-block, .block-content { min-width: 0; }
+.page-title { text-wrap: balance; }
+.content-block a, .content-block code { overflow-wrap: anywhere; }
+@media (max-width: 768px) {
+    .content-block p, .content-block li { font-size: 1rem; }
+}
+/* One logo palette across every site page. */
+.logo-img img { width: 202px; max-width: 202px; height: auto; display: block; filter: none; }
+@media (max-width: 680px) { .logo-img img { width: 180px; max-width: 180px; } }
+/* Keep text at a readable size on phones instead of shrinking the whole page. */
+html { font-size: 16px; }
+.content-block p, .github-box p { hyphens: auto; -webkit-hyphens: auto; }

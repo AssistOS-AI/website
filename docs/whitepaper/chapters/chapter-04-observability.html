@@ -1,38 +1,13 @@
 <h2>Chapter 4: Observability</h2>
-
-<p class="chapter-intro">Understanding what AI agents are doing, why they are doing it, and how well they are performing is essential for building trust and ensuring reliable outcomes. Observability in AssistOS goes beyond simple logging it provides deep insight into agent behavior, decision-making, and system health.</p>
-
-<h3>Provider Flexibility</h3>
-
-<p>The AssistOS system operates through <strong>AchillesAgentLib</strong>, which is designed to work with any LLM provider that offers OpenAI-compatible APIs. Additionally, the system supports direct integration with <strong>Google Gemini APIs</strong> and <strong>Anthropic APIs</strong>, giving users the freedom to choose the models that best fit their needs.</p>
-
-<p>This provider-agnostic approach ensures that AssistOS is not locked into any single AI vendor. Users can switch between providers, use different models for different tasks, or even combine multiple providers within a single pipeline.</p>
-
+<p class="chapter-intro">A person supervising a Robot needs to know what is running, what changed and what requires a decision. Useful status includes reading sources, running tests, waiting for input, completed and failed. A generic "thinking" indicator is not enough.</p>
+<h3>Model providers</h3>
+<p>AchillesAgentLib supports OpenAI-compatible interfaces and direct integrations with Google Gemini and Anthropic APIs. Provider support depends on the adapter and model features in use.</p>
+<p>Different tasks may use different providers. A project should record which model and capability produced an important result so the team can investigate it later.</p>
 <h3>Soul Gateway</h3>
-
-<p>The recommended way to operate the AssistOS system is through the <strong>Soul Gateway</strong> component. Soul Gateway serves as the central observability and control plane for the entire ecosystem. It provides:</p>
-
-<ul>
-    <li><strong>Unified API Management:</strong> A single point of configuration for all LLM provider connections, API keys, and model selections.</li>
-    <li><strong>Request Routing:</strong> Intelligent routing of agent requests to the most appropriate model based on task type, cost considerations, and performance requirements.</li>
-    <li><strong>Monitoring and Logging:</strong> Comprehensive tracking of all agent interactions, including prompts, responses, token usage, and execution times.</li>
-    <li><strong>Cost Tracking:</strong> Visibility into API usage and costs across all providers and agents.</li>
-    <li><strong>Health Checks:</strong> Real-time monitoring of provider availability and response quality.</li>
-</ul>
-
-<h3>Why Observability Matters</h3>
-
-<p>In an AI-augmented work environment, observability is not optional. When agents are executing build pipelines that produce important artifacts documents, designs, analyses users need to understand:</p>
-
-<ul>
-    <li>What decisions were made and why</li>
-    <li>Which models were used for which tasks</li>
-    <li>Whether the outputs meet quality standards</li>
-    <li>How to reproduce or modify the process</li>
-</ul>
-
-<p>Soul Gateway makes all of this visible and controllable, turning the black box of AI execution into a transparent, auditable process.</p>
-
-<blockquote>
-    <p><em>Note: This chapter is being actively developed. Additional details about Soul Gateway architecture, integration patterns, and advanced observability features will be added in upcoming updates.</em></p>
-</blockquote>
+<p>Soul Gateway is the proposed common point for model configuration, routing and request monitoring. Its intended responsibilities include:</p>
+<ul><li>Configuring provider connections, credentials and model selections.</li><li>Routing requests according to task, cost and performance policy.</li><li>Recording request metadata, token use and execution times.</li><li>Reporting costs and provider availability.</li></ul>
+<p>Prompt and response logging needs a retention and access policy because it may contain project data. Operational records should describe actions and outcomes without depending on hidden model reasoning.</p>
+<h3>Evidence for review</h3>
+<p>Task history should connect the inputs, model and capability versions, tool actions, checks, approvals and output files. A user should be able to distinguish a successful result from a stalled or failed task.</p>
+<p>For code, that may mean a diff and test output. For research, it may mean sources and a draft. The evidence should fit the work being reviewed.</p>
+<p class="chapter-status">The Soul Gateway architecture and integration details remain in development. This chapter describes its intended responsibilities.</p>

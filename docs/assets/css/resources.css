@@ -1,0 +1,37 @@
+/* Installation and documentation use the same margins as Home. */
+.resource-main { padding-bottom: 64px; }
+.resource-header { padding: 48px 0 32px; border-bottom: 1px solid var(--wp-line); }
+.resource-header h1 { margin: 0 0 22px; font-size: clamp(2rem, 4vw, 3rem); font-weight: 550; letter-spacing: -.035em; line-height: 1.15; }
+.resource-header p:not(.kicker) { color: var(--wp-muted); margin-bottom: 22px; line-height: 1.75; }
+.resource-page p:not(.kicker) { text-align: justify; text-align-last: start; hyphens: auto; -webkit-hyphens: auto; }
+.resource-main a { text-underline-offset: 4px; }
+.install-requirements { margin: 28px 0; color: var(--wp-muted); line-height: 1.8; }
+.resource-main .install-step { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(28px, 6vw, 80px); padding: 32px 0; border-bottom: 1px solid var(--wp-line); }
+.install-step > div { min-width: 0; }
+.install-step h2 { font-size: 1.45rem; font-weight: 550; margin: 0 0 18px; }
+.install-step p { color: var(--wp-muted); line-height: 1.8; margin: 0 0 18px; }
+.install-step pre { margin: 0 0 18px; padding: 22px; border: 1px solid #355449; border-radius: 6px; background: #10251d; overflow-x: auto; }
+.install-step code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .9rem; }
+.install-step pre code { color: #c7edda; line-height: 1.9; white-space: pre; }
+.install-step p code { overflow-wrap: anywhere; color: #c7edda; }
+.install-step .install-note { font-size: .9rem; margin-bottom: 0; }
+.install-browser-links > a { display: block; color: var(--wp-mint); margin-bottom: 22px; text-decoration: none; }
+.install-browser-links > a:hover { text-decoration: underline; }
+.install-browser-links small { display: block; font-size: .85rem; color: var(--wp-muted); margin-top: 8px; }
+.install-origin { margin: 28px 0 0; color: var(--wp-muted); font-size: .9rem; line-height: 1.8; }
+.docs-list { list-style: none; padding: 0; margin: 0; }
+.docs-list li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 28px; align-items: baseline; padding: 24px 0; border-bottom: 1px solid var(--wp-line); }
+.docs-list a { color: var(--wp-mint); font-size: 1.05rem; overflow-wrap: anywhere; }
+.docs-list p { color: var(--wp-muted); line-height: 1.7; margin: 0; }
+.research-doc-embed:empty { display: none; }
+.research-doc-embed:not(:empty) { padding-top: 32px; }
+.research-doc-embed .embed-heading h1 { color: var(--wp-ink); }
+.research-doc-embed .embed-heading p { color: var(--wp-muted); }
+.research-doc-embed .research-iframe-shell { min-height: 600px; }
+@media (max-width: 680px) {
+    .resource-header { padding-top: 36px; }
+    .resource-main .install-step, .docs-list li { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+    .install-step pre { padding: 16px; }
+    .install-step code { font-size: .82rem; }
+    .research-doc-embed .research-iframe-shell { min-height: 480px; }
+}

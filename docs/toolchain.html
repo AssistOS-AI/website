@@ -4,63 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
     <script src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <title>Integrated Toolchain - AssistOS</title>
+    <title>Integrated toolchain - AssistOS</title>
+    <link rel="icon" href="assets/images/assistos-mark.svg" type="image/svg+xml">
 </head>
 
 <body>
 <!--- Nav --->
-<nav class="main-nav" id="main-nav">
-    <div class="logo-img">
-        <a href="index.html"><img src="./assets/images/assistos-logo.svg" alt="AssistOS" class="logo"></a>
-    </div>
-    <ul class="main-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="vision.html">Vision</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="toolchain.html" class="active-nav">Toolchain</a></li>
-        <li><a href="developers.html">Developers</a></li>
-        <li><a href="whitepaper/index.html">Whitepaper</a></li>
-        <li><a href="wormhole.html">Wormhole</a></li>
-        <li>
-            <a href="index.html#contact">
-                <button class="btn-contact">Contact us</button>
-            </a>
-        </li>
-    </ul>
-    <div class="hamburger-lines" id="hamburger">
-        <span class="line" id="line1"></span>
-        <span class="line" id="line2"></span>
-        <span class="line" id="line3"></span>
-    </div>
-    <ul class="secondary-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="vision.html">Vision</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="toolchain.html">Toolchain</a></li>
-        <li><a href="developers.html">Developers</a></li>
-        <li><a href="whitepaper/index.html">Whitepaper</a></li>
-        <li><a href="wormhole.html">Wormhole</a></li>
-        <li>
-            <a href="index.html#contact">
-                <button class="btn-contact">Contact us</button>
-            </a>
-        </li>
-    </ul>
+<nav class="main-nav" id="main-nav" aria-label="Main navigation">
+    <div class="logo-img"><a href="index.html"><img src="assets/images/assistos-logo.svg" alt="AssistOS" class="logo"></a></div>
+    <ul class="main-menu"><li><a href="index.html">Home</a></li><li><a href="vision.html">Vision</a></li><li><a href="installation.html">Installation</a></li><li><a href="research.html">Documentation</a></li></ul>
 </nav>
 
 <!-- Page Content -->
 <section class="page-content">
-    <h1 class="page-title">Integrated Toolchain</h1>
+    <h1 class="page-title">Integrated toolchain</h1>
 
     <div class="content-block intro-block">
         <div class="intro-text">
-            <p>The AssistOS ecosystem is built around a tightly integrated toolchain where each component serves a specific purpose while seamlessly connecting with the others. The <strong>Achilles IDE</strong> provides the development environment where agents are designed and tested. These agents are built using <strong>AchillesAgentLib</strong>, which implements our cognitive architecture patterns. For trustworthy reasoning and knowledge management, agents connect to <strong>AGISystem2</strong>. When ready for production, <strong>Ploinky</strong> handles secure deployment and scaling. Finally, <strong>Achilles CLI</strong> and <strong>AchillesCopilotBasicSkills</strong> provide the automation and core skill sets that power the entire workflow.</p>
+            <p>AssistOS uses several tools with distinct jobs. Explorer provides the workspace. AchillesAgentLib supplies agent-building components, and Ploinky runs packaged capabilities. AGISystem2 explores reasoning checks. Achilles CLI and the skill repositories support recurring development tasks. The links below describe each project; their maturity and integration vary.</p>
         </div>
         <div class="vision-diagram">
             <svg viewBox="0 0 420 300" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -151,7 +118,7 @@
         </div>
         <div class="block-content">
             <h2>Achilles IDE</h2>
-            <p>A specialized development environment designed for building AI agents. The IDE provides intuitive tools for designing agent behaviors, testing interactions, and debugging complex AI workflows. It integrates directly with AgentLib for rapid prototyping and connects to AGISystem2 for real-time validation of agent reasoning.</p>
+            <p>Achilles IDE, also called AssistOS Explorer, is the web workspace for files, editing and agent tasks. It brings project work and the Copilot into the same interface.</p>
             <p class="tool-link"><a href="https://assistos-ai.github.io/AssistOSExplorer/" target="_blank">Explore Achilles IDE &rarr;</a></p>
         </div>
     </div>
@@ -172,7 +139,7 @@
         </div>
         <div class="block-content">
             <h2>Achilles AgentLib</h2>
-            <p>A comprehensive library implementing cognitive architecture patterns for AI agents. It provides the building blocks for creating agents that can reason, plan, and adapt to changing environments while maintaining alignment with specified goals. AgentLib handles skill orchestration, memory management, and the recursive execution model that powers our agents.</p>
+            <p>AchillesAgentLib provides patterns for agent execution, skill coordination and memory. Developers can use these components to build agents and control how they call tools and other agents.</p>
             <p class="tool-link"><a href="https://assistos-ai.github.io/AchillesAgentLib/" target="_blank">Explore AgentLib &rarr;</a></p>
         </div>
     </div>
@@ -190,7 +157,7 @@
         </div>
         <div class="block-content">
             <h2>AGISystem2</h2>
-            <p>A logical reasoning and validation system that ensures AI decisions are consistent and explainable. AGISystem2 provides formal verification capabilities, knowledge representation tools, and neurosymbolic integration essential for building trustworthy AI systems. It serves as the reasoning backbone that guarantees logical consistency across all agent operations.</p>
+            <p>AGISystem2 represents knowledge and tests statements against explicit logical constraints. It explores how these checks can support language-model output. The result depends on the inputs, the representation and the checks applied.</p>
             <p class="tool-link"><a href="https://agisystem2.com/" target="_blank">Explore AGISystem2 &rarr;</a></p>
         </div>
     </div>
@@ -211,7 +178,7 @@
         </div>
         <div class="block-content">
             <h2>Ploinky</h2>
-            <p>A secure deployment platform that handles the infrastructure concerns of running AI agents in production. Ploinky manages scaling, monitoring, security, and multi-tenant isolation, allowing developers to focus on agent logic rather than operational complexity. It provides the runtime environment where agents built with our toolchain serve real users.</p>
+            <p>Ploinky packages tools and agents with their dependencies, then runs them in configured containers or sandboxes. It manages their startup and workspace access. The chosen runtime and permissions determine the isolation boundary.</p>
             <p class="tool-link"><a href="https://ploinky.com/" target="_blank">Explore Ploinky &rarr;</a></p>
         </div>
     </div>
@@ -228,7 +195,7 @@
         </div>
         <div class="block-content">
             <h2>Achilles CLI</h2>
-            <p>The command-line interface that unifies the entire AssistOS toolchain. Achilles CLI enables developers to automate workflows, script complex operations, and integrate our tools into CI/CD pipelines. From generating agents to deploying them, from running validations to managing specifications, the CLI provides programmatic access to every capability in the ecosystem.</p>
+            <p>Achilles CLI provides a command-line Copilot for workspace tasks, skills and calls to configured agents. Developers can use it in scripts and repeatable workflows. Consult its documentation for supported commands.</p>
             <p class="tool-link"><a href="https://assistos-ai.github.io/AchillesCLI/" target="_blank">Explore Achilles CLI &rarr;</a></p>
         </div>
     </div>
@@ -244,13 +211,13 @@
         </div>
         <div class="block-content">
             <h2>AchillesCopilotBasicSkills</h2>
-            <p>A library of foundational skills and core capabilities for AI agents. It provides standardized implementations for common tasks, enabling agents to interact with tools, manage basic workflows, and perform essential functions with high reliability. These basic skills serve as the building blocks for creating more sophisticated and specialized agent personas.</p>
+            <p>AchillesCopilotBasicSkills contains reusable instructions for building and running skills. It supplies conventions that specialized agents can share.</p>
             <p class="tool-link"><a href="https://assistos-ai.github.io/AchillesCopilotBasicSkills/" target="_blank">Explore Basic Skills &rarr;</a></p>
         </div>
     </div>
 
     <div class="back-link">
-        <a href="index.html">&larr; Back to Home</a>
+        <a href="index.html">&larr; Back to home</a>
     </div>
 </section>
 
@@ -259,7 +226,7 @@
     <div class="breakline"></div>
     <div class="container-padding">
         <p class="footer-text">Research conducted by Axiologic Research as part of the European research project Achilles.</p>
-        <p class="footer-text footer-disclaimer">Disclaimer: This documentation was generated with AI assistance (LLMs) and may contain errors or hallucinations.</p>
+        <p class="footer-text footer-disclaimer">Written with AI assistance. Check implementation details against the linked project documentation.</p>
         <p class="footer-text footer-copyright">&copy; Axiologic Research</p>
     </div>
 </footer>

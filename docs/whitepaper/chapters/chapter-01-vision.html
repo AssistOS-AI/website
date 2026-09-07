@@ -1,72 +1,21 @@
 <h2>Chapter 1: Vision</h2>
-
-<p class="chapter-intro">The way we work with AI is still in its early stages. We have incredibly powerful models, but we are only beginning to understand how to integrate them meaningfully into professional workflows. The industry has converged on chat interfaces as the primary interaction model — useful for casual users, but insufficient for professionals who need agent-based modes of operation, coherent toolchains, and reproducible results. We believe we have found solutions that address the deeper problems of the current internet and legacy tools, and that we can transition organically into a more capable way of working.</p>
-
-<h3>Why Chat Is Not Enough</h3>
-
-<p>The industry has converged on chat interfaces as the primary interaction model — and while chat is useful, it draws a false equivalence between how casual users and professionals work with AI. A non-professional asking a model to summarize an article or draft an email is well-served by a simple chat window. But a professional — a researcher, a developer, an architect, a legal analyst — needs something fundamentally different.</p>
-
-<p>Even when professionals use more advanced interfaces — a CLI tool, an agent loop, a coding assistant — these are still essentially chat-like interactions bolted onto separate tools. You switch between a terminal for code, a browser for research, a document editor for writing, a messaging app for communication. Each tool has its own notion of context, its own history, its own way of storing results. Agents operate in isolation. Knowledge is lost between sessions. Reproducibility is an afterthought.</p>
-
-<p>AssistOS starts from a simple observation: <strong>if AI is going to change how professionals work, it needs an environment designed for work</strong> — not just conversation, and not a collection of loosely connected tools. That means a file explorer and document editors (including OnlyOffice for Word-compatible documents), version control through Git, video meetings through WebMeet, a shared blackboard for visual collaboration, a communication layer built for an agent-controlled world through Ploinky Wormhole, and a coherent workspace where all of these components share context, history, and intent.</p>
-
-<h3>A Complete Package for Real Problems</h3>
-
-<p>We are not building another chat wrapper. AssistOS is a complete package that covers the most important problems professionals face every day:</p>
-
-<ul>
-    <li><strong>Document creation and editing</strong> — full-featured editors, not just text generation in a chat box.</li>
-    <li><strong>File management and version control</strong> — your files, your structure, your history, with Git integration built in.</li>
-    <li><strong>Communication</strong> — video meetings through WebMeet, real-time collaboration through Blackboard, and a new approach to email and messaging built for an agent-controlled world through Ploinky Wormhole.</li>
-    <li><strong>AI agents as first-class participants</strong> — not just tools you call, but agents that understand your work, your domain, and your processes.</li>
-    <li><strong>Reproducible pipelines</strong> — specifications drive creation, pipelines ensure quality, and every output carries its provenance.</li>
-</ul>
-
-<p>This is not a collection of disconnected features. It is a coherent system where each component reinforces the others, and where AI is woven into every layer — not bolted on as an afterthought.</p>
-
-<h3>Elegant Deployment, No Stack Reinvention</h3>
-
-<p>We are not trying to rebuild the entire technology stack from scratch. The world already has excellent databases, excellent editors, excellent communication protocols. What is missing is <strong>integration</strong> — the layer that connects these tools into a coherent experience where AI agents can operate alongside humans as equal participants.</p>
-
-<p>AssistOS deploys through Linux containerization — elegant, reproducible, and portable. You get a complete working environment in minutes, not days. We build on top of proven infrastructure rather than reinventing it, focusing our energy on what actually matters: <strong>better experiences, better integration with AI, and better outcomes for the people who use the system</strong>.</p>
-
-<h3>Who AssistOS Is For</h3>
-
-<p><strong>Researchers</strong> who need more than a chat window — they need agents that can analyze literature, generate hypotheses, process data, and write papers within reproducible pipelines. They need structured Knowledge Units that persist across projects and make future research faster. They need to collaborate with other organizations through federated learning without sharing sensitive data.</p>
-
-<p><strong>Developers and programmers</strong> who want AssistOS as their primary work environment instead of juggling a terminal, a browser, an IDE, and a chat window. Agents they can install in seconds. Pipelines that capture their process. Artifacts that carry their full history. An IDE that understands their code and their intent.</p>
-
-<p><strong>Professional workers</strong> — architects, content creators, legal analysts, data scientists, designers, writers — anyone whose work involves creating, analyzing, or transforming information. AssistOS brings AI to your desk in a way that fits your actual workflow, not a hypothetical one. Agents that understand your domain. A UI that feels familiar, not foreign. And the power to create complex interfaces and workflows without starting from scratch.</p>
-
-<h3>Communication, Reimagined</h3>
-
-<p>One of the most transformative aspects of AssistOS is how it rethinks communication. Today, your email and messaging live on servers you don't control, scanned by algorithms you didn't choose, subject to outages and policies you can't influence. AssistOS introduces <strong>Ploinky Wormhole</strong> — a decentralized communication protocol where agents connect directly to each other, peer-to-peer. You get the familiar experience of email and chat — structured messages, conversations, file sharing — but the infrastructure is yours. Your agent controls who can reach you. Your data flows encrypted, end-to-end. No central authority. No spam. No lock-in.</p>
-
-<p>This is not about replacing the interfaces you know. It is about keeping what works — the intuition, the familiarity, the UI patterns you already understand — while replacing the infrastructure underneath with something that respects your autonomy.</p>
-
-<h3>An Organic Transition</h3>
-
-<p>We believe the future of work will involve more voice interaction with AI, more autonomous agent activity, more generative content. But we also believe that professionals will always need a powerful, integrated environment — a place to read, review, edit, approve, and understand. An environment where AI-generated documents coexist with human-created ones, where the provenance of every artifact is clear, where you can trust what you see because you can trace how it was produced.</p>
-
-<p>The gap between what casual users need from AI and what professionals need is not going to close on its own. Casual users want answers. Professionals want processes — reproducible, auditable, and integrated into the tools they already depend on. AssistOS is designed to bridge that gap.</p>
-
-<p>AssistOS is designed for an <strong>organic transition</strong>. You do not need to abandon your current tools overnight. You adopt AssistOS as a more capable environment, one that integrates with what you already use and gradually replaces what no longer serves you. The familiar patterns are there — documents, files, meetings, messages — but the capabilities underneath are fundamentally different.</p>
-
-<h3>The Potential</h3>
-
-<p>The potential of AssistOS is not just incremental improvement. It is the possibility of a world where:</p>
-
-<ul>
-    <li>Every professional has access to AI agents that understand their domain and work alongside them.</li>
-    <li>Research is reproducible by default, because pipelines capture the full process.</li>
-    <li>Knowledge accumulates across projects, because every finding becomes a reusable unit.</li>
-    <li>Communication is decentralized and under your control, because agents connect directly.</li>
-    <li>Data sovereignty is the norm, not the exception, because encryption and sandboxing are built in.</li>
-    <li>Trust is verifiable, not assumed, because every output carries its provenance.</li>
-</ul>
-
-<p>This is not a distant future. It is the direction AssistOS is building toward — one component, one agent, one pipeline at a time. The rest of this whitepaper describes the architecture, the agents, the protocols, and the systems that make it possible. We invite you to read on, to understand, and to join us in building it.</p>
-
-<blockquote>
-    <p>AssistOS: Where specifications drive creation, pipelines ensure quality, and AI amplifies human potential. Not a replacement for how you work — an evolution of it.</p>
-</blockquote>
+<p class="chapter-intro">A useful AI worker needs somewhere to work. AssistOS aims to give people a workspace where they can delegate tasks to persistent Robots, watch progress and review the resulting files. This chapter explains the product direction. Later chapters describe the components and research behind it.</p>
+<h3>Start with a working day</h3>
+<p>Imagine a small team preparing a customer release. They have a repository, tests, a vendor website and release notes. AI can help with each task, but someone still has to move information between tools, run checks and remember what the team approved.</p>
+<p>In AssistOS, a person could ask a Build Robot to prepare a release candidate in a separate branch. A Browser Robot could check the vendor portal. A Documentation Robot could prepare the release notes. Each task would have an owner, a working area and an output the person can inspect.</p>
+<h3>Robots, agents and packages</h3>
+<p>A Robot is the persistent worker the user sees. It has a role, a home, task history and controlled access. An AI Agent is software the Robot uses to reason and act. A Ploinky Agent is an installable capability package that may contain an AI agent, ordinary tools or a service.</p>
+<p>This distinction lets a Robot keep its role and history when its underlying agent or model changes. Its permissions should remain separate from the capability of the new engine.</p>
+<h3>The workplace</h3>
+<p>Explorer brings files, editors, tasks and review into the same project. WebChat acts as the Copilot through which people assign and redirect work. WebMeet lets people and Robots discuss and modify a shared document, diagram or screen.</p>
+<p>Each team should have its own controlled workspace. AssistOS workspaces and meeting rooms keep their relevant files and context together. A person can switch teams without mixing their data or giving every Robot access to every project.</p>
+<p>Existing tools still matter. Document editors, Git, browser sessions and shared blackboards provide ways to inspect and change work that conversation alone cannot replace.</p>
+<h3>Why an IDE, and why an operating layer?</h3>
+<p>An integrated development environment puts the tools for creating and checking software together. AssistOS applies that idea to research, proposals, documents and other digital work.</p>
+<p>An operating system manages programs, identities and resources. AssistOS aims to manage virtual workers, their homes, their capabilities and their running tasks. It runs above the host operating system and can use local machines, private servers or remote services.</p>
+<h3>Control during the work</h3>
+<p>A person should be able to observe a task, correct an instruction, pause execution or take over a browser or desktop. A Robot should stop at the boundaries set for its task. When it fails, it should report what happened and what it needs.</p>
+<p>The result should be an artifact in the project: a patch with tests, a report with sources, a budget with calculations. Task history should explain which inputs and capabilities produced it.</p>
+<h3>Build the useful part first</h3>
+<p>Some AssistOS components work today; others remain in development or research. A reliable bounded task is the first test. Broader collaboration, capability catalogs and cross-organization communication should follow evidence from actual use.</p>
+<p>The <a href="../vision.html">public vision</a> and <a href="../index.html#film">animated working day</a> explain the intended experience without requiring the reader to learn the architecture first.</p>

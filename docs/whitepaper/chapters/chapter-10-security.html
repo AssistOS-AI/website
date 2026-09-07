@@ -1,43 +1,18 @@
 <h2>Chapter 10: Security Guardian Agent</h2>
-
-<p class="chapter-intro">The Security Guardian Agent is Ploinky's intelligent security layer for the entire workspace. It watches code, dependencies, containers, models, configurations, network activity, user behavior, and agent behavior — functioning as a guardian that observes, scans, tests, correlates, validates, and reports.</p>
-
-<h3>A Mixed Approach: Deterministic + Intelligent</h3>
-
-<p>SecurityGuardian Agent combines symbolic verification, explicit rules, declarative policies, signatures, deterministic scans, and baselines with LLM-assisted triage, alert explanation, context identification, and false-positive reduction. Critical checks remain auditable and deterministic. Ambiguous cases become easier to interpret.</p>
-
-<p>This hybrid approach ensures that security decisions are both reliable and efficient — rules catch what they can, and intelligence handles the rest.</p>
-
-<h3>What It Protects</h3>
-
-<p>The agent operates across three regimes:</p>
-
-<p><strong>Development security:</strong> It scans source code for vulnerable patterns, detects secrets in repositories and files, identifies vulnerable dependencies and license issues, verifies container images and deployment configurations, and enforces secure coding policies.</p>
-
-<p><strong>Supply chain security:</strong> It produces and verifies SBOMs, tracks vulnerabilities across components, monitors license compliance, and links every finding to the affected artifact — repository, image, package, model, or dataset.</p>
-
-<p><strong>Runtime security:</strong> It monitors processes, containers, system calls, logs, network connections, and agent behavior. It detects anomalies, intrusion attempts, policy violations, and deviations from approved baselines. It builds incident timelines that connect system events, tool calls, users, and external connections.</p>
-
-<h3>Penetration Testing</h3>
-
-<p>The agent runs authorized penetration tests against workspace endpoints, APIs, plugins, and public-facing interfaces. It manages scope, testing windows, intensity, and reporting. It verifies what is actually exposed, not just what is supposed to be.</p>
-
-<h3>Policy Enforcement</h3>
-
-<p>SecurityGuardian Agent reads administrator policies and verifies compliance in execution. Policies define which agents can access the internet, which folders they can read, which tools they can call, which models they can use, what data can be exported, and what actions require approval. The agent signals both direct violations and operational deviations — like an agent reading massive data before an unusual external connection.</p>
-
-<h3>Monitoring Users and Agents</h3>
-
-<p>In an ecosystem with many agents and users, the guardian watches both. It detects unusual access patterns, abnormal volumes, suspicious authentication, risky configuration changes, and lateral movement. For agents, it monitors tool calls, file access, network connections, prompt injection attempts, cost anomalies, and actions that deviate from their defined purpose.</p>
-
-<h3>GxP and Regulated Environments</h3>
-
-<p>For regulated contexts, the agent produces evidence for qualification, validation, change control, audit trails, and data integrity. It supports compliance with frameworks like 21 CFR Part 11 and EU GMP Annex 11 by generating structured evidence that connects security controls to regulatory requirements.</p>
-
-<h3>Knowledge Accumulation</h3>
-
-<p>Every scan, incident, and remediation produces reusable knowledge. The agent extracts Knowledge Units about detection rules, false-positive patterns, validated remediation steps, secure baselines, incident patterns, and policy-control mappings. These accumulate and improve future scans.</p>
-
-<h3>Vision</h3>
-
-<p>SecurityGuardian Agent is not a collection of separate scanners. It is a unified security intelligence layer for the workspace — one agent that understands the relationships between code, dependencies, containers, models, users, agents, policies, and network activity. It produces actionable findings, not just alerts. It accumulates knowledge, not just logs. It turns workspace security from a reactive practice into a proactive, continuously improving system.</p>
+<p class="chapter-intro">Security Guardian is a proposed workspace security agent. It would combine conventional scanners and policy checks with AI-assisted triage, then connect findings to the code, packages, identities and tasks involved.</p>
+<h3>Rules and AI have different jobs</h3>
+<p>Signatures, declared policies, known vulnerability checks and baselines should use deterministic tools. A language model can help explain an alert or identify relevant context. Its interpretation should remain separate from the evidence and the enforcement decision.</p>
+<h3>Development and supply chains</h3>
+<p>The planned checks cover vulnerable code patterns, exposed secrets, dependencies, container images and deployment settings. Software bills of materials, or SBOMs, record the components in a package.</p>
+<p>Each finding should point to an affected repository, image, package, model or dataset. License checks and vulnerability findings need their source and version recorded so the team can review them.</p>
+<h3>Runtime monitoring</h3>
+<p>Process activity, system calls, logs, network connections and agent tool use can be compared with approved behavior. Unusual access volumes, authentication attempts or configuration changes may warrant review.</p>
+<p>For an incident, the agent should assemble a timeline of observed events, tool calls, users and external connections. An anomaly is a reason to investigate, not proof of an attack.</p>
+<h3>Policy and authorized testing</h3>
+<p>Administrator policy defines which folders, tools, models and network destinations a capability may use. The runtime should enforce those boundaries. Security Guardian can check observed activity and report violations.</p>
+<p>Penetration testing must have an authorized target, scope, time window and intensity. The intended testing workflow covers workspace endpoints, APIs and plugins, with a report of what was exposed and how it was tested.</p>
+<h3>Evidence in regulated work</h3>
+<p>Qualification, change control and audit work need records that connect controls to tests and results. Reports may organize evidence against requirements such as 21 CFR Part 11 or EU GMP Annex 11. The organization must validate that mapping for its deployment.</p>
+<h3>Retain useful findings</h3>
+<p>Detection rules, false positives, confirmed remedies and incident patterns can be saved as Knowledge Units. These records should state where a rule works and what it misses.</p>
+<p>The goal is a report a team can act on, with evidence and a retest path. Security Guardian remains a development direction, not a guarantee that a workspace is protected against every threat.</p>

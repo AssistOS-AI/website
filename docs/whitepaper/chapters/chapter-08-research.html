@@ -1,37 +1,11 @@
-<h2>Chapter 8: AI Research Agents</h2>
-
-<p class="chapter-intro">The ModelAutoResearcher Agent is Ploinky's autonomous modeling laboratory — a single agent that takes a research or product objective and delivers a working, evaluated, documented model. It encapsulates the entire cycle from raw data to installable artifact.</p>
-
-<h3>One Agent, Many Profiles</h3>
-
-<p>Instead of a collection of separate tools, ModelAutoResearcher Agent is an integrated entity with multiple internal profiles. You describe what you need — "classify these documents," "adapt an LLM for this domain," "find the best embedding model for these texts," "compare three approaches for information extraction" — and the agent handles the rest: data analysis, method selection, experiment planning, training, evaluation, and delivery.</p>
-
-<p>The agent is pragmatic. For each requirement, it chooses the method that can produce a useful result given the real conditions of the workspace: available hardware, existing data, confidentiality constraints, time, budget, and the required level of evaluation.</p>
-
-<h3>The Full Cycle</h3>
-
-<p>The agent works in seven phases:</p>
-
-<p><strong>Objective interpretation.</strong> It receives a goal from a user or another agent and translates it into a concrete research plan.</p>
-
-<p><strong>Data analysis.</strong> It inspects available data — formats, sizes, missing values, duplicates, imbalances, label quality, leakage risks, and sensitivity. For text, it analyzes lengths, languages, styles, and categories. For tabular data, it checks distributions, correlations, and outliers. For graphs, it examines nodes, edges, and connectivity.</p>
-
-<p><strong>Experiment planning.</strong> It selects the working profile, base model, training or evaluation method, dataset structure, validation strategy, and success criteria. For LLMs, it may choose LoRA, QLoRA, or supervised fine-tuning. For tabular problems, it may select classical models, gradient boosting, or hybrid pipelines. For embeddings, it may choose zero-shot evaluation, contrastive adaptation, or fine-tuning.</p>
-
-<p><strong>Data preparation.</strong> It cleans, normalizes, transforms, deduplicates, splits, and documents the dataset. If data is insufficient, it activates Synthetic Data Lab to produce additional examples through larger LLMs, local rules, or specialized agents. Every generated example has provenance, schema, version, and filtering criteria.</p>
-
-<p><strong>Training or experimentation.</strong> It runs the appropriate local process: fine-tuning, LoRA adaptation, classifier training, embedding evaluation, tabular modeling, time-series analysis, or comparative benchmarking. It monitors resources, logs, errors, metrics, and early stopping.</p>
-
-<p><strong>Evaluation.</strong> It compares the resulting model against baselines and alternatives. Evaluation includes quantitative metrics, qualitative tests, representative examples, failure cases, and user-defined criteria.</p>
-
-<p><strong>Delivery.</strong> It produces final artifacts: model, adaptor, configuration, processed dataset, evaluation report, model card, inference instructions, limitation sheet, and extracted Knowledge Units.</p>
-
-<h3>Knowledge Accumulation</h3>
-
-<p>ModelAutoResearcher Agent does not only "learn" by updating model weights. It builds an explicit operational memory: training recipes, observations about datasets, efficient configurations, recurring failures, useful benchmarks, synthetic data prompts, filtering rules, and compatibilities between models and tasks.</p>
-
-<p>After each experiment, the agent extracts Knowledge Units that can be validated automatically, approved by the user, or marked as experimental. These are saved at the workspace, folder, or subfolder level. At future experiments, the agent searches for relevant KUs and uses them for planning, avoiding past mistakes, and accelerating configuration.</p>
-
-<h3>Vision</h3>
-
-<p>The complete vision is for ModelAutoResearcher Agent to become the autonomous modeling laboratory of the Ploinky workspace: an agent capable of receiving a scientific or operational objective, investigating solutions, preparing data, producing models, comparing them rigorously, documenting them, and learning procedurally from every experiment. Not just a tool for researchers — a research partner that gets better with every project.</p>
+<h2>Chapter 8: AI research agents</h2>
+<p class="chapter-intro">ModelAutoResearcher is a proposed agent for planning and running modeling experiments in a Ploinky workspace. Its intended output is a model or comparison with the data preparation, evaluation and instructions needed to review it.</p>
+<h3>Begin with an objective</h3>
+<p>A user might ask it to classify documents, adapt a language model to a domain, compare embedding models or test information-extraction methods. The agent would choose a working profile based on the task, available data and hardware, confidentiality rules, time and budget.</p>
+<h3>The experiment cycle</h3>
+<ol><li><strong>Define the objective.</strong> Convert the request into a research plan and acceptance criteria.</li><li><strong>Inspect the data.</strong> Check formats, missing values, duplicates, label quality, imbalance, leakage and sensitivity. Text, tables and graphs require different checks.</li><li><strong>Plan the experiment.</strong> Choose the base model, method and validation strategy. Candidates include LoRA, QLoRA, supervised fine-tuning, classical models, gradient boosting and embedding evaluation.</li><li><strong>Prepare the dataset.</strong> Clean, transform, deduplicate and split the data, recording each step. If Synthetic Data Lab produces extra examples, preserve their source, schema, version and filtering rules.</li><li><strong>Run the experiment.</strong> Execute training, adaptation or comparison inside the allowed environment. Record resource use, metrics, errors and early stopping.</li><li><strong>Evaluate.</strong> Compare against baselines and alternatives using quantitative metrics, representative examples and failure cases.</li><li><strong>Deliver.</strong> Save the model or adapter, configuration, processed data, evaluation report, model card, limitations and inference instructions.</li></ol>
+<h3>What the project keeps</h3>
+<p>The useful memory is broader than model weights. Training recipes, dataset observations, failed configurations, benchmark results and filtering rules can help with later experiments.</p>
+<p>The agent would store these findings as Knowledge Units in the relevant workspace or project folder. Records can be marked experimental, checked automatically or approved by a person. Later tasks can retrieve them without treating every past conclusion as established fact.</p>
+<h3>What needs to be demonstrated</h3>
+<p>The full cycle remains a development goal. Each supported task needs evidence that its data checks, experiment selection and evaluation work under the stated resource limits. A useful failed experiment should still return logs, partial artifacts and a clear account of where it stopped.</p>

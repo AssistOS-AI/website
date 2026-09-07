@@ -1,58 +1,21 @@
-<h2>Chapter 2: Achilles IDE as AssistOS Explorer</h2>
-
-<p class="chapter-intro">Every modern operating system needs two fundamental components: a window management system and a file explorer. AssistOS is no different. The Achilles IDE serves as the AssistOS Explorer — providing the central interface through which users navigate, manage, and interact with their AI-powered work environment.</p>
-
-<h3>From Research to Product</h3>
-
-<p>The development of Achilles IDE was significantly accelerated by winning EU funding for the <a href="https://www.achilles-project.eu/" target="_blank">Achilles research project</a>. This project built upon our earlier research results and prototyping work within AssistOS, transforming conceptual designs into a production-ready development environment.</p>
-
-<p>The Achilles IDE is more than a traditional code editor. It is a workspace designed from the ground up for AI-assisted development and content creation. It integrates file management, version control, agent configuration, and pipeline orchestration into a single cohesive interface.</p>
-
-<h3>Integrated Document Management</h3>
-
-<p>Achilles IDE includes a confidential document management system integrated directly into the Explorer interface, managed by the DPU Agent:</p>
-
-<ul>
-    <li><strong>/Confidential/My Space</strong> — private area for creating personal folder structures and files.</li>
-    <li><strong>/Confidential/Shared</strong> — collaboration zone where files shared by others appear with appropriate access permissions.</li>
-    <li><strong>/Confidential/Secrets</strong> — virtual file list where each "file" represents a secret. Readable secrets show their content; writable secrets can be updated with changes propagating instantly to all entities with Access rights. Users can view which entities have permissions on each secret.</li>
-</ul>
-
-<h3>OnlyOffice Integration</h3>
-
-<p>Files with extensions .docx, .pptx, and .xlsx open directly in the browser using an integrated OnlyOffice Document Server instance. Edits are saved back to the confidential file system, respecting the access rules established by the Secrets Agent. This provides a familiar collaborative editing experience within the secure workspace boundary.</p>
-
-<h3>GitHub and Repository Control</h3>
-
-<p>Like any modern IDE, Achilles IDE provides full Git repository control — commit, push, pull, branch management. But AssistOS goes further: agents can also manage repositories autonomously. A researcher can ask an agent to commit changes, create branches, or even manage entire repositories — turning routine version control tasks into conversational commands.</p>
-
-<h3>WebMeet and Interactive Copilot</h3>
-
-<p>AssistOS includes WebMeet — a sovereign replacement for Slack/Discord, optimized for human-AI interaction. It features:</p>
-
-<ul>
-    <li><strong>Audio-Video and Chat</strong> — WebRTC peer-to-peer connections organized by workspace groups and channels, with persistent history and transcription.</li>
-    <li><strong>AI Agent Participation</strong> — agents can be added to calls or chats. They operate passively by default (observing, indexing context, recording for long-term memory) or actively when directly addressed.</li>
-    <li><strong>Post-Event Processing</strong> — recordings can be sent to AI pipelines for Meeting Minutes generation or automatic task extraction.</li>
-    <li><strong>Achilles Copilot</strong> — an interactive conversational medium where users talk with agents, and agents can control shared visual surfaces through the agent-blackboard system.</li>
-</ul>
-
-<h3>Agent-Blackboard: Visual Collaboration</h3>
-
-<p>The agent-blackboard is a shared visual surface controlled by AI agents instead of screen sharing. Agents can display text, shapes, cards, images, SVG diagrams, browser captures, YouTube clips, tables, lists, timers, inputs, and simple animations. The blackboard supports both a common board visible to all participants and individual boards for private interactions. This enables agents to present results, guide discussions, run interactive quizzes, and orchestrate collaborative sessions — all through a controlled visual interface.</p>
-
-<h3>AxiFace: Agent Visual Presence</h3>
-
-<p>AxiFace is a lightweight JavaScript library for displaying expressive SVG-based agent faces in chat interfaces, video conferences, or any AI product. It provides a visual presence — robotic, schematic, or abstract — that reacts to conversation state with emotions, thoughts, and micro-animations. Each instance is isolated, controllable via HTML attributes or JavaScript API, and can respond to global events. This gives agents a visual identity without the complexity of 3D avatars.</p>
-
-<h3>AudioAgent: Voice Integration</h3>
-
-<p>Ploinky AudioAgent connects audio conversations in WebMeet with agent instances. When voice is active, AudioAgent transcribes what is said and delivers transcriptions to agents as internal messages. When an agent wants to respond vocally, AudioAgent generates the audio file, temporarily locks microphones to prevent echo, and instructs the WebMeet UI to play the agent's voice. This creates a seamless audio conversation loop between humans and agents.</p>
-
-<h3>The Explorer Paradigm</h3>
-
-<p>Just as Windows Explorer or macOS Finder became the central hub for managing digital files, Achilles IDE aims to become the central hub for managing AI-augmented work. It is the place where specifications are written, pipelines are configured, agents are orchestrated, documents are collaboratively edited, and results are reviewed — all within a secure, agent-aware environment.</p>
-
-<p>The IDE is available as a standalone application and can be initialized through the Ploinky environment with a single command, making it accessible to both technical and non-technical users.</p>
-
-<p class="tool-link"><a href="https://assistos-ai.github.io/AssistOSExplorer/" target="_blank">Explore Achilles IDE &rarr;</a></p>
+<h2>Chapter 2: Achilles IDE and AssistOS Explorer</h2>
+<p class="chapter-intro">Achilles IDE provides the Explorer workspace in AssistOS. It brings file navigation, editing, agent configuration and task controls into a browser interface. Projects keep the work in one place as tools and models change.</p>
+<h3>Development background</h3>
+<p>The <a href="https://www.achilles-project.eu/" target="_blank" rel="noopener">Achilles research project</a> supported development from earlier AssistOS prototypes. The workspace combines existing editors and collaboration tools with agent controls. The integrations below have their own setup and maturity requirements.</p>
+<h3>Documents and access</h3>
+<p>The confidential document interface uses the DPU Agent to organize private files, shared files and secrets:</p>
+<ul><li><code>/Confidential/My Space</code> holds personal folders and files.</li><li><code>/Confidential/Shared</code> shows files shared with the user under the relevant access rules.</li><li><code>/Confidential/Secrets</code> represents secrets as virtual files. The interface shows which entities have access, read or write permissions. Authorized changes propagate to entities with access.</li></ul>
+<p>The OnlyOffice integration opens <code>.docx</code>, <code>.pptx</code> and <code>.xlsx</code> files in the browser. It saves edits back to the confidential file system under the configured Secrets Agent access rules.</p>
+<h3>Repositories</h3>
+<p>Git controls support commits, pushes, pulls and branch management. A user can also assign repository work to an agent. Those actions need the same task scope and permission checks as other delegated work, especially before a push or publication.</p>
+<h3>WebMeet and the Copilot</h3>
+<p>WebMeet brings audio, video and chat into workspace groups and channels. The intended experience includes human colleagues and Robots as visible participants. A meeting room should have an explicit project context and access boundary.</p>
+<p>Participants can ask a Robot to retrieve a source, edit a shared draft or run a task. Recording, transcription and post-meeting processing must follow the room's policy. A Robot's presence should make its role and access visible.</p>
+<h3>Shared blackboards</h3>
+<p>The agent-blackboard interface lets agents update a shared visual object. Supported objects include text, shapes, images, SVG diagrams, browser captures, clips, tables, lists, timers, inputs and simple animations. Common and individual boards support group discussion and private interactions.</p>
+<p>AxiFace supplies SVG-based agent faces for chat and video interfaces. Applications control instances through HTML attributes, JavaScript or events. These faces represent interface state; they are not evidence of an agent's emotions or understanding.</p>
+<h3>Voice</h3>
+<p>Ploinky AudioAgent connects WebMeet audio to agent instances. It transcribes speech into messages and generates audio for an agent's reply. The described playback flow temporarily controls microphones to avoid echo.</p>
+<h3>Keep the project central</h3>
+<p>Explorer should make it clear which workspace, project and meeting room are active. A Robot result belongs beside the files it changes. Editors and plugins can evolve while the project keeps its artifacts and history.</p>
+<p class="tool-link"><a href="https://assistos-ai.github.io/AssistOSExplorer/" target="_blank" rel="noopener">Read the Explorer documentation &rarr;</a></p>

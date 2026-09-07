@@ -1,33 +1,17 @@
 <h2>Chapter 9: Trustworthy AI Agent</h2>
-
-<p class="chapter-intro">The Trustworthy AI Agent is Ploinky's built-in verification layer for AI systems. It inspects datasets, models, and runtime behavior to produce auditable findings, risk reports, and actionable recommendations — helping teams ship AI that is not just powerful, but responsible.</p>
-
-<h3>Why Trustworthy AI Matters</h3>
-
-<p>Building AI is getting easier. Trusting it is not. A model can have excellent benchmark scores and still fail in production due to bias, data leakage, prompt injection, or behavior drift. Regulatory frameworks like the EU AI Act, NIST AI RMF, and ISO/IEC 42001 are making trustworthy AI a requirement, not an option.</p>
-
-<p>The Trustworthy AI Agent operationalizes these requirements. Instead of manual checklists and ad-hoc reviews, it provides continuous, automated verification across the entire lifecycle of an AI system — from training data to deployment to runtime monitoring.</p>
-
-<h3>What It Checks</h3>
-
-<p>The agent works across three phases:</p>
-
-<p><strong>Before training:</strong> It inspects datasets for quality issues, bias, contamination with test data, privacy risks, and suitability for the intended task. It flags PII, sensitive fields, licensing gaps, and class imbalances that could cause problems downstream.</p>
-
-<p><strong>Before deployment:</strong> It audits model candidates for performance across subgroups, robustness to perturbations, fairness metrics, explainability, and safety. For LLMs, it tests for hallucinations, prompt injection resistance, format compliance, and toxic outputs.</p>
-
-<p><strong>During operation:</strong> It monitors deployed models for data drift, performance degradation, behavior changes, security incidents, cost anomalies, and policy violations. It catches problems before they become incidents.</p>
-
-<h3>Reports and Findings</h3>
-
-<p>The agent produces structured reports at multiple levels. A short report for quick decisions. A technical report with metrics, tests, and examples. An audit report with full evidence, execution traces, and compliance mapping. A remediation report with prioritized actions and retest criteria.</p>
-
-<p>Each finding has a stable structure: what was checked, what was observed, severity, supporting evidence, and recommended remediation. Findings are mapped to external frameworks — ALTAI, NIST AI RMF, EU AI Act, ISO/IEC 42001 — so teams can demonstrate compliance without extra work.</p>
-
-<h3>Knowledge Accumulation</h3>
-
-<p>Every audit produces reusable knowledge. The agent extracts Knowledge Units about effective tests, failure patterns, useful benchmarks, detection rules, and validated remediation steps. These accumulate over time, making each verification smarter than the last.</p>
-
-<h3>Vision</h3>
-
-<p>The Trustworthy AI Agent is not a one-time scanner. It is the continuous verification layer of the Ploinky ecosystem — an agent that analyzes every important dataset, model, and pipeline, produces auditable evidence, and accumulates knowledge that improves future verifications. It turns trustworthy AI from a compliance burden into an operational habit.</p>
+<p class="chapter-intro">The Trustworthy AI Agent is a development direction for checking datasets, models and deployed behavior. Its intended outputs are findings with evidence, risk reports and specific steps for correction.</p>
+<h3>What needs checking</h3>
+<p>A model can score well on a benchmark and still fail on a particular population or workflow. Tests need to cover the intended use, including data leakage, bias, unsupported outputs, prompt injection and changes after deployment.</p>
+<p>The agent is intended to organize these checks across the system's lifecycle. It cannot replace domain review or establish compliance by itself.</p>
+<h3>Before training</h3>
+<p>Inspect data quality, class balance, test-data contamination and suitability for the task. Flag personal information, sensitive fields and missing licensing information. Record the affected data and the method used to detect each issue.</p>
+<h3>Before deployment</h3>
+<p>Compare model candidates across relevant subgroups and perturbations. Test robustness, explainability and the safety requirements of the use case. For language models, include unsupported claims, prompt injection, output-format errors and harmful outputs.</p>
+<h3>During operation</h3>
+<p>Monitor data drift, performance changes, incidents, unusual costs and policy violations. An alert should state what changed and what evidence supports it. Monitoring can miss failures, so teams still need a response and recovery process.</p>
+<h3>Reports</h3>
+<p>A finding should identify the check, observation, severity, supporting evidence and proposed remedy. A short decision report can link to technical tests, execution records and retest criteria.</p>
+<p>Reports may map findings to ALTAI, NIST AI RMF, the EU AI Act or ISO/IEC 42001. Such mappings help organize evidence. Whether the system meets a particular obligation requires separate assessment.</p>
+<h3>Reuse what the tests establish</h3>
+<p>Validated tests, recurring failure patterns and successful remedies can become Knowledge Units. Record their scope and limitations so later checks can reuse evidence without assuming it applies to every model.</p>
+<p>The first useful milestone is a narrow evaluation that another person can rerun and inspect. Broader continuous monitoring should build on those results.</p>

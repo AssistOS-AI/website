@@ -1,93 +1,20 @@
-<h2>Chapter 13: NeuroVSA — A Self-Improving Neuro-Symbolic Research Agent</h2>
-
-<p class="chapter-intro">NeuroVSA is a specialized AI research agent built on Vector Symbolic Architectures (VSA), Hyperdimensional Computing (HDC), and Holographic Reduced Representations (HRR). It receives problems in natural language, decomposes them into subproblems, selects suitable representational backends, runs experiments, validates results, and stores findings as Knowledge Units. Its central claim: no single representation is universally optimal — the right choice depends on the problem class.</p>
-
-<h3>Why VSA/HDC Matters</h3>
-
-<p>The dominant AI stack today relies on large neural models operating over dense floating-point tensors. This is powerful for language, perception, and generative modeling — but it is expensive, opaque, and poorly aligned with many forms of symbolic, procedural, legal, scientific, and biological reasoning.</p>
-
-<p>VSA/HDC offers a different paradigm: information is represented by high-dimensional distributed vectors, and symbolic structure is encoded through algebraic operations — binding, bundling, permutation, cleanup, and similarity search. It is not a single model but a family of representations, each with different strengths.</p>
-
-<p>The strategic implication is clear: a useful AI reasoning system should not search for one "best" representation. Following the No Free Lunch theorem, performance comes from exploiting problem structure. NeuroVSA treats representation choice as an empirical, domain-conditioned decision.</p>
-
-<h3>How NeuroVSA Works</h3>
-
-<p>NeuroVSA has six main subsystems:</p>
-
-<p><strong>Problem Interpreter</strong> uses LLMs and symbolic parsers to transform natural-language requests into structured problem descriptions, constraints, data types, expected outputs, and validation requirements.</p>
-
-<p><strong>Representation Registry</strong> stores available VSA/HDC/HRR backends, each described by its algebraic contract, cost profile, supported encoders, and known failure modes.</p>
-
-<p><strong>Experiment Engine</strong> runs controlled comparisons across representations, dimensions, encoders, noise models, cleanup memories, and task decompositions.</p>
-
-<p><strong>Validation Layer</strong> applies statistical tests, symbolic checks, baseline comparisons, ablations, and reproducibility tests.</p>
-
-<p><strong>Knowledge Unit Store</strong> persists every experiment, result, failure, benchmark, and validated heuristic as an auditable unit of knowledge.</p>
-
-<p><strong>Meta-Learning Planner</strong> learns which representation to try first for each problem class, when to split a problem, when to use LLMs, when to use exact symbolic tools, and when to reject a VSA approach.</p>
-
-<p>The LLM is not the reasoning substrate. It is the linguistic front-end, methodological assistant, and hypothesis generator. The reasoning substrate is a dynamically selected combination of VSA/HDC backends, symbolic tools, statistical evaluators, and domain-specific engines.</p>
-
-<h3>A Portfolio of Representations</h3>
-
-<p>NeuroVSA maintains a portfolio of representation families, each with explicit operational contracts:</p>
-
-<ul>
-    <li><strong>Binary Spatter Codes</strong> — fast symbolic binding, role-value records, provenance frames, local CPU execution.</li>
-    <li><strong>MAP / bipolar HDC</strong> — robust bundling, classification, document encoding, biological feature aggregation.</li>
-    <li><strong>Holographic Reduced Representations</strong> — approximate compositional structure, analogical representations, continuous vector binding.</li>
-    <li><strong>Sparse binary representations</strong> — membership, routing, approximate filtering, large memory indexes.</li>
-    <li><strong>Graph-VSA hybrids</strong> — explicit graph storage combined with VSA similarity for relation retrieval and provenance.</li>
-    <li><strong>k-mer HDC / genomic hypervectors</strong> — sequence sketching, genome similarity, cohort comparison, biological indexing.</li>
-    <li><strong>Ultrametric / hierarchical encodings</strong> — ontologies, taxonomies, legal categories, biological classifications.</li>
-    <li><strong>Exact symbolic layer</strong> — rule execution, formal validation, policy compliance, GxP checks, legal constraints.</li>
-</ul>
-
-<p>Many of these are <strong>partial representations</strong> — they deliberately sacrifice some classical VSA properties because those properties are not needed for the target problem. This is a valid design choice when done intentionally.</p>
-
-<h3>The Autoresearch Loop</h3>
-
-<p>NeuroVSA runs a continuous autoresearch cycle:</p>
-
-<ol>
-    <li><strong>Observe</strong> — receive user problems, benchmark failures, new datasets, new literature.</li>
-    <li><strong>Hypothesize</strong> — formulate representational hypotheses.</li>
-    <li><strong>Experiment</strong> — generate microbenchmarks, ablations, synthetic tasks, and domain-specific tests.</li>
-    <li><strong>Compare</strong> — evaluate against baselines, alternative representations, and LLM-only solutions.</li>
-    <li><strong>Validate</strong> — check reproducibility, statistical robustness, and sensitivity to parameters.</li>
-    <li><strong>Store</strong> — write Knowledge Units with traces, parameters, results, and conclusions.</li>
-    <li><strong>Promote</strong> — add validated architectures and selection rules to the active registry.</li>
-    <li><strong>Retire</strong> — deprecate weak heuristics and representations that repeatedly fail.</li>
-</ol>
-
-<p>This is analogous to AutoML, but the search space is not conventional ML pipelines. It includes representational algebras, partial operation contracts, encoders, cleanup strategies, symbolic validators, and task decompositions.</p>
-
-<h3>Problem Classes</h3>
-
-<p>NeuroVSA is most promising for problems that are structured, noisy, compositional, and repeatedly queried:</p>
-
-<ul>
-    <li><strong>Scientific literature analysis</strong> — encode claims, methods, hypotheses, evidence types, and citations; use VSA for clustering, contradiction candidates, and hypothesis routing.</li>
-    <li><strong>Legal document analysis</strong> — encode parties, obligations, exceptions, conditions, and deadlines; use VSA for candidate retrieval and structural comparison, then symbolic validators for final interpretation.</li>
-    <li><strong>Genomic sequence analysis</strong> — encode k-mers, variants, motifs, cohorts, and phenotypes; use k-mer HDC for compact similarity and cohort exploration.</li>
-    <li><strong>Scientific workflow automation</strong> — encode protocols, variables, instruments, and observations; use Graph-VSA hybrids for traceable experiment comparison.</li>
-    <li><strong>Security and monitoring</strong> — encode event streams, user actions, and policy violations; use HDC classification for fast local monitoring.</li>
-</ul>
-
-<h3>Fundamental Limits</h3>
-
-<p>NeuroVSA acknowledges fundamental limits and is designed to respect them:</p>
-
-<ul>
-    <li><strong>Open-world limit.</strong> Absence of information does not mean falsity. NeuroVSA distinguishes between "true under local closure," "unknown in open world," and "requires external validation."</li>
-    <li><strong>Frame problem.</strong> It is not enough to encode facts in hypervectors. The system must know what consequences are relevant. NeuroVSA uses explicit dependency graphs and symbolic validators.</li>
-    <li><strong>Symbol grounding.</strong> Vectors are not meaning — they are operational instruments for manipulating representations anchored externally through measurements, protocols, ontologies, and human validation.</li>
-    <li><strong>Capacity and noise.</strong> VSA is excellent for approximation, but should not be the sole mechanism for conclusions requiring exhaustiveness or formal certainty.</li>
-    <li><strong>Encoder dependency.</strong> Performance often comes from the encoder, not the algebra. VSA amplifies the structure the encoder preserves; it does not recover structure lost at encoding.</li>
-    <li><strong>No Free Lunch.</strong> No architecture is optimal across all problem classes. NeuroVSA learns: this problem class → this encoder → this representation → this validation.</li>
-    <li><strong>Causal inference.</strong> VSA can detect associations, but not causality. NeuroVSA can organize and prioritize causal hypotheses, but does not certify them alone.</li>
-</ul>
-
-<h3>Vision</h3>
-
-<p>NeuroVSA is not a universal AGI substrate. It is a specialized autoresearch interpreter for representational reasoning — a system that becomes better not by vague adaptation, but by running experiments, comparing representations, validating results, and turning confirmed findings into reusable Knowledge Units. Its value lies in disciplined self-improvement: converting vague architectural intuition into measurable hypotheses, and accumulating an experimental atlas of what works, for what problem, under what conditions.</p>
+<h2>Chapter 13: NeuroVSA</h2>
+<p class="chapter-intro">NeuroVSA explores how an agent can choose and test representations for a structured problem. Its research covers Vector Symbolic Architectures, or VSA, Hyperdimensional Computing, or HDC, and Holographic Reduced Representations, or HRR.</p>
+<h3>Choose through experiments</h3>
+<p>VSA methods represent information with high-dimensional vectors. Operations such as binding, bundling, permutation, cleanup and similarity search encode and retrieve structure. Different representations preserve different properties and have different costs.</p>
+<p>NeuroVSA treats the choice as an empirical question. A useful comparison needs a problem class, an encoder, a baseline and an acceptance test. The project should retain unsuccessful experiments as well as successful ones.</p>
+<h3>The proposed components</h3>
+<ul><li>A Problem Interpreter converts the request into constraints, data types, outputs and validation requirements.</li><li>A Representation Registry records each backend's operations, cost, encoders and known failures.</li><li>An Experiment Engine compares dimensions, encoders, noise models, cleanup methods and task decompositions.</li><li>A Validation Layer runs statistical and symbolic checks, baselines, ablations and reproduction tests.</li><li>A Knowledge Unit Store saves results, parameters and failure records.</li><li>A Meta-Learning Planner uses those records to choose what to try next, including when to reject VSA for a task.</li></ul>
+<p>The language model helps interpret requests and propose experiments. Representation backends, symbolic tools and statistical evaluators perform the checks.</p>
+<h3>Representations under study</h3>
+<ul><li>Binary Spatter Codes for symbolic binding, role-value records and provenance frames.</li><li>MAP and bipolar HDC for bundling, classification and feature aggregation.</li><li>HRR for approximate compositional structure and continuous binding.</li><li>Sparse binary representations for membership tests, routing and approximate filtering.</li><li>Graph-VSA hybrids for explicit relations combined with similarity retrieval.</li><li>Genomic hypervectors and k-mer HDC for sequence sketches and cohort comparisons.</li><li>Hierarchical and ultrametric encodings for taxonomies and ontologies.</li><li>Exact symbolic tools for rule execution and constraints that need exact checks.</li></ul>
+<p>Some backends intentionally support only part of the usual operation set. Their contracts should state which properties they preserve and which they omit.</p>
+<h3>The research loop</h3>
+<p>A new task, dataset or benchmark failure leads to a hypothesis. The agent runs controlled experiments, compares baselines and tests sensitivity to parameters. It saves the evidence as Knowledge Units.</p>
+<p>Supported selection rules can enter the active registry. Rules that fail repeatedly should be retired. This is a search over representations and validation methods, with a record of why each choice was made.</p>
+<h3>Possible applications</h3>
+<p>Literature analysis could retrieve candidate claims and contradictory evidence. Legal analysis could compare obligations and exceptions before an exact review. Genomics could use sequence sketches for similarity search. Workflow analysis could compare experiments through explicit graphs. Security experiments could classify local event streams.</p>
+<p>These are research targets. Each needs task-specific benchmarks and comparisons with simpler methods.</p>
+<h3>Limits</h3>
+<ul><li>Missing information does not establish that a claim is false. The system must distinguish unknown facts from closed-world conclusions.</li><li>Encoding facts does not identify every relevant consequence. Dependency rules still matter.</li><li>Vectors need external grounding in measurements, protocols or reviewed definitions.</li><li>Noise and limited capacity make approximate retrieval unsuitable as the sole basis for exhaustive or formally certain conclusions.</li><li>An encoder can discard structure that later operations cannot recover.</li><li>Performance on one problem class does not establish performance on another.</li><li>Associations can suggest causal hypotheses; they do not prove causality.</li></ul>
+<p>The deliverable is an experimental record of which method worked for which task, under which conditions. Claims of improvement need that evidence.</p>

@@ -294,9 +294,9 @@
 }
 
 .chapter-content-area blockquote p {
-    text-align: left;
-    hyphens: none;
-    -webkit-hyphens: none;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
 }
 
 .chapter-content-area .chapter-intro {
@@ -324,9 +324,9 @@
 .chapter-content-area .placeholder-notice p {
     color: #a0a0b0;
     margin-bottom: 0;
-    text-align: left;
-    hyphens: none;
-    -webkit-hyphens: none;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
 }
 
 /* Responsive */
@@ -866,3 +866,15 @@ body.embedded .whitepaper-layout {
         min-height: 480px;
     }
 }
+/* Keep prose readable in both the standalone reader and embedded reader. */
+.chapter-scroll-content {font-family:'Segoe UI',Arial,sans-serif;}
+.chapter-scroll-content > p,.chapter-scroll-content > ul,.chapter-scroll-content > ol,.chapter-scroll-content > h3,.chapter-scroll-content > h4,.chapter-scroll-content > pre,.chapter-scroll-content > blockquote {max-width:76ch;margin-left:auto;margin-right:auto;}
+.chapter-content-area p,.embed-whitepaper .embed-content p,.embed-whitepaper .embed-content li,.chapter-content-area li {font-size:1rem;line-height:1.8;text-align:justify;text-align-last:start;hyphens:auto;-webkit-hyphens:auto;}
+.chapter-content-area strong {color:inherit;font-weight:600;}
+.chapter-content-area .chapter-intro,.embed-whitepaper .embed-content .chapter-intro {font-size:1.05rem;line-height:1.75;text-align:justify;text-align-last:start;}
+.chapter-scroll-content .chapter-status {border-left:2px solid #849c76;padding:15px 18px;background:#8db57a0d;font-size:.9rem;}
+.chapter-scroll-content a,.chapter-scroll-content code {overflow-wrap:anywhere;}
+.chapter-scroll-content pre code {overflow-wrap:normal;}
+.chapter-item:focus-visible {outline:2px solid var(--color-neon);outline-offset:-3px;}
+@media(max-width:768px){.chapter-content-area,.embed-whitepaper .embed-content{height:auto;min-height:480px;}.chapter-scroll-content{overflow:visible;}.chapter-reader-header{position:relative;top:auto;}.embed-whitepaper .chapter-reader-header{top:auto;}}
+.chapter-content-area .chapter-intro, .embed-whitepaper .embed-content .chapter-intro { hyphens: auto; -webkit-hyphens: auto; }

@@ -1,82 +1,22 @@
-<h2>Chapter 15: Agentic Knowledge Units (AKU)</h2>
-
-<p class="chapter-intro">AKU — Agentic Knowledge Units — is the context management system that organizes agent memory and knowledge in an explorable, user-controllable way. Instead of relying on opaque vector embeddings or external RAG services, AKU uses deterministic local indexing and BM25F keyword search to make agent memory transparent, auditable, and fast.</p>
-
-<h3>The Problem with Agent Memory</h3>
-
-<p>Today's AI agents have a fundamental memory problem: they either forget everything between sessions, or they rely on external vector databases that are opaque, expensive, and hard to audit. When an agent produces a finding, writes a specification, or runs an experiment, that knowledge should persist — not as a black-box embedding, but as a structured, searchable, reusable unit.</p>
-
-<p>AKU solves this by introducing <strong>Knowledge Units (KUs)</strong> — discrete units of agent knowledge that live in a hidden <code>.aku/</code> folder within any project, workspace, or experiment directory. Each KU has its own folder with metadata, state, history, documents, results, and supporting files. But search never opens individual KU folders — it reads aggregated index files at the root level, making it fast even with thousands of KUs.</p>
-
-<h3>How AKU Works</h3>
-
-<p>The structure is simple:</p>
-
-<p><code>&lt;root-folder&gt;/.aku/</code> contains:</p>
-
-<ul>
-    <li><strong>search-index.jsonl</strong> — the main denormalized search index, containing all searchable metadata from every KU, document, result, and event.</li>
-    <li><strong>search-stats.json</strong> — BM25F statistics: document counts, field lengths, term frequencies.</li>
-    <li><strong>ku-index.jsonl</strong>, <strong>documents-index.jsonl</strong>, <strong>results-index.jsonl</strong>, <strong>events-index.jsonl</strong> — specialized indexes for different record types.</li>
-    <li><strong>kus/</strong> — individual KU folders, each with manifest.json, state.md, history.md, and subfolders for documents, results, code, and data.</li>
-</ul>
-
-<p>When an agent needs context, it calls <code>buildContextPack(query, options)</code>. AKU reads the root-level index, applies BM25F scoring with exact keyword boosts, filters by type and status, controls diversity, and returns a compact context pack within a character budget. The agent gets relevant knowledge without being overwhelmed.</p>
-
-<h3>BM25F Search</h3>
-
-<p>AKU uses a simplified BM25F — BM25 with weighted fields. Different fields carry different importance:</p>
-
-<ul>
-    <li><strong>keywords</strong> (weight 8) — explicit terms defined by the agent.</li>
-    <li><strong>tags</strong> (weight 6) — categorical labels.</li>
-    <li><strong>title</strong> (weight 5) — the KU or document name.</li>
-    <li><strong>reusable_findings</strong> (weight 4) — short conclusions useful for future agents.</li>
-    <li><strong>summary</strong> (weight 3) — brief description.</li>
-</ul>
-
-<p>Exact phrase matches receive significant boosts: +60 for exact keyword phrases, +45 for exact tag matches, +40 for exact title phrases. This ensures that when an agent searches for "BM25F context pack," records with those exact keywords rise to the top — not just records that happen to mention the words in passing.</p>
-
-<h3>Knowledge Unit Types</h3>
-
-<p>AKU supports many KU types, each representing a different kind of agent knowledge:</p>
-
-<ul>
-    <li><strong>experiment</strong> — simulations, benchmarks, tests, empirical validations.</li>
-    <li><strong>specification</strong> — technical, functional, architectural, or API specs.</li>
-    <li><strong>scientific_article</strong> — articles, position papers, whitepapers.</li>
-    <li><strong>architecture_decision</strong> — technical decisions with justifications.</li>
-    <li><strong>research_note</strong> — ideas, hypotheses, conceptual notes.</li>
-    <li><strong>data_analysis</strong> — data verification and interpretation.</li>
-    <li><strong>validation</strong> — conceptual, technical, or documentary validations.</li>
-    <li><strong>reusable_pattern</strong> — technical or methodological patterns worth reusing.</li>
-    <li><strong>failure_note</strong> — informative failures worth preserving.</li>
-</ul>
-
-<h3>ContextPack: Compact Agent Context</h3>
-
-<p>The ContextPack is the object through which AKU delivers relevant information to an agent without overwhelming its context window. It respects a character budget, prioritizes KUs over history, summarizes documents and results, and includes a <code>matched_on</code> explanation for each result so the agent understands why something was selected.</p>
-
-<p>Levels of detail are available:</p>
-
-<ul>
-    <li><strong>L1</strong> — results directly from search-index.jsonl (default).</li>
-    <li><strong>L2</strong> — state.md for selected KUs (activated with includeState: true).</li>
-    <li><strong>L3</strong> — full documents or results (explicit request).</li>
-    <li><strong>L4</strong> — history.md (explicit reconstruction of evolution).</li>
-</ul>
-
-<h3>Why Deterministic, Not Vector-Based</h3>
-
-<p>AKU deliberately avoids embeddings and vector search for several reasons:</p>
-
-<ul>
-    <li><strong>Transparency:</strong> BM25F scoring is explainable. An agent can see exactly why a result ranked high — which fields matched, which boosts applied.</li>
-    <li><strong>Speed:</strong> Reading a JSONL index and computing BM25F is fast, even with thousands of records. No external service, no GPU, no latency.</li>
-    <li><strong>Control:</strong> Agents and skills decide what KUs to create, what conclusions to preserve, what to delete. AKU provides the infrastructure, not the semantics.</li>
-    <li><strong>Portability:</strong> The entire memory is a folder structure with JSON files. It can be versioned, backed up, shared, and inspected with any text editor.</li>
-</ul>
-
-<h3>Vision</h3>
-
-<p>AKU represents a different approach to agent memory: not a black-box embedding service, but a transparent, deterministic, local library. Every KU is a structured unit of knowledge with metadata, state, history, and findings. Search is fast because it reads aggregated indexes, not thousands of folders. Context is compact because it respects character budgets and diversity controls. And everything is auditable because it lives in plain files that any developer can inspect. This is agent memory you can trust, understand, and control.</p>
+<h2>Chapter 15: Agentic knowledge units</h2>
+<p class="chapter-intro">Agentic knowledge units, or AKU, organize reusable agent context in local files. Aggregated indexes and BM25F keyword search select records for a task without requiring an external search service.</p>
+<h3>Keep a finding with its evidence</h3>
+<p>An experiment, specification or failed attempt can help a later task. A Knowledge Unit gives that material a folder with metadata, state, history, documents, results and supporting files.</p>
+<p>The proposed library keeps these units in <code>.aku/</code> beneath a project, workspace or experiment directory. Search reads aggregated indexes before opening the selected unit's detailed files.</p>
+<h3>Directory structure</h3>
+<ul><li><code>search-index.jsonl</code> contains searchable metadata from units, documents, results and events.</li><li><code>search-stats.json</code> contains document counts, field lengths and term statistics.</li><li><code>ku-index.jsonl</code>, <code>documents-index.jsonl</code>, <code>results-index.jsonl</code> and <code>events-index.jsonl</code> organize the record types.</li><li><code>kus/</code> contains individual folders with <code>manifest.json</code>, <code>state.md</code>, <code>history.md</code> and supporting documents, results, code and data.</li></ul>
+<h3>Build a context pack</h3>
+<p>An agent calls <code>buildContextPack(query, options)</code>. The library scores the root-level index, filters by type and status, applies diversity controls and selects a result within a character budget.</p>
+<p>The ContextPack prioritizes Knowledge Units over history and includes a <code>matched_on</code> explanation. A reader can inspect which fields matched instead of treating the ranking as unexplained output.</p>
+<h3>Search weights</h3>
+<p>The documented BM25F configuration assigns these field weights:</p>
+<ul><li><code>keywords</code>: 8</li><li><code>tags</code>: 6</li><li><code>title</code>: 5</li><li><code>reusable_findings</code>: 4</li><li><code>summary</code>: 3</li></ul>
+<p>Exact keyword phrases add 60 points, exact tags add 45, and exact title phrases add 40. These boosts favor explicit matches. They do not establish the truth or usefulness of the matched record.</p>
+<h3>Record types</h3>
+<p>The type vocabulary includes <code>experiment</code>, <code>specification</code>, <code>scientific_article</code>, <code>architecture_decision</code>, <code>research_note</code>, <code>data_analysis</code>, <code>validation</code>, <code>reusable_pattern</code> and <code>failure_note</code>.</p>
+<p>Agents and skills decide what to save, validate or remove. The library supplies storage and retrieval; it does not decide which conclusions deserve trust.</p>
+<h3>Levels of detail</h3>
+<ul><li>L1 returns records from <code>search-index.jsonl</code> by default.</li><li>L2 adds selected <code>state.md</code> files with <code>includeState: true</code>.</li><li>L3 opens full documents or results on request.</li><li>L4 opens <code>history.md</code> to reconstruct how a unit changed.</li></ul>
+<h3>Why local keyword search?</h3>
+<p>Files and explicit scores let developers inspect the ranking and version or back up the knowledge store. Search does not require a GPU or remote request. Its runtime cost still depends on the index and query.</p>
+<p>This is a choice for inspectable project context, not a claim that keyword search is best for every retrieval problem. The library and its task-specific evaluation remain part of the development work.</p>

@@ -1,76 +1,21 @@
-<h2>Chapter 11: Data Sharing & Provenance</h2>
-
-<p class="chapter-intro">LightDSU is the encrypted data substrate of the Ploinky ecosystem — a local library for storing, versioning, auditing, and controlling access to encrypted data units. Together with DPU Agent, European Data Spaces integration, and the Data Sharing Plugin, it forms a complete architecture for sensitive data management, provenance tracking, and controlled sharing across organizations.</p>
-
-<h3>Encrypted Data Units: LightDSU</h3>
-
-<p>LightDSU stores data as encrypted bricks — content-addressed blocks that can only be reconstructed with the right keys. A special brick called the BrickMap maintains the virtual file system structure, references to data bricks, and the symmetric keys needed for reconstruction. The entire system is anchored by a cryptographically signed, append-only event log.</p>
-
-<p>Access is controlled through three types of keys, derived hierarchically from a single master secret:</p>
-
-<ul>
-    <li><strong>lkey</strong> — full control: write, grant, revoke, read, verify.</li>
-    <li><strong>rkey</strong> — read-only: decrypt the BrickMap, read files, verify the anchor.</li>
-    <li><strong>lza</strong> — zero-access: verify the anchor's existence and history without seeing any content.</li>
-</ul>
-
-<p>This hierarchy enables a powerful pattern: you can give someone proof that a dataset exists and has a certain history (lza) without giving them access to the data itself. You can grant read access (rkey) without giving write privileges. And you retain full control (lkey) for administration.</p>
-
-<h3>Provenance Profiles</h3>
-
-<p>Every operation on a LightDSU data unit produces a signed event in the anchor. For detailed provenance, LightDSU supports multiple profiles — each mapping to established standards for different domains:</p>
-
-<ul>
-    <li><strong>LIGHTDSU_MINIMAL</strong> — lightweight provenance for technical audit: what operation, on what resource, by whom, when, with what inputs and outputs.</li>
-    <li><strong>W3C_PROV</strong> — general provenance interoperability using the W3C PROV model of entities, activities, and agents.</li>
-    <li><strong>FHIR_PROVENANCE / FHIR_AUDIT_EVENT</strong> — healthcare and clinical data provenance using HL7 FHIR standards.</li>
-    <li><strong>GXP_AUDIT_TRAIL</strong> — pharmaceutical and regulated environments, supporting FDA 21 CFR Part 11 and EU GMP Annex 11 requirements.</li>
-    <li><strong>GA4GH_DATA_USE</strong> — genomic data with standardized usage terms through the GA4GH Data Use Ontology.</li>
-    <li><strong>RO_CRATE</strong> — FAIR research objects and publishing using RO-Crate metadata.</li>
-    <li><strong>AI_ML_EXPERIMENT</strong> — machine learning experiment provenance: datasets, models, code, parameters, metrics, and results.</li>
-</ul>
-
-<p>Each profile is stored as an encrypted brick, referenced by the compact anchor event. The anchor stays small and inspectable; the detailed provenance stays encrypted and domain-specific.</p>
-
-<h3>DPU Agent: Protecting Sensitive Data</h3>
-
-<p>DPU Agent is the data protection component of a Ploinky workspace. It owns sensitive data locally and exposes it to other agents only through controlled interfaces. Research agents never receive raw data — they receive references: packageRef, taskRef, resultRef.</p>
-
-<p>DPU Agent manages:</p>
-
-<ul>
-    <li><strong>Secret Vault</strong> — API keys, passwords, tokens, credentials. Secrets are encrypted at rest and injected into tasks, not exposed to agents.</li>
-    <li><strong>Confidential Object Store</strong> — files and folders with granular permissions (Access, Read, Comment, Write) modeled after Google Docs-style sharing.</li>
-    <li><strong>LightDSU Package Store</strong> — encrypted data packages with policies, grants, and provenance.</li>
-    <li><strong>Sandbox Execution</strong> — tasks run over sensitive data in isolated environments. The requesting agent gets only the permitted output, not the raw data.</li>
-    <li><strong>Audit & Provenance</strong> — every access, task, export, and policy change is logged and verifiable.</li>
-</ul>
-
-<h3>European Data Spaces Integration</h3>
-
-<p>Ploinky integrates with European Data Spaces through two cooperating agents:</p>
-
-<p><strong>EDS Adapter Agent</strong> is the external-facing component. It searches DCAT/DCAT-AP catalogues, describes datasets, summarizes usage policies, initiates access requests, attaches grants, and prepares imports. It translates external data-space concepts into stable Ploinky primitives — dataset descriptors, policy summaries, access grants, and transfer plans.</p>
-
-<p><strong>DPU Agent</strong> receives approved data and materializes it as encrypted LightDSU packages. It enforces policies, runs sandboxed computations, and records provenance for imports, transformations, and results.</p>
-
-<p>The separation is deliberate: the adapter handles external interoperability; the DPU handles sensitive data locally. Research agents operate through DPU task tools and never require direct access to external data spaces or raw sensitive data.</p>
-
-<h3>Data Sharing Plugin</h3>
-
-<p>The Data Sharing Plugin provides a minimal UI for researchers to publish FAIR metadata descriptions of datasets, search metadata published by others, and request access to relevant data. All operations are executed by a local Data Sharing Agent through MCP tools.</p>
-
-<p>The plugin has four screens:</p>
-
-<ul>
-    <li><strong>My Shared Data</strong> — datasets the user wants to make visible through metadata.</li>
-    <li><strong>Create FAIR Metadata</strong> — guided form for generating metadata: title, description, domain, keywords, data type, provenance, access conditions, ethical/legal restrictions.</li>
-    <li><strong>Search Data Network</strong> — search in the local index built from metadata published by the user and discovered through other agents in the Ploinky network.</li>
-    <li><strong>Requests & Bookmarks</strong> — saved datasets, sent requests, received requests, and their status.</li>
-</ul>
-
-<p>Metadata is published to a dedicated GitHub repository — without publishing the raw data. Other researchers can discover the metadata, request access, and if approved, receive the data through Ploinky Wormhole's secure P2P channels.</p>
-
-<h3>Vision</h3>
-
-<p>Together, LightDSU, DPU Agent, EDS Adapter, and the Data Sharing Plugin form a complete data sovereignty stack: encrypted storage with verifiable provenance, controlled access through sandboxed execution, interoperability with European Data Spaces, and a discovery layer that connects researchers through metadata — not through exposed data. The result is a system where data can be shared, analyzed, and trusted without ever leaving the control of its owner.</p>
+<h2>Chapter 11: Data sharing and provenance</h2>
+<p class="chapter-intro">LightDSU and the DPU Agent describe how AssistOS can store sensitive data locally, control computations on it and preserve a record of its use. Data-space adapters and a sharing plugin extend that design across organizations. These integrations remain in development.</p>
+<h3>LightDSU data units</h3>
+<p>LightDSU stores data in encrypted, content-addressed blocks called bricks. A BrickMap records the virtual file structure, references to those blocks and the symmetric keys needed to reconstruct them. A signed, append-only event log anchors the unit's history.</p>
+<p>The key hierarchy derives three access types from a master secret:</p>
+<ul><li><code>lkey</code> grants full control, including writing, granting, revoking, reading and verification.</li><li><code>rkey</code> provides read access to the BrickMap and files, plus anchor verification.</li><li><code>lza</code> permits verification of the anchor's existence and history without content access.</li></ul>
+<p>This separates proof of history from permission to read or modify the data. It does not make previously disclosed content retractable.</p>
+<h3>Provenance profiles</h3>
+<p>Detailed provenance records use encrypted bricks referenced by compact anchor events. The proposed profiles cover different kinds of records:</p>
+<ul><li><code>LIGHTDSU_MINIMAL</code> records the operation, resource, actor, time, inputs and outputs.</li><li><code>W3C_PROV</code> represents entities, activities and agents.</li><li><code>FHIR_PROVENANCE</code> and <code>FHIR_AUDIT_EVENT</code> cover healthcare provenance and audit records.</li><li><code>GXP_AUDIT_TRAIL</code> organizes evidence for pharmaceutical and regulated workflows.</li><li><code>GA4GH_DATA_USE</code> describes genomic data-use terms.</li><li><code>RO_CRATE</code> describes research objects and their metadata.</li><li><code>AI_ML_EXPERIMENT</code> connects datasets, models, code, parameters, metrics and results.</li></ul>
+<p>A profile provides a record format. Whether it meets a sector's requirements needs domain-specific validation.</p>
+<h3>DPU Agent</h3>
+<p>The DPU Agent keeps sensitive data in its local environment and exposes controlled operations. Requesting agents use references such as <code>packageRef</code>, <code>taskRef</code> and <code>resultRef</code> rather than receiving raw data by default.</p>
+<ul><li>The Secret Vault holds encrypted credentials and supplies them to authorized tasks.</li><li>The Confidential Object Store applies Access, Read, Comment and Write permissions to files and folders.</li><li>The LightDSU Package Store manages encrypted packages, grants and policies.</li><li>Sandboxed tasks process the permitted data and return approved outputs.</li><li>Audit records connect access, tasks, exports and policy changes.</li></ul>
+<h3>European Data Spaces</h3>
+<p>The EDS Adapter Agent is intended to search DCAT/DCAT-AP catalogs, describe datasets and usage policies, request access and prepare transfers. It converts external records into dataset descriptions, policy summaries, grants and transfer plans.</p>
+<p>The DPU Agent would receive approved imports, create encrypted LightDSU packages, apply local policy and record subsequent work. The adapter handles external connections; the DPU handles local data access.</p>
+<h3>The sharing plugin</h3>
+<p>The proposed Data Sharing Plugin has screens for shared-data records, FAIR metadata creation, network search, and requests and bookmarks. A local Data Sharing Agent performs its operations through MCP tools.</p>
+<p>The metadata form records title, description, domain, keywords, data type, provenance and access restrictions. Metadata can be published in a dedicated GitHub repository without publishing the dataset itself.</p>
+<p>Other researchers can discover that record and request access. An approved transfer could use Wormhole. This separation makes discovery possible while leaving the data owner responsible for the sharing decision.</p>
