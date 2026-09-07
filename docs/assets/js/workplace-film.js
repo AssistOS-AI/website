@@ -22,14 +22,14 @@
     [
         "BUILD YOUR TEAM",
         "Choose tools. Define a role.",
-        "Sam builds his RoboTeam with catalog agents or his own team's agents.",
-        "Sam first sets up the Books RoboTeam. He can choose agents from the AssistOS catalog. His own software team can also build custom agents. He gives each Robot its agents, role, permitted skills, and project access. SCRIPTA drafts chapters while Proof reviews them. Layout prepares the pages. Sam remains the author."
+        "Sam configures packaged agents to create the Robots in his RoboTeam.",
+        "Sam first sets up the Books RoboTeam. He chooses agents from the AssistOS catalog. These are software packages that run in Linux containers. His own IT team can also prepare custom agents. Each Robot is a configured instance of that software. Sam sets its subscriptions, preferences, permitted skills, and instructions. He also defines its role and workspace access. SCRIPTA drafts chapters, Proof reviews them, and Layout prepares the pages. Sam remains the author."
     ],
     [
         "BOOKS / WEBCHAT",
         "Background work, in view.",
         "WebChat keeps background tasks visible and under control.",
-        "With his team ready, Sam asks Copilot to prepare a book preview. He also asks it to check the references. WebChat shows what each Robot is doing in the background. Robots can run CLI commands, coding agents, or custom agents. Other agents can check sources and results for trustworthy AI. Sam can redirect, pause, or stop a task from WebChat. He can then return to his work while the Robots continue."
+        "With his team ready, Sam asks Copilot to prepare a book preview. He also asks it to check the references. WebChat shows what each Robot is doing in the background. Robots can run CLI commands, coding agents, or custom agents. Robots can also use agents that check sources and results for trustworthy AI. Sam can redirect, pause, or stop a task from WebChat. He can then return to his work while the Robots continue."
     ],
     [
         "BOOKS / MANUSCRIPT",
@@ -76,8 +76,8 @@
     [
         "START YOUR OWN WORKSPACE",
         "Thank you!",
-        "Start with Installation. Find technical documentation in Research.",
-        "Sam ends the day with his book published and a marketing draft ready. Research has experiment records and a budget to review. His Robots handle supporting tasks while he guides each team. Sam keeps responsibility for the decisions. AssistOS is open source and easy to install. Visit Installation to set up your first workspace. Explore the links in Research for technical documentation. Thank you!"
+        "Bring your own workflows. The AssistOS team can help you integrate them.",
+        "Sam's day is just one example. Robots can help with many kinds of intellectual work. They can control browsers, use desktop apps, or run CLI tools. You give them those capabilities through their configured agents. The AssistOS team is happy to help you build your own integrations. AssistOS is open source and easy to install. Visit the Installation page to set up your first workspace. Open the Research menu for technical documentation. Thank you!"
     ]
 ];
     const sceneDuration = 8;
@@ -143,11 +143,6 @@
         });
     }
 
-    function formatTime(value) {
-        const seconds = Math.floor(value);
-        return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`;
-    }
-
     function render(announce = false) {
         const index = Math.min(scenes.length - 1, Math.floor(position / sceneDuration));
         const sceneTime = position - index * sceneDuration;
@@ -173,10 +168,11 @@
         }
         updateSubtitles();
         seek.value = String(position);
-        seek.setAttribute('aria-valuetext', voiceEnabled ? `Scene ${index + 1} of ${scenes.length}. ${scenes[index][2]}` : `${formatTime(position)} of ${formatTime(duration)}. Scene ${index + 1}`);
-        time.hidden = voiceEnabled;
-        time.textContent = `${formatTime(position)} / ${formatTime(duration)}`;
-        if (voiceEnabled && canAnimate() && !utterance && narratedScene !== currentScene) speakScene();
+        seek.setAttribute('aria-valuetext', `Scene ${index + 1} of ${scenes.length}. ${scenes[index][2]}`);
+        // Progress represents scenes, not a fixed running time. Both speech and
+        // the reading fallback determine how long each sentence stays visible.
+        time.hidden = true;
+        if (usesSpeechClock() && canAnimate() && !utterance && narratedScene !== currentScene) speakScene();
         if (announce) announcement.textContent = `Scene ${index + 1}. ${scenes[index][2]} ${scenes[index][3]}`;
     }
 
@@ -200,6 +196,12 @@
         return playing && inView && !document.hidden;
     }
 
+    function usesSpeechClock() {
+        // Muting changes audibility only. Speech at zero volume still keeps
+        // captions and scene changes on the same clock as audible narration.
+        return voiceSupported && !voiceFailed;
+    }
+
     function synchronizePlayback() {
         if (frame !== null) cancelAnimationFrame(frame);
         frame = null;
@@ -208,7 +210,7 @@
         playLabel.textContent = playing ? 'Pause' : position >= duration ? 'Replay' : 'Play';
         playSymbol.textContent = playing ? 'Ⅱ' : '▶';
         play.setAttribute('aria-label', playing ? 'Pause film' : position >= duration ? 'Replay film' : 'Play film');
-        if (voiceEnabled) {
+        if (usesSpeechClock()) {
             if (canAnimate()) {
                 if (utterance) {
                     synth.resume();
@@ -228,16 +230,26 @@
         frame = null;
         if (!canAnimate()) return;
         if (lastFrame) {
-            const cueEnd = (currentScene + (cueIndex + 1) / cues[currentScene].length) * sceneDuration;
-            const limit = voiceEnabled && narratedScene !== currentScene ? cueEnd - 0.001 : duration;
-            position = Math.min(limit, position + (now - lastFrame) / 1000);
+            const elapsed = Math.min(now - lastFrame, 250) / 1000;
+            if (usesSpeechClock()) {
+                const cueEnd = (currentScene + (cueIndex + 1) / cues[currentScene].length) * sceneDuration;
+                const limit = narratedScene !== currentScene ? cueEnd - 0.001 : duration;
+                position = Math.min(limit, position + elapsed);
+            } else {
+                // Without a working voice, allow roughly 144 words per minute
+                // and a short pause. Even a brief sentence gets 2.8 seconds.
+                const text = cues[currentScene][timedCueIndex()];
+                const readingSeconds = Math.max(2.8, text.split(/\s+/).length / 2.4 + 0.6);
+                const progressPerSecond = sceneDuration / cues[currentScene].length / readingSeconds;
+                position = Math.min((currentScene + 1) * sceneDuration, position + elapsed * progressPerSecond);
+            }
         }
         lastFrame = now;
         render();
         if (position >= duration) {
             playing = false;
             synchronizePlayback();
-            announcement.textContent = 'Film finished. Visit Installation to set up AssistOS, or Research for technical documentation.';
+            announcement.textContent = 'Film finished. Visit the Installation page to set up AssistOS, or open the Research menu for technical documentation.';
         } else {
             frame = requestAnimationFrame(tick);
         }
@@ -266,12 +278,15 @@
     }
 
     function voiceUnavailable() {
+        // Give the sentence that was on screen a full reading interval if the
+        // speech service fails partway through it.
+        position = (currentScene + visibleCueIndex() / cues[currentScene].length) * sceneDuration;
         voiceEnabled = false;
         voiceFailed = true;
         volume = 0;
         cancelNarration();
         updateVolumeControls();
-        announcement.textContent = 'No working English voice is available in this browser. Subtitles remain available.';
+        announcement.textContent = 'No working English voice is available in this browser. Subtitles will advance at a reading pace.';
         render();
         synchronizePlayback();
     }
@@ -306,7 +321,7 @@
     }
 
     function speakScene() {
-        if (!voiceSupported || !voiceEnabled || !canAnimate() || film.dataset.transitioning === 'true') return;
+        if (!usesSpeechClock() || !canAnimate() || film.dataset.transitioning === 'true') return;
         const token = ++voiceToken;
         const spokenScene = currentScene;
         const spokenCue = cueIndex;
@@ -381,8 +396,7 @@
         voiceButton.setAttribute('aria-label', voiceSupported ? 'Spoken narration' : 'Narration unavailable');
         voiceButton.title = !voiceSupported ? 'Narration is unavailable. Use CC to read the subtitles.'
             : voiceFailed ? 'Narration unavailable. Click to try again.'
-            : voiceEnabled ? (volume === 0 ? 'Narration is on at zero volume. Turn narration off.' : 'Turn narration off')
-            : 'Turn narration on';
+            : voiceEnabled ? 'Mute narration' : 'Unmute narration';
     }
 
     function splitNarration(text) {
@@ -398,7 +412,7 @@
     }
 
     function visibleCueIndex() {
-        return voiceEnabled ? subtitleCueIndex : timedCueIndex();
+        return usesSpeechClock() ? subtitleCueIndex : timedCueIndex();
     }
 
     function updateSubtitles() {
@@ -449,7 +463,7 @@
         // Some speech engines only read volume when an utterance starts.
         cancelNarration();
         narratedScene = -1;
-        if (voiceEnabled && canAnimate()) speakScene();
+        if (usesSpeechClock() && canAnimate()) speakScene();
     });
     window.addEventListener('pagehide', cancelNarration);
 

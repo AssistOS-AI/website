@@ -210,3 +210,22 @@
     .film-audio-controls { flex: 1 1 100%; justify-content: flex-end; gap: 8px; }
     .film-subtitle { bottom: 12px; font-size: .95rem; }
 }
+
+/* A board of possible workflows closes the story without repeating Sam's teams. */
+.results-scene { width: 620px; }
+.results-scene .result-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.results-scene .result-heading > span { margin: 0; font-size: 11px; letter-spacing: .07em; }
+.results-scene .result-heading > strong { font-size: 29px; }
+.automation-ideas { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 21px 5px 0; }
+.idea-note { --note-angle: -1.5deg; position: relative; display: flex; align-items: center; gap: 8px; min-height: 62px; padding: 10px; background: #f3dfa6; color: #375347; border-radius: 2px 2px 9px 2px; box-shadow: 1px 3px 0 #73856330; transform: rotate(var(--note-angle)); }
+.idea-note::before { content: ''; position: absolute; top: -5px; left: calc(50% - 16px); width: 32px; height: 9px; background: #fff9; transform: rotate(-3deg); }
+.idea-note:nth-child(4n + 2) { --note-angle: 1deg; background: #c9e2d0; }
+.idea-note:nth-child(4n + 3) { --note-angle: -1deg; background: #daccdf; }
+.idea-note:nth-child(4n) { --note-angle: 1.5deg; background: #edd0b7; }
+.idea-note:nth-child(n + 5):nth-child(-n + 8) { --note-angle: .7deg; }
+.idea-note svg { width: 23px; height: 23px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; opacity: .8; }
+.idea-note strong { font-size: 15px; font-weight: 550; line-height: 1.2; }
+.results-scene .tomorrow-note { margin-top: 17px; font-size: 14px; }
+.film[data-view="results"] .idea-note { animation: idea-settle .65s ease-out both; animation-delay: var(--note-delay); }
+@keyframes idea-settle { from { transform: translateY(5px) rotate(var(--note-angle)) scale(.97); } to { transform: translateY(0) rotate(var(--note-angle)) scale(1); } }
+@media (prefers-reduced-motion: reduce) { .film .idea-note { animation: none !important; } }
