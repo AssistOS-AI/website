@@ -122,7 +122,7 @@
 .film:is([data-view="dispatch"], [data-view="configure"]) .sam-mouth-neutral { animation: sam-discovery-neutral 10s ease-in-out infinite; }
 .film:is([data-view="dispatch"], [data-view="configure"]) .sam-smile { animation: sam-discovery-smile 10s ease-in-out infinite; }
 .film:is([data-view="editor"], [data-view="meeting"], [data-view="results"]) .sam-finger { animation-name: finger-rest; animation-duration: 8s; }
-@keyframes finger-tap { 0%, 34%, 100% { transform: rotate(0); } 15% { transform: rotate(-8deg) translateY(-.6px); } 23% { transform: rotate(3deg); } }
+@keyframes finger-tap { 0%, 34%, 100% { transform: rotate(0); } 15% { transform: rotate(-12deg) translateY(-1px); } 23% { transform: rotate(3deg); } }
 @keyframes finger-rest { 0%, 100% { transform: rotate(0); } 25%, 40% { transform: rotate(-3deg); } }
 @keyframes sam-discover { 0%, 10%, 70%, 100% { transform: rotate(0); } 20%, 28% { transform: rotate(-4deg); } 45%, 56% { transform: rotate(3deg); } }
 @keyframes sam-wide-eyes { 0%, 10%, 38%, 100% { transform: scale(1); } 19%, 28% { transform: translate(1px,-.5px) scale(1.12); } }
@@ -130,3 +130,83 @@
 @keyframes sam-surprised { 0%, 12%, 35%, 100% { opacity: 0; } 19%, 27% { opacity: 1; } }
 @keyframes sam-discovery-neutral { 0%, 12%, 35%, 65%, 100% { opacity: 1; } 19%, 27%, 44%, 56% { opacity: 0; } }
 @keyframes sam-discovery-smile { 0%, 35%, 65%, 100% { opacity: 0; } 44%, 56% { opacity: 1; } }
+
+.dispatch-bubble { padding: 24px; background: #f3f5e9; border: 1px solid #d5dfcc; }
+.dispatch-bubble .copilot-window-label { display: block; font-size: 12px; text-transform: none; color: #5a7863; letter-spacing: .02em; padding-bottom: 18px; border-bottom: 1px solid #d6e0cd; }
+.copilot-workspaces { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 17px; padding-top: 26px; }
+.copilot-assignment { text-align: center; }
+.copilot-zone { display: grid; place-items: center; width: 68px; height: 68px; border-radius: 50%; margin: 0 auto 18px; box-shadow: inset 0 2px 3px #fff6, 0 5px 0 #44694b14; }
+.zone-books { background: #8ac8d0; }.zone-marketing { background: #e9ba84; }.zone-research { background: #c7abdf; }
+.copilot-zone svg { width: 36px; height: 36px; fill: none; stroke: #fffdf3; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.dispatch-bubble .copilot-assignment strong { display: block; font-size: 19px; line-height: 1.2; margin-bottom: 11px; }
+.copilot-assignment > span { display: block; font-size: 13px; color: #678066; line-height: 1.5; }
+.film[data-view="dispatch"] .copilot-assignment { animation: copilot-arrive .8s ease-out both; }
+.film[data-view="dispatch"] .copilot-assignment:nth-child(2) { animation-delay: .25s; }
+.film[data-view="dispatch"] .copilot-assignment:nth-child(3) { animation-delay: .5s; }
+@keyframes copilot-arrive { from { opacity: .6; transform: translateY(10px) scale(.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+/* The last scene provides real links outside the decorative film world. */
+.film-next-steps:not([hidden]) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 28px;
+    padding: 18px 24px;
+    border-top: 1px solid var(--wp-line);
+    font-size: .9rem;
+}
+
+.film-next-steps a {
+    color: var(--wp-mint);
+    text-underline-offset: 4px;
+}
+
+.film-next-steps a:focus-visible {
+    outline: 2px solid var(--wp-mint);
+    outline-offset: 5px;
+}
+
+/* WebChat projects the same background task activity shown on Sam's laptop. */
+.background-scene { width: 580px; }
+.background-scene .window-bar > span { font-size: 15px; font-weight: 550; }
+.background-tasks strong { font-size: 16px; }
+.background-tasks small, .background-tasks > div > b { font-size: 12px; }
+.background-scene .task-pulse.violet { animation: task-progress 2s 1.4s ease-in-out infinite; }
+.background-log > span { font-size: 12px; }
+.background-log code { font-size: 14px; }
+.background-cursor { animation: task-progress 1s steps(2, end) infinite; }
+.background-controls { font-size: 12px; }
+
+/* Make the editor's review step recognizable without a page of tiny prose. */
+.ide-scene { width: 640px; }
+.ide-scene .window-bar > span { font-size: 17px; font-weight: 550; }
+.ide-scene .explorer-layout { grid-template-columns: 140px 1fr; min-height: 0; }
+.ide-scene .explorer-editor { padding: 14px 18px; }
+.ide-scene .explorer-editor h3 { margin: 12px 0; font: 500 20px/1.25 Inter, 'Segoe UI', Arial, sans-serif; }
+.ide-review-original { padding: 8px 10px; background: #f0e7dc; color: #886f60; font-size: 12px; margin-bottom: 8px; }
+.ide-review-original .document-lines i { background: #d5bbab; }
+.ide-scene .document-lines { margin-bottom: 2px; }
+.ide-scene .document-lines i { height: 4px; margin-top: 7px; }
+.ide-scene .review-change { padding: 8px 10px; }
+.ide-scene .review-change .document-lines i { background: #a3bf95; }
+.ide-scene .review-footer { margin-top: 10px; gap: 12px; }
+
+/* Keep narration, volume and its readable script together. */
+.film-audio-controls { display: flex; align-items: center; gap: 10px; margin-left: auto; max-width: 100%; }
+.film-controls .film-icon-button { display: grid; place-items: center; width: 44px; height: 44px; min-height: 44px; padding: 10px; margin: 0; border: 1px solid #476d52; border-radius: 6px; background: #18362a; color: #c7dcca; }
+.film-icon-button svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.film-controls .film-voice[aria-pressed="true"], .film-controls .film-subtitles-toggle[aria-pressed="true"] { background: #b8e7d0; color: #173b31; border-color: #b8e7d0 !important; }
+.film-voice .voice-slash, .film-voice[data-silent="true"] .voice-waves { display: none; }
+.film-voice[data-silent="true"] .voice-slash { display: block; }
+.film-controls .film-voice:disabled { opacity: .5; cursor: default; }
+.film-audio-controls .film-volume { flex: 0 1 auto; min-width: 0; margin: 0; }
+.film-audio-controls .voice-volume { flex: 0 1 80px; width: 80px; min-width: 50px; }
+.film-icon-button:focus-visible { outline: 2px solid #b8e7d0; outline-offset: 3px; }
+
+/* Subtitles sit over the room, without adding height below the film. */
+.film-subtitle { display: none; position: absolute; z-index: 20; left: 50%; bottom: 16px; transform: translateX(-50%); width: calc(100% - 32px); max-width: 850px; margin: 0; color: #fff; font-size: clamp(.95rem, 1.7vw, 1.2rem); font-weight: 650; line-height: 1.4; text-align: center; text-wrap: balance; pointer-events: none; -webkit-text-stroke: 3px #13261e; paint-order: stroke fill; text-shadow: -1px -1px 0 #13261e, 1px -1px 0 #13261e, -1px 1px 0 #13261e, 1px 1px 0 #13261e, 0 2px 4px #0008; }
+.film[data-subtitles="true"] .film-subtitle { display: block; }
+.film[data-subtitles="true"] .film-caption { display: none; }
+.film[data-subtitles="true"] .film-controls { padding-top: 16px; }
+@media (max-width: 680px) {
+    .film-audio-controls { flex: 1 1 100%; justify-content: flex-end; gap: 8px; }
+    .film-subtitle { bottom: 12px; font-size: .95rem; }
+}

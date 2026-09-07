@@ -33,7 +33,7 @@
     padding-top: 32px;
     color: #cedbd5;
     font-size: 1.125rem;
-    line-height: 1.8;
+    line-height: 1.65;
     text-align: justify;
     text-align-last: start;
     hyphens: auto;
@@ -41,7 +41,8 @@
 }
 
 .vision-reading-story p {
-    margin: 0 0 1.3em;
+    margin: 0;
+    text-indent: 2em;
     scroll-margin-top: 28px;
 }
 
@@ -88,6 +89,6 @@
 
 @media (max-width: 680px) {
     .vision-reading-header { padding-top: 36px; }
-    .vision-reading-story { font-size: 1.0625rem; line-height: 1.75; }
+    .vision-reading-story { font-size: 1.0625rem; line-height: 1.65; }
     .vision-reading-main { padding-bottom: 44px; }
 }

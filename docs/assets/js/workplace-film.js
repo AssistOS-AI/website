@@ -11,73 +11,73 @@
         "MONDAY / SAM'S OFFICE",
         "Meet Sam.",
         "Sam has three teams, four deadlines, and one pair of hands.",
-        "Meet Sam. He writes books, coordinates marketing for his books, and leads machine-learning research. Today, a chapter, a book launch, an LLM study, and a European project budget all need his attention. He keeps switching teams, finding files, and explaining the same context again. There is little time left for the work he actually wants to do."
+        "Meet Sam. He writes books and promotes them with his marketing team. He also leads research into machine learning. Today, a chapter and a book launch need his attention. So do an LLM study and a European project budget. He keeps switching teams and searching for the right files. Even with AI chat, he has to explain the same context again. His own writing and research keep getting pushed aside."
     ],
     [
         "ASSISTOS COPILOT",
         "A place for each team.",
-        "WebChat is the interface to the AssistOS Copilot.",
-        "Sam brings these teams into AssistOS and opens WebChat, the interface to its Copilot. He describes what each project needs. Copilot helps him assign tasks to Robots and follow their progress. Books, Marketing, and Research each have their own workspace, with their own people, projects, and access rules."
+        "Each workspace has a different RoboTeam.",
+        "Sam opens WebChat, the interface to the AssistOS Copilot. He describes what needs doing in each team's workspace. Books, Marketing, and Research each have a separate workspace. Each workspace has different Robots, roles, and access rules. Copilot assigns tasks to that workspace's RoboTeam and tracks their progress. Changing workspace brings Sam that team's Robots and colleagues."
     ],
     [
         "BUILD YOUR TEAM",
         "Choose tools. Define a role.",
-        "Sam or his IT team builds the Books RoboTeam.",
-        "Before the work starts, Sam sets up his Books RoboTeam. He can choose agent packages from the AssistOS catalog or use custom code prepared by his IT team. For each Robot, he defines a role, permitted skills, and project access. SCRIPTA helps draft the chapters, Proof reviews them, and Layout prepares the pages. Sam remains the author."
+        "Sam builds his RoboTeam with catalog agents or his own team's agents.",
+        "Sam first sets up the Books RoboTeam. He can choose agents from the AssistOS catalog. His own software team can also build custom agents. He gives each Robot its agents, role, permitted skills, and project access. SCRIPTA drafts chapters while Proof reviews them. Layout prepares the pages. Sam remains the author."
     ],
     [
         "BOOKS / WEBCHAT",
         "Background work, in view.",
         "WebChat keeps background tasks visible and under control.",
-        "With his team in place, Sam asks Copilot to build a book preview and check the references. He follows the work in WebChat. Robots can run CLI commands, coding agents, agents for trustworthy AI checks, or other packaged and custom agents. Copilot keeps the background tasks visible, so Sam can redirect the work, pause it, or stop it without staying beside a terminal."
+        "With his team ready, Sam asks Copilot to prepare a book preview. He also asks it to check the references. WebChat shows what each Robot is doing in the background. Robots can run CLI commands, coding agents, or custom agents. Other agents can check sources and results for trustworthy AI. Sam can redirect, pause, or stop a task from WebChat. He can then return to his work while the Robots continue."
     ],
     [
         "BOOKS / MANUSCRIPT",
-        "The chapter is ready to review.",
-        "An IDE for writing, research and other work.",
-        "When the preview is ready, Sam returns to the manuscript. He opens a chapter beside its sources and revision history, then reviews the proposed edits. This is the IDE idea applied beyond code: one environment for creating work and checking it. When Sam approves the finished book, SCRIPTA publishes it on scriptahub.com."
+        "AssistOS as an IDE.",
+        "AssistOS as an IDE: write, check and review in one workspace.",
+        "The preview is ready, so Sam opens the book in Explorer. This is AssistOS as an IDE, an integrated development environment. Developers use one to keep their files, editor, and checks together. Sam does the same for his book. He compares SCRIPTA's edits with the original chapter. He reads Proof's notes before accepting the revision. When Sam approves the finished book, SCRIPTA publishes it on scriptahub.com."
     ],
     [
         "MARKETING / BOOK LAUNCH",
         "Scout researches the launch.",
         "Sam watches Scout research publications in its browser.",
-        "Now Sam switches to Marketing to help readers discover the book. Scout uses its browser to research relevant publications, while Studio prepares campaign material. Sam can watch the browser, pause the Robot, or take control himself. Once the outreach draft is ready, he reviews the message and decides whether to send it."
+        "Sam switches to Marketing to help readers discover his book. Scout uses its browser to research relevant publications. Meanwhile, Studio prepares material for the book campaign. Sam can watch the browser, pause Scout, or take control himself. He reviews the outreach draft and decides whether to send it."
     ],
     [
         "RESEARCH / EU PROJECT BUDGET",
-        "Pip works in the spreadsheet.",
-        "Sam follows Pip's work in the desktop spreadsheet.",
-        "His next stop is Research, where the European project budget has its own AssistOS workspace. Pip works through staff, travel, and equipment costs in a desktop spreadsheet. This is computer use, with the Robot operating an application Sam can watch. Sam can take control at any point. He and the project officer review the figures before submission."
+        "Hugo works in the spreadsheet.",
+        "Sam follows Hugo's work in the desktop spreadsheet.",
+        "Sam next opens the Research team's European project budget. The budget has its own AssistOS workspace. Hugo prepares staff, travel, and equipment costs in a desktop spreadsheet. This is computer use: a Robot working in an application Sam can watch. Sam can take control at any point. He reviews the figures with the project officer before submission."
     ],
     [
         "RESEARCH / LLM STUDY",
         "Compare. Test. Keep the evidence.",
         "The researchers compare results and review changes through GitHub.",
-        "In another Research project, Ada compares baseline and smoothed LLM outputs, while Check evaluates the results. The team keeps the scripts and notes together. Any workspace folder can be put in a GitHub repository, or kept local. For this study, the researchers choose GitHub so colleagues can review proposed changes and contribute their own work."
+        "Sam then opens the workspace for the LLM study. Atlas compares baseline and smoothed LLM outputs. Vera evaluates the results. The team keeps its scripts, data, and notes together. Any workspace folder can stay local or use a GitHub repository. Here, the researchers use GitHub to review and share their changes."
     ],
     [
         "RESEARCH / REVIEW ROOM",
         "The whole team joins the call.",
         "WebMeet brings colleagues and the RoboTeam into one room.",
-        "To discuss those results, Sam joins Lee and Robin in the study's WebMeet room. Ada, Check, and Pip join as visible Robot participants. Lee asks Check to add a held-out test to the shared plan, and everyone can see the change. The room uses the study's approved context, so the discussion stays with the right project."
+        "Sam joins Lee and Robin in the study's WebMeet room. Atlas, Vera, and Hugo join as visible Robot participants. Lee asks Vera to add a held-out test to the shared plan. Everyone sees the change as they discuss it. The room uses the study's approved context. The meeting and its work stay with the right project."
     ],
     [
         "SWITCH WORKSPACE",
         "A different team. Its own context.",
-        "Sam changes workspace. The right people and work come with it.",
-        "After the call, Sam returns to Books or continues with Marketing. Each workspace brings together the right colleagues, RoboTeam, projects, and meeting rooms. With the right access, colleagues can connect from a laptop or phone, manage Robots together, and follow each other's work across subprojects. Folders can stay local or connect to GitHub. Sam moves between responsibilities without mixing the teams' work."
+        "Switching workspace brings Sam a different RoboTeam.",
+        "After the meeting, Sam switches workspace and RoboTeam. Books has SCRIPTA, Proof, and Layout. Marketing has Scout, Studio, and Pulse. Research has Atlas, Vera, and Hugo. Each workspace keeps its own Robot settings, files, and meeting rooms. Colleagues with access can connect from a laptop or phone. They can manage Robots together and follow work across subprojects. Folders can stay local or connect to GitHub."
     ],
     [
         "ASSISTOS / ORGANIZING THE WORK",
         "Why an operating layer?",
         "AssistOS gives the virtual team a place to work and a history to keep.",
-        "Underneath, Linux containers help isolate agent code and protect the host machine. AssistOS can run on your computer or on a cloud server shared by a team. Its open-source platform was developed in Achilles, a European research project, to control AI agents. Individual agents can have different licenses. This is the OS idea: managing workers, tasks, and permissions while project files and history survive a change of model or agent."
+        "Linux containers help isolate agent code and protect the host machine. AssistOS can run on your computer or a cloud server shared by a team. Axiologic developed the open-source platform in the European Achilles project. The research project created an environment for controlling AI agents. Individual agents can have different licenses. This is the OS idea applied to virtual workers. AssistOS manages their homes, tasks, and permissions. Your project files and history remain when you change models or agents."
     ],
     [
-        "SAM'S NEXT WORKING DAY",
-        "Less coordination. More decisions.",
-        "Sam leads the work and makes the decisions.",
-        "Sam can now review what each team has accomplished. SCRIPTA has published his approved book on scriptahub.com. Marketing has prepared the outreach, and Research has experiment records and a budget to review. He still writes and researches, but spends less time carrying information between tools. With Robots taking on the supporting tasks, he becomes a manager of the work and keeps responsibility for the decisions."
+        "START YOUR OWN WORKSPACE",
+        "Thank you!",
+        "Start with Installation. Find technical documentation in Research.",
+        "Sam ends the day with his book published and a marketing draft ready. Research has experiment records and a budget to review. His Robots handle supporting tasks while he guides each team. Sam keeps responsibility for the decisions. AssistOS is open source and easy to install. Visit Installation to set up your first workspace. Explore the links in Research for technical documentation. Thank you!"
     ]
 ];
     const sceneDuration = 8;
@@ -92,13 +92,23 @@
     const time = film.querySelector('.film-time');
     const chapters = [...film.querySelectorAll('[data-chapter]')];
     const announcement = film.querySelector('.film-announcement');
+    const nextSteps = film.querySelector('.film-next-steps');
     const voiceButton = film.querySelector('.film-voice');
+    const subtitlesButton = film.querySelector('.film-subtitles-toggle');
+    const subtitle = film.querySelector('.film-subtitle');
+    const cues = scenes.map(scene => splitNarration(scene[3]));
+    let subtitlesEnabled = true;
+    let cueIndex = 0;
+    let subtitleCueIndex = 0;
     const synth = window.speechSynthesis;
     const volumeSlider = film.querySelector('.voice-volume');
     const volumeOutput = film.querySelector('.volume-value');
-    let volume = 0.35;
+    const volumeStorageKey = 'assistos.film.narrationVolume';
     const voiceSupported = Boolean(synth && window.SpeechSynthesisUtterance);
+    let preferredVolume = readNarrationVolume();
+    let volume = voiceSupported ? preferredVolume : 0;
     let voiceEnabled = voiceSupported;
+    let voiceFailed = false;
     let utterance = null;
     let narratedScene = -1;
     let voiceToken = 0;
@@ -153,12 +163,15 @@
             film.querySelector('.stamp-title').textContent = title;
             film.querySelector('#film-caption-title').textContent = caption;
             film.querySelector('#film-caption-text').textContent = description;
+            cueIndex = subtitleCueIndex = timedCueIndex();
+            nextSteps.hidden = index !== scenes.length - 1;
             film.querySelector('.film-current-scene').textContent = `${String(index + 1).padStart(2, '0')} / ${scenes.length} · ${sceneLabels[index]}`;
             chapters.forEach((button, chapter) => {
                 if (chapter === index) button.setAttribute('aria-current', 'step');
                 else button.removeAttribute('aria-current');
             });
         }
+        updateSubtitles();
         seek.value = String(position);
         seek.setAttribute('aria-valuetext', voiceEnabled ? `Scene ${index + 1} of ${scenes.length}. ${scenes[index][2]}` : `${formatTime(position)} of ${formatTime(duration)}. Scene ${index + 1}`);
         time.hidden = voiceEnabled;
@@ -215,7 +228,8 @@
         frame = null;
         if (!canAnimate()) return;
         if (lastFrame) {
-            const limit = voiceEnabled && narratedScene !== currentScene ? (currentScene + 1) * sceneDuration - 0.001 : duration;
+            const cueEnd = (currentScene + (cueIndex + 1) / cues[currentScene].length) * sceneDuration;
+            const limit = voiceEnabled && narratedScene !== currentScene ? cueEnd - 0.001 : duration;
             position = Math.min(limit, position + (now - lastFrame) / 1000);
         }
         lastFrame = now;
@@ -223,7 +237,7 @@
         if (position >= duration) {
             playing = false;
             synchronizePlayback();
-            announcement.textContent = 'Film finished. Replay it, choose a chapter, or read the story below.';
+            announcement.textContent = 'Film finished. Visit Installation to set up AssistOS, or Research for technical documentation.';
         } else {
             frame = requestAnimationFrame(tick);
         }
@@ -253,18 +267,19 @@
 
     function voiceUnavailable() {
         voiceEnabled = false;
+        voiceFailed = true;
+        volume = 0;
         cancelNarration();
-        voiceButton.textContent = 'Voice unavailable';
-        voiceButton.setAttribute('aria-pressed', 'false');
-        voiceButton.title = 'No working English voice is available in this browser. The film and transcript still work.';
-        announcement.textContent = voiceButton.title;
+        updateVolumeControls();
+        announcement.textContent = 'No working English voice is available in this browser. Subtitles remain available.';
         render();
         synchronizePlayback();
     }
 
-    // Keep screen labels intact. Spell initialisms only in the speech payload.
+    // Keep screen labels intact. Spell selected initialisms only in speech;
+    // leave IDE intact so the narrator reads the acronym naturally.
     function narrationText(text) {
-        return text.replace(/\bAssistOS\b/gi, 'Assist O S').replace(/\bSCRIPTA\b/g, 'Scripta').replace(/scriptahub\.com/gi, 'Scripta Hub dot com').replace(/\b(?:OS|IDE|AI|IT|EU|ML|LLMs?|MCP|API|CPU|GPU|CLI|PDF)\b/g, abbreviation => {
+        return text.replace(/\bAssistOS\b/gi, 'Assist O S').replace(/\bSCRIPTA\b/g, 'Scripta').replace(/scriptahub\.com/gi, 'Scripta Hub dot com').replace(/\b(?:OS|AI|IT|EU|ML|LLMs?|MCP|API|CPU|GPU|CLI|PDF)\b/g, abbreviation => {
             const plural = abbreviation.endsWith('s');
             const letters = plural ? abbreviation.slice(0, -1) : abbreviation;
             return letters.split('').join(' ') + (plural ? 's' : '');
@@ -294,8 +309,11 @@
         if (!voiceSupported || !voiceEnabled || !canAnimate() || film.dataset.transitioning === 'true') return;
         const token = ++voiceToken;
         const spokenScene = currentScene;
+        const spokenCue = cueIndex;
         voiceStarted = false;
-        utterance = new SpeechSynthesisUtterance(narrationText(scenes[currentScene][3]));
+        // Phrase-sized utterances keep subtitles synchronized even when a voice
+        // does not emit word-boundary events. Only onstart reveals the next cue.
+        utterance = new SpeechSynthesisUtterance(narrationText(cues[spokenScene][spokenCue]));
         const voices = synth.getVoices();
         const voice = selectNarrator(voices);
         if (voices.length && !voice) { voiceUnavailable(); return; }
@@ -306,12 +324,20 @@
         utterance.onstart = () => {
             if (token !== voiceToken) return;
             voiceStarted = true;
+            subtitleCueIndex = spokenCue;
+            updateSubtitles();
             clearTimeout(voiceWatchdog);
             voiceWatchdog = null;
         };
         utterance.onend = () => {
             if (token !== voiceToken) return;
             clearTimeout(voiceWatchdog);
+            if (spokenCue + 1 < cues[spokenScene].length) {
+                cueIndex = spokenCue + 1;
+                utterance = null;
+                render();
+                return;
+            }
             narrationTail = setTimeout(() => {
                 if (token !== voiceToken) return;
                 narratedScene = spokenScene;
@@ -327,24 +353,97 @@
         synth.speak(utterance);
     }
 
-    voiceButton.disabled = !voiceSupported;
-    voiceButton.setAttribute('aria-pressed', String(voiceEnabled));
-    if (!voiceSupported) voiceButton.textContent = 'Voice unavailable';
+    function readNarrationVolume() {
+        try {
+            const saved = Number(localStorage.getItem(volumeStorageKey));
+            if (saved > 0 && saved <= 100 && saved % 5 === 0) return saved / 100;
+        } catch { /* Storage may be unavailable; playback still works. */ }
+        return 0.35;
+    }
+
+    function rememberNarrationVolume() {
+        try { localStorage.setItem(volumeStorageKey, String(Math.round(preferredVolume * 100))); }
+        catch { /* Keep the preference for this page when storage is blocked. */ }
+    }
+
+    function updateVolumeControls() {
+        const percent = Math.round(volume * 100);
+        volumeSlider.value = String(percent);
+        volumeOutput.textContent = `${percent}%`;
+        volumeSlider.setAttribute('aria-valuetext', `${percent} percent`);
+        updateVoiceButton();
+    }
+
+    function updateVoiceButton() {
+        voiceButton.disabled = !voiceSupported;
+        voiceButton.setAttribute('aria-pressed', String(voiceEnabled));
+        voiceButton.dataset.silent = String(!voiceEnabled || volume === 0);
+        voiceButton.setAttribute('aria-label', voiceSupported ? 'Spoken narration' : 'Narration unavailable');
+        voiceButton.title = !voiceSupported ? 'Narration is unavailable. Use CC to read the subtitles.'
+            : voiceFailed ? 'Narration unavailable. Click to try again.'
+            : voiceEnabled ? (volume === 0 ? 'Narration is on at zero volume. Turn narration off.' : 'Turn narration off')
+            : 'Turn narration on';
+    }
+
+    function splitNarration(text) {
+        // Captions and speech share complete sentences. Keep names such as
+        // scriptahub.com intact and let CSS wrap long captions without pausing speech.
+        return (text.match(/.+?(?:[.!?](?=\s+[A-Z])|$)/g) || [text])
+            .map(sentence => sentence.trim());
+    }
+
+    function timedCueIndex(sceneIndex = currentScene) {
+        const fraction = (position - sceneIndex * sceneDuration) / sceneDuration;
+        return Math.min(cues[sceneIndex].length - 1, Math.max(0, Math.floor(fraction * cues[sceneIndex].length)));
+    }
+
+    function visibleCueIndex() {
+        return voiceEnabled ? subtitleCueIndex : timedCueIndex();
+    }
+
+    function updateSubtitles() {
+        const text = cues[currentScene][visibleCueIndex()];
+        if (subtitle.textContent !== text) subtitle.textContent = text;
+    }
+
+    subtitlesButton.addEventListener('click', () => {
+        subtitlesEnabled = !subtitlesEnabled;
+        film.dataset.subtitles = String(subtitlesEnabled);
+        subtitlesButton.setAttribute('aria-pressed', String(subtitlesEnabled));
+        subtitlesButton.title = subtitlesEnabled ? 'Hide subtitles' : 'Show subtitles';
+    });
+
+    updateVolumeControls();
     voiceButton.addEventListener('click', () => {
+        cueIndex = visibleCueIndex();
         voiceEnabled = !voiceEnabled;
+        voiceFailed = false;
+        volume = voiceEnabled ? preferredVolume : 0;
+        rememberNarrationVolume();
         cancelNarration();
         narratedScene = -1;
-        voiceButton.textContent = voiceEnabled ? 'Voice on' : 'Voice off';
-        voiceButton.setAttribute('aria-pressed', String(voiceEnabled));
-        voiceButton.title = voiceEnabled ? 'Turn off narration' : 'Read the story aloud using a browser voice';
+        updateVolumeControls();
         if (voiceEnabled) setPlaying(true);
         else { render(); synchronizePlayback(); }
     });
     volumeSlider.disabled = !voiceSupported;
     volumeSlider.addEventListener('input', () => {
+        const wasEnabled = voiceEnabled;
+        cueIndex = visibleCueIndex();
         volume = Number(volumeSlider.value) / 100;
-        volumeOutput.textContent = `${volumeSlider.value}%`;
-        volumeSlider.setAttribute('aria-valuetext', `${volumeSlider.value} percent`);
+        voiceEnabled = voiceSupported && volume > 0;
+        voiceFailed = false;
+        if (volume > 0) {
+            preferredVolume = volume;
+            rememberNarrationVolume();
+        }
+        updateVolumeControls();
+        if (wasEnabled !== voiceEnabled) {
+            cancelNarration();
+            narratedScene = -1;
+            render();
+            synchronizePlayback();
+        }
     });
     volumeSlider.addEventListener('change', () => {
         // Some speech engines only read volume when an utterance starts.
@@ -360,6 +459,7 @@
         cancelNarration();
         narratedScene = -1;
         position = 0;
+        cueIndex = subtitleCueIndex = 0;
         playing = !reducedMotion.matches;
         render(true);
         synchronizePlayback();
@@ -368,6 +468,7 @@
         cancelNarration();
         narratedScene = -1;
         position = index * sceneDuration;
+        cueIndex = subtitleCueIndex = 0;
         start.hidden = true;
         playing = false;
         render(true);
@@ -377,6 +478,7 @@
         cancelNarration();
         narratedScene = -1;
         position = Math.max(0, Math.min(duration, Number(seek.value)));
+        cueIndex = subtitleCueIndex = timedCueIndex(Math.min(scenes.length - 1, Math.floor(position / sceneDuration)));
         playing = false;
         render();
         synchronizePlayback();
