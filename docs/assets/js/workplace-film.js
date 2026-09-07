@@ -47,7 +47,7 @@
         "RESEARCH / EU PROJECT BUDGET",
         "Hugo works in the spreadsheet.",
         "Sam follows Hugo's work in the desktop spreadsheet.",
-        "Sam next opens the Research team's European project budget. The budget has its own AssistOS workspace. Hugo prepares staff, travel, and equipment costs in a desktop spreadsheet. This is computer use: a Robot working in an application Sam can watch. Sam can take control at any point. He reviews the figures with the project officer before submission."
+        "Sam next opens the Research team's European project budget. The budget has its own AssistOS workspace. Hugo prepares staff, travel, and equipment costs in a desktop spreadsheet. This is computer use: a Robot working in an application Sam can watch. Sam can take control at any point. He reviews the figures with the project coordinator before submission."
     ],
     [
         "RESEARCH / LLM STUDY",
