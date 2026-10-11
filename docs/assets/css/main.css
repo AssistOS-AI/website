@@ -1971,3 +1971,20 @@ section.contact {
 /* Keep text at a readable size on phones instead of shrinking the whole page. */
 html { font-size: 16px; }
 .content-block p, .github-box p { hyphens: auto; -webkit-hyphens: auto; }
+
+/* Header submenus use explicit expanded state for mouse and keyboard access. */
+.main-menu .nav-dropdown:hover .nav-submenu, .main-menu .nav-dropdown:focus-within .nav-submenu { display: none; }
+.main-menu .nav-dropdown[data-open="true"] .nav-submenu { display: block; }
+.workplace-page .main-menu .nav-dropdown:focus-within .nav-submenu { display: none; }
+.workplace-page .main-menu .nav-dropdown[data-open="true"] .nav-submenu { display: block; }
+.secondary-menu .nav-submenu { position: static; width: 100%; min-width: 0; box-shadow: none; display: none; }
+.secondary-menu .nav-dropdown:hover .nav-submenu, .secondary-menu .nav-dropdown:focus-within .nav-submenu { display: none; }
+.secondary-menu .nav-dropdown[data-open="true"] .nav-submenu { display: block; }
+.workplace-page .secondary-menu .nav-dropdown:focus-within .nav-submenu { display: none; }
+.workplace-page .secondary-menu .nav-dropdown[data-open="true"] .nav-submenu { display: block; }
+.documentation-map { width: 100%; border-collapse: separate; border-spacing: .75rem; }
+.documentation-map th, .documentation-map td { border: 0; background: transparent; padding: .5rem; vertical-align: top; text-align: left; }
+.documentation-map a, .documentation-map span { display: block; }
+.documentation-map a { text-decoration: underline; margin-bottom: .3rem; }
+.documentation-map-section { padding: 1rem; }
+@media (max-width: 700px) { .documentation-map { display: block; overflow-x: auto; } }

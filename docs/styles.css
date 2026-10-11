@@ -1,0 +1,11 @@
+@import url("assets/css/main.css");
+.page { width: 100%; padding: 1rem; margin: 0; }
+.page__panel { width: 100%; max-width: none; padding: 1rem; margin: 0; }
+.page__panel h1 { font-size: 2rem; }
+.page__panel h2 { margin-top: 1.5rem; }
+.page__panel p { margin: 1rem 0; }
+.page__panel a { color: #7cd6ff; text-decoration: underline; }
+.page__panel table { width: 100%; border-collapse: collapse; }
+.page__panel th, .page__panel td { padding: .6rem; text-align: left; }
+.page__panel pre { overflow: auto; padding: 1rem; background: #ffffff0a; }
+@media (max-width: 700px) { .page { padding: .5rem; } .page__panel { padding: .75rem; } }

@@ -101,7 +101,7 @@ function initSiteNavigation() {
     ].map(([label, tool]) => `<li><a href="${prefix}research.html?tool=${tool}">${label}</a></li>`).join('');
 
     nav.innerHTML = `
-        <div class="logo-img"><a href="${prefix}index.html"><img src="${prefix}assets/images/assistos-logo.svg" alt="AssistOS" class="logo"></a></div>
+        <div class="logo-img"><img src="${prefix}assets/images/assistos-logo.svg" alt="AssistOS" class="logo"></div>
         <ul class="main-menu menu-desktop">
             <li class="nav-dropdown"><button class="nav-trigger${homeClass}" type="button" aria-expanded="false">Home <span aria-hidden="true">⌄</span></button>
                 <ul class="nav-submenu">
@@ -112,20 +112,48 @@ function initSiteNavigation() {
             </li>
             <li class="nav-dropdown"><button class="nav-trigger${researchClass}" type="button" aria-expanded="false">Research <span aria-hidden="true">⌄</span></button>
                 <ul class="nav-submenu nav-submenu-wide">
+                    <li><a href="${prefix}research.html">Research documentation</a></li>
+                    <li><a href="${prefix}whitepaper/index.html">Whitepaper</a></li>
                     ${toolLinks}
                 </ul>
             </li>
-            <li><a href="${prefix}index.html#contact" class="nav-contact">Contact us</a></li>
+            <li class="nav-dropdown"><button class="nav-trigger" type="button" aria-expanded="false">Reference <span aria-hidden="true">⌄</span></button><ul class="nav-submenu"><li><a href="${prefix}wiki.html">Wiki</a></li><li><a href="${prefix}specsLoader.html?spec=matrix.md">Specifications</a></li></ul></li>
+            <li class="nav-dropdown"><button class="nav-trigger" type="button" aria-expanded="false">Contact <span aria-hidden="true">⌄</span></button><ul class="nav-submenu"><li><a href="${prefix}index.html#contact" class="nav-contact">Contact us</a></li></ul></li>
         </ul>
         <button class="hamburger-lines" id="hamburger" type="button" aria-label="Open navigation" aria-expanded="false"><span class="line"></span><span class="line"></span><span class="line"></span></button>
         <ul class="secondary-menu">
             <li class="mobile-menu-title">Home</li>
             <li><a href="${prefix}index.html">Home</a></li><li><a href="${prefix}vision.html">Vision</a></li><li><a href="${prefix}installation.html">Installation</a></li>
             <li class="mobile-menu-title">Research</li>
+            <li><a href="${prefix}research.html">Research documentation</a></li><li><a href="${prefix}whitepaper/index.html">Whitepaper</a></li>
             ${toolLinks}
+            <li class="mobile-menu-title">Reference</li>
+            <li><a href="${prefix}wiki.html">Wiki</a></li><li><a href="${prefix}specsLoader.html?spec=matrix.md">Specifications</a></li>
+            <li class="mobile-menu-title">Contact</li>
             <li><a href="${prefix}index.html#contact" class="nav-contact">Contact us</a></li>
         </ul>`;
 
+    nav.querySelector('.secondary-menu').innerHTML = nav.querySelector('.menu-desktop').innerHTML;
+    const menus = [...nav.querySelectorAll('.nav-dropdown')];
+    function closeMenus() {
+        for (const menu of menus) {
+            menu.dataset.open = 'false';
+            menu.querySelector('button').setAttribute('aria-expanded', 'false');
+        }
+    }
+    for (const menu of menus) menu.querySelector('button').addEventListener('click', () => {
+        const open = menu.dataset.open !== 'true';
+        closeMenus();
+        menu.dataset.open = String(open);
+        menu.querySelector('button').setAttribute('aria-expanded', String(open));
+    });
+    document.addEventListener('click', (event) => { if (!event.target.closest('.nav-dropdown')) closeMenus(); });
+    document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Escape') return;
+        const trigger = menus.find(menu => menu.dataset.open === 'true')?.querySelector('button');
+        closeMenus();
+        trigger?.focus();
+    });
 }
 
 function initResearchEmbed() {
