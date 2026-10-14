@@ -14,3 +14,4 @@
 .agents/skills/oskill-build/
 .agents/skills/review-specs/
 # <<< ploinky default-skills <<<
+.DS_Store
